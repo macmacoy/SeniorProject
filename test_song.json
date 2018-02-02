@@ -1,0 +1,46 @@
+{
+  "song": {
+    "title": "This is Our Song",
+    "artist": "Mac & Taylor",
+    "duration": 25,
+    "tempo": 60,
+    "lyric_offset": 0.00,
+    "capo": null,
+    "chords": [
+      {
+        "timestamp": 0.00,
+        "chord": "C"
+      },
+      {
+        "timestamp": 3.00,
+        "chord": "G"
+      },
+      {
+        "timestamp": 7.00,
+        "chord": "Am"
+      },
+      {
+        "timestamp": 18.00,
+        "chord": "F"
+      }
+    ],
+    "lyrics": [
+      {
+        "timestamp": 0.00,
+        "lyric": "This is our song"
+      },
+      {
+        "timestamp": 3.00,
+        "lyric": "It's our song"
+      },
+      {
+        "timestamp": 7.00,
+        "lyric": "We wrote this song"
+      },
+      {
+        "timestamp": 18.00,
+        "lyric": "For you"
+      }
+    ]
+  }
+}
