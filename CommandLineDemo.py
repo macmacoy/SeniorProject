@@ -1,7 +1,7 @@
 from Song import Song
 import time
 
-my_song = Song("test_song.json")
+my_song = Song("tests/test_song.json")
 
 print ("Song: " + my_song.name)
 print ("Artist: " + my_song.artist)

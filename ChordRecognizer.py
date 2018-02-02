@@ -1,21 +1,25 @@
 # for microphone input
 import pyaudio
 import wave
-# for chord recognition
+
+# for madmom chord recognition
 from madmom.audio.chroma import DeepChromaProcessor
 from madmom.features.chords import DeepChromaChordRecognitionProcessor
 
-# returns a chord or 'N'
-def chordFromMicrophone():
+# for pymire chord recognition
+from pymir import AudioFile
+from pymir import Pitch
+from pymir import Onsets
 
-	### -------MICROPHONE INPUT------- ###
-	FORMAT = pyaudio.paInt16
-	CHANNELS = 2
-	RATE = 44100
-	CHUNK = 1024
-	RECORD_SECONDS = 0.35
-	WAVE_OUTPUT_FILENAME = "myWaveFile.wav"
-	 
+# constants
+FORMAT = pyaudio.paInt16
+CHANNELS = 2
+RATE = 44100
+CHUNK = 1024
+WAVE_OUTPUT_FILENAME = "myWaveFile.wav"
+
+# records audio from microphone
+def record(length):
 	audio = pyaudio.PyAudio()
 	 
 	# start Recording
@@ -25,7 +29,7 @@ def chordFromMicrophone():
 	#print "recording..."
 	frames = []
 	 
-	for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+	for i in range(0, int(RATE / CHUNK * length)):
 	    data = stream.read(CHUNK)
 	    frames.append(data)
 	#print "finished recording"
@@ -41,12 +45,59 @@ def chordFromMicrophone():
 	waveFile.setframerate(RATE)
 	waveFile.writeframes(b''.join(frames))
 	waveFile.close()
-	### -------MICROPHONE INPUT------- ###
 
-	### -------CHORD RECOGNITION------- ###
+# returns a chord or 'N'
+def madmomChord():
+
+	RECORD_SECONDS = 0.35
+	record(RECORD_SECONDS)
+
 	dcp = DeepChromaProcessor()
 	decode = DeepChromaChordRecognitionProcessor()
 	chroma = dcp('myWaveFile.wav')
 	chord = (decode(chroma)[0][2])
 	return chord
-	### -------CHORD RECOGNITION------- ###
+
+# returns a chord
+# more instable, but ability to give confidence
+def pymirChord():
+
+	RECORD_SECONDS = 0.35
+	record(RECORD_SECONDS)
+	
+	audiofile = AudioFile.open(WAVE_OUTPUT_FILENAME)
+
+	o = Onsets.onsetsByFlux(audiofile)
+	frames = audiofile.framesFromOnsets(o)
+
+	#frameSize = 16384
+	#frames = audioFile.frames(frameSize)
+
+	chords = []
+	frameIndex = 0
+	startIndex = 0
+	for frame in frames:
+		spectrum = frame.spectrum()
+		chroma = spectrum.chroma()
+		# print chroma
+		
+		chord, score = Pitch.getChord(chroma)
+
+		endIndex = startIndex + len(frame)
+
+		startTime = startIndex / frame.sampleRate
+		endTime = endIndex / frame.sampleRate
+
+		# print "%.2f  | %.2f | %-4s | (%.2f)" % (startTime, endTime, chord, score)
+	    
+		chords.append([startTime, endTime, chord, score])
+
+		frameIndex = frameIndex + 1
+		startIndex = startIndex + len(frame)
+
+	chord = {"chord": 'N', "confidence": 0}
+	for interval in chords:
+		if(interval[3] > chord["confidence"]):
+			chord["chord"] = interval[2]
+			chord["confidence"] = interval[3]
+	return chord["chord"]
