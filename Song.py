@@ -12,6 +12,7 @@ class Song(object):
 		    self.duration = data.get("song").get("duration")
 		    self.tempo = data.get("song").get("tempo")
 		    self.capo = data.get("song").get("capo")
+
 		    chord_data = data.get("song").get("chords")
 		    self.chords = []
 		    for i in range(0, len(chord_data)):
@@ -19,6 +20,7 @@ class Song(object):
 		    		self.chords.append({"start":chord_data[i]["timestamp"], "end":chord_data[i+1]["timestamp"], "chord":chord_data[i]["chord"]})
 		    	else:
 		    		self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
+		    
 		    lyric_data = data.get("song").get("lyrics")
 		    self.lyrics = []
 		    for i in range(0, len(lyric_data)):
