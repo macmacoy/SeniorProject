@@ -56,6 +56,13 @@ def madmomChord():
 	decode = DeepChromaChordRecognitionProcessor()
 	chroma = dcp('myWaveFile.wav')
 	chord = (decode(chroma)[0][2])
+	if ":maj" in chord:
+		return chord.replace(':maj','')
+	elif ":min" in chord:
+		return chord.replace(':min','m')
+	if chord == "N":
+		return chord
+	print ("ChordRecognizer.py: NOT ALL CASES ACCOUNTED FOR")
 	return chord
 
 # returns a chord

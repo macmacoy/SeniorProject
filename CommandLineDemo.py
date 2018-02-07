@@ -52,7 +52,7 @@ while(time.time() < start + my_song.duration):
 		if hit == False:
 			if madmomChord() == chords[chordIndex]["chord"]:
 				hit = True
-				redraw(hit)
+				draw(hit)
 		now = time.time() - start
 	chordIndex += 1
 	hit = False
