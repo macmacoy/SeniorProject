@@ -1,0 +1,1261 @@
+{
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "youtube_url": "A_MjCqQoLLA",
+    "duration": 490.0,
+    "tempo": 147,
+    "lyric_offset": 0,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": "intro"
+        },
+        {
+            "timestamp": 57.19,
+            "chord": "F"
+        },
+        {
+            "timestamp": 60.44,
+            "chord": "C"
+        },
+        {
+            "timestamp": 63.66,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 64.47,
+            "chord": "Fsus4"
+        },
+        {
+            "timestamp": 66.9,
+            "chord": "F"
+        },
+        {
+            "timestamp": 70.05,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 73.26,
+            "chord": "F"
+        },
+        {
+            "timestamp": 76.42,
+            "chord": "C"
+        },
+        {
+            "timestamp": 79.59,
+            "chord": "F"
+        },
+        {
+            "timestamp": 86.09,
+            "chord": "C"
+        },
+        {
+            "timestamp": 89.32,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 90.13,
+            "chord": "Fsus4"
+        },
+        {
+            "timestamp": 92.55,
+            "chord": "F"
+        },
+        {
+            "timestamp": 95.78,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 99.0,
+            "chord": "F"
+        },
+        {
+            "timestamp": 102.21,
+            "chord": "C"
+        },
+        {
+            "timestamp": 105.45,
+            "chord": "F"
+        },
+        {
+            "timestamp": 108.75,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 111.63,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 113.27,
+            "chord": "Dm"
+        },
+        {
+            "timestamp": 114.89,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 116.52,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 118.14,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 121.39,
+            "chord": "F"
+        },
+        {
+            "timestamp": 124.62,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 127.85,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 129.47,
+            "chord": "Dm"
+        },
+        {
+            "timestamp": 131.11,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 132.74,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 134.36,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 137.61,
+            "chord": "F"
+        },
+        {
+            "timestamp": 140.85,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 142.47,
+            "chord": "C"
+        },
+        {
+            "timestamp": 142.87,
+            "chord": "F"
+        },
+        {
+            "timestamp": 143.28,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 145.71,
+            "chord": "C"
+        },
+        {
+            "timestamp": 146.12,
+            "chord": "F"
+        },
+        {
+            "timestamp": 146.52,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 148.96,
+            "chord": "F"
+        },
+        {
+            "timestamp": 152.23,
+            "chord": "C"
+        },
+        {
+            "timestamp": 155.47,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 158.72,
+            "chord": "F"
+        },
+        {
+            "timestamp": 161.89,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 165.14,
+            "chord": "F"
+        },
+        {
+            "timestamp": 168.41,
+            "chord": "C"
+        },
+        {
+            "timestamp": 171.66,
+            "chord": "F"
+        },
+        {
+            "timestamp": 174.88,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 178.09,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 179.71,
+            "chord": "Dm"
+        },
+        {
+            "timestamp": 181.34,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 183.0,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 184.63,
+            "chord": "C"
+        },
+        {
+            "timestamp": 185.47,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 187.93,
+            "chord": "F"
+        },
+        {
+            "timestamp": 191.18,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 194.42,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 196.05,
+            "chord": "Dm"
+        },
+        {
+            "timestamp": 197.68,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 199.32,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 200.97,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 204.28,
+            "chord": "F"
+        },
+        {
+            "timestamp": 207.58,
+            "chord": "F7"
+        },
+        {
+            "timestamp": 209.24,
+            "chord": "C"
+        },
+        {
+            "timestamp": 209.65,
+            "chord": "F"
+        },
+        {
+            "timestamp": 210.07,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 212.56,
+            "chord": "C"
+        },
+        {
+            "timestamp": 212.97,
+            "chord": "F"
+        },
+        {
+            "timestamp": 213.39,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 215.88,
+            "chord": "F"
+        },
+        {
+            "timestamp": 219.22,
+            "chord": "C"
+        },
+        {
+            "timestamp": 222.53,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 225.84,
+            "chord": "F"
+        },
+        {
+            "timestamp": 229.13,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 232.43,
+            "chord": "F"
+        },
+        {
+            "timestamp": 235.69,
+            "chord": "C7"
+        },
+        {
+            "timestamp": 238.97,
+            "chord": "F"
+        },
+        {
+            "timestamp": 243.89,
+            "chord": "rest"
+        },
+        {
+            "timestamp": 245.53,
+            "chord": "F"
+        },
+        {
+            "timestamp": 247.17,
+            "chord": "Dm"
+        },
+        {
+            "timestamp": 248.81,
+            "chord": "Eb"
+        },
+        {
+            "timestamp": 252.13,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 255.47,
+            "chord": "F"
+        },
+        {
+            "timestamp": 262.07,
+            "chord": "Eb"
+        },
+        {
+            "timestamp": 265.42,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 268.75,
+            "chord": "F"
+        },
+        {
+            "timestamp": 275.28,
+            "chord": "Eb"
+        },
+        {
+            "timestamp": 278.62,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 281.96,
+            "chord": "F"
+        },
+        {
+            "timestamp": 288.58,
+            "chord": "Eb"
+        },
+        {
+            "timestamp": 291.91,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 295.25,
+            "chord": "F"
+        },
+        {
+            "timestamp": 301.81,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 305.16,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 308.48,
+            "chord": "F"
+        },
+        {
+            "timestamp": 314.94,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 318.21,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 321.46,
+            "chord": "F"
+        },
+        {
+            "timestamp": 327.87,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 331.12,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 334.37,
+            "chord": "F"
+        },
+        {
+            "timestamp": 340.82,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 344.07,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 347.32,
+            "chord": "F"
+        },
+        {
+            "timestamp": 353.78,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 357.03,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 360.28,
+            "chord": "F"
+        },
+        {
+            "timestamp": 366.65,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 369.9,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 373.16,
+            "chord": "F"
+        },
+        {
+            "timestamp": 379.58,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 382.83,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 386.04,
+            "chord": "F"
+        },
+        {
+            "timestamp": 392.41,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 395.63,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 398.86,
+            "chord": "F"
+        },
+        {
+            "timestamp": 405.22,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 408.43,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 411.65,
+            "chord": "F"
+        },
+        {
+            "timestamp": 418.04,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 421.28,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 424.5,
+            "chord": "F"
+        },
+        {
+            "timestamp": 430.89,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 434.14,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 437.39,
+            "chord": "F"
+        },
+        {
+            "timestamp": 443.75,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 446.98,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 450.22,
+            "chord": "F"
+        },
+        {
+            "timestamp": 456.44,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 459.6,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 462.8,
+            "chord": "F"
+        },
+        {
+            "timestamp": 468.95,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 472.24,
+            "chord": "Bb"
+        },
+        {
+            "timestamp": 475.52,
+            "chord": "F"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.0,
+            "lyric": ""
+        },
+        {
+            "timestamp": 0.61,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 2.62,
+            "lyric": ""
+        },
+        {
+            "timestamp": 3.61,
+            "lyric": "Don't make it bad."
+        },
+        {
+            "timestamp": 6.09,
+            "lyric": ""
+        },
+        {
+            "timestamp": 7.03,
+            "lyric": "Take a sad song and make it better."
+        },
+        {
+            "timestamp": 12.94,
+            "lyric": ""
+        },
+        {
+            "timestamp": 13.99,
+            "lyric": "Remember,"
+        },
+        {
+            "timestamp": 15.01,
+            "lyric": ""
+        },
+        {
+            "timestamp": 15.5,
+            "lyric": "To let her into your heart."
+        },
+        {
+            "timestamp": 18.36,
+            "lyric": ""
+        },
+        {
+            "timestamp": 18.92,
+            "lyric": "Then you can start,"
+        },
+        {
+            "timestamp": 21.16,
+            "lyric": ""
+        },
+        {
+            "timestamp": 21.79,
+            "lyric": "To make it better."
+        },
+        {
+            "timestamp": 25.21,
+            "lyric": ""
+        },
+        {
+            "timestamp": 26.08,
+            "lyric": "Hey Jude,"
+        },
+        {
+            "timestamp": 28.0,
+            "lyric": ""
+        },
+        {
+            "timestamp": 28.88,
+            "lyric": "Don't be afraid."
+        },
+        {
+            "timestamp": 31.55,
+            "lyric": ""
+        },
+        {
+            "timestamp": 32.55,
+            "lyric": "You were made to go out and get her."
+        },
+        {
+            "timestamp": 38.14,
+            "lyric": ""
+        },
+        {
+            "timestamp": 39.32,
+            "lyric": "The minute,"
+        },
+        {
+            "timestamp": 40.39,
+            "lyric": ""
+        },
+        {
+            "timestamp": 41.07,
+            "lyric": "You let her under your skin,"
+        },
+        {
+            "timestamp": 43.86,
+            "lyric": ""
+        },
+        {
+            "timestamp": 44.49,
+            "lyric": "Then you begin to make it better."
+        },
+        {
+            "timestamp": 50.84,
+            "lyric": ""
+        },
+        {
+            "timestamp": 53.14,
+            "lyric": "And anytime you feel the pain."
+        },
+        {
+            "timestamp": 56.06,
+            "lyric": ""
+        },
+        {
+            "timestamp": 56.31,
+            "lyric": "Hey Jude, refrain."
+        },
+        {
+            "timestamp": 59.17,
+            "lyric": ""
+        },
+        {
+            "timestamp": 59.55,
+            "lyric": "Don't carry the world upon your shoulder."
+        },
+        {
+            "timestamp": 67.45,
+            "lyric": ""
+        },
+        {
+            "timestamp": 69.13,
+            "lyric": "For well you know, that it's a fool who plays it cool,"
+        },
+        {
+            "timestamp": 75.35,
+            "lyric": ""
+        },
+        {
+            "timestamp": 75.72,
+            "lyric": "By making his world a little colder."
+        },
+        {
+            "timestamp": 83.0,
+            "lyric": ""
+        },
+        {
+            "timestamp": 83.57,
+            "lyric": "Na - na - na - na - na, na - na - na - na"
+        },
+        {
+            "timestamp": 89.23,
+            "lyric": ""
+        },
+        {
+            "timestamp": 91.84,
+            "lyric": "Hey Jude,"
+        },
+        {
+            "timestamp": 93.7,
+            "lyric": ""
+        },
+        {
+            "timestamp": 94.58,
+            "lyric": "Don't let me down."
+        },
+        {
+            "timestamp": 97.06,
+            "lyric": ""
+        },
+        {
+            "timestamp": 98.55,
+            "lyric": "You have found her."
+        },
+        {
+            "timestamp": 100.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 101.11,
+            "lyric": "Now go and get her."
+        },
+        {
+            "timestamp": 104.1,
+            "lyric": ""
+        },
+        {
+            "timestamp": 105.02,
+            "lyric": "Remember,"
+        },
+        {
+            "timestamp": 106.15,
+            "lyric": ""
+        },
+        {
+            "timestamp": 106.71,
+            "lyric": "To let her into your heart."
+        },
+        {
+            "timestamp": 109.63,
+            "lyric": ""
+        },
+        {
+            "timestamp": 110.19,
+            "lyric": "Then you can start,"
+        },
+        {
+            "timestamp": 112.62,
+            "lyric": ""
+        },
+        {
+            "timestamp": 113.05,
+            "lyric": "To make it better."
+        },
+        {
+            "timestamp": 116.35,
+            "lyric": ""
+        },
+        {
+            "timestamp": 118.84,
+            "lyric": "So let it out and let it in."
+        },
+        {
+            "timestamp": 121.65,
+            "lyric": ""
+        },
+        {
+            "timestamp": 122.26,
+            "lyric": "Hey Jude, begin."
+        },
+        {
+            "timestamp": 125.25,
+            "lyric": ""
+        },
+        {
+            "timestamp": 125.63,
+            "lyric": "You're waiting for someone to perform with."
+        },
+        {
+            "timestamp": 132.89,
+            "lyric": ""
+        },
+        {
+            "timestamp": 135.26,
+            "lyric": "And don't you know that it's just you?"
+        },
+        {
+            "timestamp": 138.24,
+            "lyric": ""
+        },
+        {
+            "timestamp": 138.57,
+            "lyric": "Hey Jude, you'll do."
+        },
+        {
+            "timestamp": 141.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 141.86,
+            "lyric": "The movement you need is on your shoulder."
+        },
+        {
+            "timestamp": 148.83,
+            "lyric": ""
+        },
+        {
+            "timestamp": 149.51,
+            "lyric": "Na - na - na - na - na, na - na - na - na"
+        },
+        {
+            "timestamp": 155.25,
+            "lyric": "Yeah!"
+        },
+        {
+            "timestamp": 157.3,
+            "lyric": ""
+        },
+        {
+            "timestamp": 158.1,
+            "lyric": "Hey Jude,"
+        },
+        {
+            "timestamp": 160.58,
+            "lyric": ""
+        },
+        {
+            "timestamp": 161.08,
+            "lyric": "Don't make it bad."
+        },
+        {
+            "timestamp": 163.89,
+            "lyric": ""
+        },
+        {
+            "timestamp": 164.76,
+            "lyric": "Take a sad song and make it better."
+        },
+        {
+            "timestamp": 170.85,
+            "lyric": ""
+        },
+        {
+            "timestamp": 171.67,
+            "lyric": "Remember,"
+        },
+        {
+            "timestamp": 173.02,
+            "lyric": ""
+        },
+        {
+            "timestamp": 173.41,
+            "lyric": "To let her under your skin."
+        },
+        {
+            "timestamp": 176.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 177.02,
+            "lyric": "Then you'll begin,"
+        },
+        {
+            "timestamp": 179.37,
+            "lyric": ""
+        },
+        {
+            "timestamp": 179.87,
+            "lyric": "To make it,"
+        },
+        {
+            "timestamp": 181.24,
+            "lyric": ""
+        },
+        {
+            "timestamp": 181.49,
+            "lyric": "Better - better - better - better - better - better"
+        },
+        {
+            "timestamp": 186.65,
+            "lyric": "Aah!"
+        },
+        {
+            "timestamp": 188.33,
+            "lyric": "Yeah!"
+        },
+        {
+            "timestamp": 189.82,
+            "lyric": "Yeah - yeah - yeah - yeah - yeah - yeah"
+        },
+        {
+            "timestamp": 192.88,
+            "lyric": ""
+        },
+        {
+            "timestamp": 194.86,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 197.16,
+            "lyric": ""
+        },
+        {
+            "timestamp": 197.54,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 199.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 201.4,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 207.18,
+            "lyric": ""
+        },
+        {
+            "timestamp": 208.06,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 210.62,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 212.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 214.6,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 220.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 221.18,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 223.8,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 225.54,
+            "lyric": ""
+        },
+        {
+            "timestamp": 227.84,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 233.37,
+            "lyric": ""
+        },
+        {
+            "timestamp": 234.42,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 236.97,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 238.61,
+            "lyric": ""
+        },
+        {
+            "timestamp": 240.96,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 246.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 247.55,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 250.04,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 251.65,
+            "lyric": ""
+        },
+        {
+            "timestamp": 254.02,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 259.44,
+            "lyric": ""
+        },
+        {
+            "timestamp": 260.62,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 262.98,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 264.53,
+            "lyric": ""
+        },
+        {
+            "timestamp": 267.04,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 272.25,
+            "lyric": ""
+        },
+        {
+            "timestamp": 273.37,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 275.8,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 277.23,
+            "lyric": ""
+        },
+        {
+            "timestamp": 279.73,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 285.15,
+            "lyric": ""
+        },
+        {
+            "timestamp": 286.2,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 288.68,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 290.29,
+            "lyric": ""
+        },
+        {
+            "timestamp": 292.61,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 298.31,
+            "lyric": ""
+        },
+        {
+            "timestamp": 299.06,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 301.62,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 303.25,
+            "lyric": ""
+        },
+        {
+            "timestamp": 305.42,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 310.89,
+            "lyric": ""
+        },
+        {
+            "timestamp": 311.89,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 314.38,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 315.99,
+            "lyric": ""
+        },
+        {
+            "timestamp": 318.3,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 323.58,
+            "lyric": ""
+        },
+        {
+            "timestamp": 324.71,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 327.13,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 328.68,
+            "lyric": ""
+        },
+        {
+            "timestamp": 331.05,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 336.39,
+            "lyric": ""
+        },
+        {
+            "timestamp": 337.39,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 339.95,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 341.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 343.74,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 349.04,
+            "lyric": ""
+        },
+        {
+            "timestamp": 350.08,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 352.58,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 354.19,
+            "lyric": ""
+        },
+        {
+            "timestamp": 356.5,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 361.91,
+            "lyric": ""
+        },
+        {
+            "timestamp": 362.84,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 365.27,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 367.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 369.25,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 374.78,
+            "lyric": ""
+        },
+        {
+            "timestamp": 375.65,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 378.15,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 379.7,
+            "lyric": ""
+        },
+        {
+            "timestamp": 382.13,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 387.18,
+            "lyric": ""
+        },
+        {
+            "timestamp": 388.29,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 390.78,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 392.52,
+            "lyric": ""
+        },
+        {
+            "timestamp": 394.57,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 399.8,
+            "lyric": ""
+        },
+        {
+            "timestamp": 400.86,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 403.29,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 404.84,
+            "lyric": ""
+        },
+        {
+            "timestamp": 407.14,
+            "lyric": "Na, na, na, na - na - na - na"
+        },
+        {
+            "timestamp": 412.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 413.67,
+            "lyric": "Na - na - na - na"
+        },
+        {
+            "timestamp": 416.1,
+            "lyric": "Hey Jude."
+        },
+        {
+            "timestamp": 418.02,
+            "lyric": ""
+        }
+    ]
+}
