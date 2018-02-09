@@ -7,13 +7,13 @@ class Song(object):
 		with open(filename) as json_data:
 		    data = json.load(json_data)
 
-		    self.name = data.get("song").get("title")
-		    self.artist = data.get("song").get("artist")
-		    self.duration = data.get("song").get("duration")
-		    self.tempo = data.get("song").get("tempo")
-		    self.capo = data.get("song").get("capo")
+		    self.name = data.get("title")
+		    self.artist = data.get("artist")
+		    self.duration = data.get("duration")
+		    self.tempo = data.get("tempo")
+		    self.capo = data.get("capo")
 
-		    chord_data = data.get("song").get("chords")
+		    chord_data = data.get("chords")
 		    self.chords = []
 		    for i in range(0, len(chord_data)):
 		    	if i < len(chord_data) - 1:
@@ -21,7 +21,7 @@ class Song(object):
 		    	else:
 		    		self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
 		    
-		    lyric_data = data.get("song").get("lyrics")
+		    lyric_data = data.get("lyrics")
 		    self.lyrics = []
 		    for i in range(0, len(lyric_data)):
 		    	if i < len(lyric_data) - 1:

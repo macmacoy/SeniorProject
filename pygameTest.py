@@ -69,10 +69,3 @@ while 1:
     screen.fill(black)
     screen.blit(chordDisplay, (0, 200))
     pygame.display.flip()
-
-
-
-
-
-
-

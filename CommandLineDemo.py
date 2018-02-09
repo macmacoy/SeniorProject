@@ -1,9 +1,9 @@
 from Song import Song
-from ChordRecognizer import madmomChord
+from ChordRecognizer import madmomChord, RECORD_SECONDS
 import time
 import os
 
-my_song = Song("tests/test_song.json")
+my_song = Song("tests/song_takeiteasy_20180208184250.json")
 
 os.system('clear')
 print ("Song: " + my_song.name)
@@ -24,7 +24,7 @@ def draw(hit):
 	os.system('clear')
 	print (lyrics[lyricIndex]["lyric"] + tab[len(lyrics[lyricIndex]["lyric"]):] + chords[chordIndex]["chord"] + " <----")
 	if hit:
-		print(tab[4:] + "-NICE!-")
+		print(tab[4:] + str(chordScore))
 	else:
 		print(tab[1:] + "-X-")
 	print("")
@@ -38,9 +38,19 @@ def draw(hit):
 		# print("   next:   ")
 		print(tab + chords[chordIndex+1]["chord"])
 
+	print("\n\n\n   Total Score: " + str(totalScore/(chordIndex+1)))
+
+def score(timeoff):
+	if(timeoff < 2.5):
+		return (float(1) - (float(1)/float(15))*timeoff*timeoff)
+	else:
+		return ((float(1) - (float(1)/float(6))*timeoff))
+
 lyricIndex = 0
 chordIndex = 0
 hit = False
+totalScore = float(0)
+chordScore = float(0)
 start = time.time()
 while(time.time() < start + my_song.duration):
 	draw(hit)
@@ -51,6 +61,9 @@ while(time.time() < start + my_song.duration):
 			draw(hit)
 		if hit == False:
 			if madmomChord() == chords[chordIndex]["chord"]:
+				now = time.time() - start
+				chordScore = score(now-chords[chordIndex]["start"]-RECORD_SECONDS)
+				totalScore += chordScore
 				hit = True
 				draw(hit)
 		now = time.time() - start

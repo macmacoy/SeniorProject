@@ -1,5 +1,4 @@
 {
-  "song": {
     "title": "This is Our Song",
     "artist": "Mac & Taylor",
     "duration": 25,
@@ -42,5 +41,4 @@
         "lyric": "For you"
       }
     ]
-  }
 }

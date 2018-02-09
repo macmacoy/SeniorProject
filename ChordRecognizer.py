@@ -16,6 +16,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 44100
 CHUNK = 1024
+RECORD_SECONDS = 0.35
 WAVE_OUTPUT_FILENAME = "myWaveFile.wav"
 
 # records audio from microphone
@@ -49,7 +50,6 @@ def record(length):
 # returns a chord or 'N'
 def madmomChord():
 
-	RECORD_SECONDS = 0.35
 	record(RECORD_SECONDS)
 
 	dcp = DeepChromaProcessor()
@@ -69,7 +69,6 @@ def madmomChord():
 # more instable, but ability to give confidence
 def pymirChord():
 
-	RECORD_SECONDS = 0.35
 	record(RECORD_SECONDS)
 	
 	audiofile = AudioFile.open(WAVE_OUTPUT_FILENAME)
