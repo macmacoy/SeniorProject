@@ -3,7 +3,7 @@ from ChordRecognizer import madmomChord, RECORD_SECONDS
 import time
 import os
 
-my_song = Song("tests/song_takeiteasy_20180208184250.json")
+my_song = Song("tests/test_song.json")
 
 os.system('clear')
 print ("Song: " + my_song.name)
