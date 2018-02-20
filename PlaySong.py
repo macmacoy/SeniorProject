@@ -2,12 +2,29 @@
 import sys, pygame
 import time
 import os
-from threading import Thread
+import copy
+import threading
+from queue import Queue, Empty
+from multiprocessing import Process, Pipe
+# from threading import Thread
 from pygame.surface import Surface
 from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
-from ChordRecognizer import madmomChord, RECORD_SECONDS
+from ChordRecognizer import madmomChord, getStream, closeStream, RECORD_SECONDS
+
+def listenForChords(you, audio, stream):
+	while True:
+		madmomChord(you,audio,stream)
+
+me, you = Pipe()
+audio, stream = getStream()
+
+# q = Queue()
+threads = []
+threads.append(threading.Thread(target=listenForChords, args=(you,audio,stream)))
+threads[-1].setDaemon(True)
+threads[-1].start()
 
 pygame.init()
 pygame.font.init()
@@ -19,18 +36,14 @@ chordDisplayPlacement = 0.5 * screenSize[1]
 chordFontSize = 100
 chordFont = pygame.font.SysFont('Comic Sans MS', chordFontSize)
 
-# flags = FULLSCREEN | DOUBLEBUF
-flags = DOUBLEBUF
+flags = FULLSCREEN | DOUBLEBUF
+# flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 chordDisplay = Surface(chordDisplaySize)
 chordDisplayRect = chordDisplay.get_rect()
 
 timeIntervalOnScreen = 5.0 # seconds
-
-song = Song("tests/test_song.json")
-chords = song.chords
-lyrics = song.lyrics
 
 def isInTimeRange(chord, timeRangeOnScreen):
 	if chord["start"] > timeRangeOnScreen["start"] and chord["start"] < timeRangeOnScreen["end"]:
@@ -42,11 +55,11 @@ def isInTimeRange(chord, timeRangeOnScreen):
 	else:
 		return False
 
-def userHasQuit():
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			return True
-	return False
+# def userHasQuit():
+# 	for event in pygame.event.get():
+# 		if event.type == pygame.QUIT:
+# 			return True
+# 	return False
 
 def getColor(chord):
 	if chord == "G":
@@ -63,6 +76,15 @@ def getColor(chord):
 backgroundColor = 0, 0, 0
 gray = 220, 220, 220
 
+song = Song("tests/test_song.json")
+chords = song.chords
+lyrics = song.lyrics
+
+start = time.time()
+now = time.time() - start
+lastChordCheck = now
+checkChordInterval = 0.35
+
 totalScore = float(0)
 chordScore = float(0)
 hit = []
@@ -71,33 +93,22 @@ for chord in chords:
 
 chordIndex = 0
 
-def listenForChords():
-	print("in thread")
-	while now < song.duration:
-		while now < chords[chordIndex]["end"]:
-			print("listening for : " + chords[chordIndex]["chord"])
-			if madmomChord() == chords[chordIndex]["chord"]:
-				print("GOT IT")
-				hit[chordIndex] = True
-		chordIndex += 1
-
-start = time.time()
-now = time.time() - start
-t = Thread(target=listenForChords, args=())
-t.start()
-
 timeRangeOnScreen = {"start":0.0, "end":0.0};
 while now < song.duration:
 	# user quits
-	if userHasQuit():
-		sys.exit()
+	# if userHasQuit():
+	# 	sys.exit()
 
 	now = time.time() - start
+
+	if (now > chords[chordIndex]["end"]):
+			chordIndex += 1
 
 	timeRangeOnScreen["start"] = now-timeIntervalOnScreen/2
 	timeRangeOnScreen["end"] = now+timeIntervalOnScreen/2
 	firstPixelOfChord = 0
 	lastPixelOfChord = 0
+	i = 0
 	for chord in chords:
 		if isInTimeRange(chord,timeRangeOnScreen):
 			if chord["start"] > timeRangeOnScreen["start"]:
@@ -108,17 +119,53 @@ while now < song.duration:
 				lastPixelOfChord = ((chord["end"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
 			else:
 				lastPixelOfChord = chordDisplaySize[0]
-			if hit[chordIndex]:
+			if (now > (lastChordCheck + checkChordInterval)):
+				c = me.recv()
+				if c == chords[chordIndex]["chord"]:
+					hit[i] = True
+				lastChordCheck = now
+				print(c)
+				# try:
+					# print (q.get())
+					# q.task_done()
+					# t = time.time()
+					# print("blocked for " + str(time.time()-t))
+					# for thread in threads:
+					# 	print(thread.isAlive())
+					# threads.append(threading.Thread(target=madmomChord, args=(you,audio,stream)))
+					# threads[-1].setDaemon(True)
+					# threads[-1].start()
+				# except Empty:
+				# 	print("got empty exception")
+				# 	pass
+
+				# try:
+				# 	chordStr = q.get(False)
+				# 	q.task_done()
+				# 	print(str(now-lastChordCheck))
+				# 	print(chordStr)
+				# 	print("got from q")
+				# 	p = Process(target=madmomChord, args=(q,))
+				# 	p.daemon = True
+				# 	p.start()
+				# 	if chordStr == chords[chordIndex]["chord"]:
+				# 		hit[chordIndex] = True
+				# except Empty: 
+				# 	pass
+			if hit[i]:
 				chordDisplay.fill(getColor(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
 			else:
 				chordDisplay.fill(gray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
 			firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
 			chordText = chordFont.render(chord["chord"], False, (255, 255, 255))
 			chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-(chordFontSize/3)))
+		i += 1
 	chordDisplay.fill(backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
 
 	# screen.fill(backgroundColor)
 	screen.blit(chordDisplay, (0, chordDisplayPlacement))
 	pygame.display.update(chordDisplayRect)
 	# pygame.display.flip()
+
+closeStream(audio,stream)
 sys.exit()
