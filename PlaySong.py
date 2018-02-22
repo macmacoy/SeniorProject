@@ -1,33 +1,22 @@
-#!/usr/bin/env pypy
 import sys, pygame
 import time
 import os
-import copy
 import threading
-# from queue import Queue, Empty
-from multiprocessing import Process, Pipe
-import socket
-# from threading import Thread
+import Colors
+from queue import Queue, Empty
 from pygame.surface import Surface
 from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
-from ChordRecognizer import madmomChord, closeStream, RECORD_SECONDS
+from ChordRecognizer import madmomChord, closeStream
 
-def listenForChords(you):
+def listenForChords(q):
 	while True:
-		madmomChord(you)
+		madmomChord(q)
 
-me, you = Pipe()
-# serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# serversocket.bind(('localhost', 8089))
-# serversocket.listen(5)
+q = Queue()
 
-# clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# clientsocket.connect(('localhost', 8089))
-
-
-listeningThread = threading.Thread(target=listenForChords, args=(you,))
+listeningThread = threading.Thread(target=listenForChords, args=(q,))
 listeningThread.setDaemon(True)
 listeningThread.start()
 
@@ -36,19 +25,36 @@ pygame.font.init()
 
 screenSize = (1400, 800)
 chordDisplaySize = (screenSize[0], int(float(screenSize[1])/4))
-chordDisplayPlacement = 0.5 * screenSize[1]
+chordDisplayPlacement = (0, 0.5*screenSize[1])
+currentTimeMarkerSize = (5, chordDisplaySize[1]*1.2)
+currentTimeMarkerPlacement = (screenSize[0]/2, chordDisplayPlacement[1]-(currentTimeMarkerSize[1]-chordDisplaySize[1])/2)
+lyricPlacement = (screenSize[0]/2, screenSize[1]/10)
 
 chordFontSize = 100
 chordFont = pygame.font.SysFont('Comic Sans MS', chordFontSize)
+lyricFontSize = 50
+lyricFont = pygame.font.SysFont('Comic Sans MS', lyricFontSize)
 
-# flags = FULLSCREEN | DOUBLEBUF
+chordDisplay = Surface(chordDisplaySize)
+currentTimeMarker = Surface(currentTimeMarkerSize)
+
+currentTimeMarker.fill(Colors.darkGray)
+
+# flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
 flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
-chordDisplay = Surface(chordDisplaySize)
-chordDisplayRect = chordDisplay.get_rect()
 
 timeIntervalOnScreen = 5.0 # seconds
+
+def userHasQuit():
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			return True
+	return False
+
+def toSeconds(millis):
+	return float(millis)*0.001
 
 def isInTimeRange(chord, timeRangeOnScreen):
 	if chord["start"] > timeRangeOnScreen["start"] and chord["start"] < timeRangeOnScreen["end"]:
@@ -60,26 +66,11 @@ def isInTimeRange(chord, timeRangeOnScreen):
 	else:
 		return False
 
-def userHasQuit():
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			return True
-	return False
-
-def getColor(chord):
-	if chord == "G":
-		return (2, 224, 9)
-	if chord == "Em":
-		return (226, 151, 0)
-	if chord == "C":
-		return (219, 12, 8)
-	if chord == "D":
-		return (4, 89, 226)
+def score(timeoff):
+	if(timeoff < 2.5):
+		return (float(1) - (float(1)/float(15))*timeoff*timeoff)
 	else:
-		return (200,0,0)
-
-backgroundColor = 0, 0, 0
-gray = 220, 220, 220
+		return ((float(1) - (float(1)/float(6))*timeoff))
 
 song = Song("tests/test_song.json")
 chords = song.chords
@@ -91,24 +82,29 @@ hit = []
 for chord in chords:
 	hit.append(False)
 
-start = time.time()
-now = time.time() - start
-lastChordCheck = now
-checkChordInterval = 0.5
+clock = pygame.time.Clock()
+start = toSeconds(pygame.time.get_ticks())
+now = start
 
 chordIndex = 0
+lyricIndex = 0
+lyricChanged = True
 
-timeRangeOnScreen = {"start":0.0, "end":0.0};
+timeRangeOnScreen = {"start":0.0, "end":0.0}
 while now < song.duration:
 	# user quits
 	if userHasQuit():
 		sys.exit()
 
 	if (now > chords[chordIndex]["end"]):
-			chordIndex += 1
+		chordIndex += 1
+	if (now > lyrics[lyricIndex]["end"]):
+		lyricIndex += 1
+		lyricChanged = True
 
 	timeRangeOnScreen["start"] = now-timeIntervalOnScreen/2
 	timeRangeOnScreen["end"] = now+timeIntervalOnScreen/2
+
 	firstPixelOfChord = 0
 	lastPixelOfChord = 0
 	i = 0
@@ -122,62 +118,44 @@ while now < song.duration:
 				lastPixelOfChord = ((chord["end"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
 			else:
 				lastPixelOfChord = chordDisplaySize[0]
-			# t = time.time()
-			# connection, address = serversocket.accept()
-			# connection.setblocking(False)
-			# buf = connection.recv(64)
-			# if len(buf) > 0:
-			# 	print(buf)
-			# print("time to get: " + str(time.time()-t))
-			if (now > (lastChordCheck + checkChordInterval)):
-				c = me.recv()
+			try:  
+				c = q.get_nowait() # or q.get(timeout=.1)
 				if c == chords[chordIndex]["chord"]:
 					hit[chordIndex] = True
 				lastChordCheck = now
 				# print(c)
-				# try:
-					# print (q.get())
-					# q.task_done()
-					# t = time.time()
-					# print("blocked for " + str(time.time()-t))
-					# for thread in threads:
-					# 	print(thread.isAlive())
-					# threads.append(threading.Thread(target=madmomChord, args=(you,audio,stream)))
-					# threads[-1].setDaemon(True)
-					# threads[-1].start()
-				# except Empty:
-				# 	print("got empty exception")
-				# 	pass
-
-				# try:
-				# 	chordStr = q.get(False)
-				# 	q.task_done()
-				# 	print(str(now-lastChordCheck))
-				# 	print(chordStr)
-				# 	print("got from q")
-				# 	p = Process(target=madmomChord, args=(q,))
-				# 	p.daemon = True
-				# 	p.start()
-				# 	if chordStr == chords[chordIndex]["chord"]:
-				# 		hit[chordIndex] = True
-				# except Empty: 
-				# 	pass
+			except Empty:
+			    pass
 			if hit[i]:
-				chordDisplay.fill(getColor(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+				chordDisplay.fill(Colors.getColor(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+				chordText = chordFont.render(chord["chord"], False, Colors.white)
 			else:
-				chordDisplay.fill(gray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+				chordDisplay.fill(Colors.lightGray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+				chordText = chordFont.render(chord["chord"], False, Colors.mediumGray)
 			firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
-			chordText = chordFont.render(chord["chord"], False, (255, 255, 255))
 			chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-(chordFontSize/3)))
 		i += 1
-	chordDisplay.fill(backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
+	chordDisplay.fill(Colors.backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
 
-	# screen.fill(backgroundColor)
-	screen.blit(chordDisplay, (0, chordDisplayPlacement))
-	pygame.display.update(chordDisplayRect)
-	# pygame.display.flip()
+	if lyricChanged:
+		screen.fill(Colors.backgroundColor)
+		lyricText = lyricFont.render(lyrics[lyricIndex]["lyric"], False, Colors.white)
+		centeredLyricPlacement = (lyricPlacement[0]-lyricText.get_rect().width/2, lyricPlacement[1])
+		screen.blit(lyricText, centeredLyricPlacement)
 
-	now = time.time() - start
+	screen.blit(chordDisplay, chordDisplayPlacement)
+	screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
 
+	if lyricChanged:
+		lyricChanged = False
+		pygame.display.flip()
+	else:
+		pygame.display.update(chordDisplay.get_rect())
+		# pygame.display.flip()
+
+	clock.tick()
+	now = toSeconds(pygame.time.get_ticks()) - start
+
+print ("fps: " + str(clock.get_fps()))
 # closeStream()
 sys.exit()

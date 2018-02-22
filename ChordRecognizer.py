@@ -47,7 +47,7 @@ def record(length):
 	waveFile.close()
 
 # returns a chord or 'N'
-def madmomChord(me):
+def madmomChord(q):
 	record(RECORD_SECONDS)
 
 	dcp = DeepChromaProcessor()
@@ -55,14 +55,13 @@ def madmomChord(me):
 	chroma = dcp('myWaveFile.wav')
 	chord = (decode(chroma)[0][2])
 	if ":maj" in chord:
-		# me.send(chord.replace(':maj',''))
+		q.put(chord.replace(':maj',''))
 		return
 	elif ":min" in chord:
-		# me.send(chord.replace(':min','m'))
+		q.put(chord.replace(':min','m'))
 		return
 	if chord == "N":
-		me.send(chord)
-		# me.send(bytes(chord, 'UTF-8'))
+		q.put(chord)
 		return
 	print ("ChordRecognizer.py: NOT ALL CASES ACCOUNTED FOR")
 	return
