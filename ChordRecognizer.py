@@ -10,7 +10,7 @@ import time
 from madmom.audio.chroma import DeepChromaProcessor
 from madmom.features.chords import DeepChromaChordRecognitionProcessor
 
-# # for pymire chord recognition
+# # for pymir chord recognition
 # from pymir import AudioFile
 # from pymir import Pitch
 # from pymir import Onsets
@@ -23,38 +23,21 @@ CHUNK = 1024
 RECORD_SECONDS = 0.35
 WAVE_OUTPUT_FILENAME = "myWaveFile.wav"
 
-def getStream():
-	audio = pyaudio.PyAudio()
-	
-	# start Recording
-	stream = audio.open(format=FORMAT, channels=CHANNELS,
-	                rate=RATE, input=True,
-	                frames_per_buffer=CHUNK)
-	                # , input_device_index=0, input_host_api_specific_stream_info=stream_info)
-	#print "recording..."
-	return (audio, stream)
-
-def closeStream(audio, stream):
-	# stop Recording
-	stream.stop_stream()
-	stream.close()
-	audio.terminate()
+# open audio stream
+audio = pyaudio.PyAudio()
+stream = audio.open(format=FORMAT, channels=CHANNELS,
+                rate=RATE, input=True,
+                frames_per_buffer=CHUNK)
 
 # records audio from microphone
-def record(length, audio, stream):
+def record(length):
 	frames = []
 	 
 	# t = time.time()
 	for i in range(0, int(RATE / CHUNK * length)):
 		data = stream.read(CHUNK, exception_on_overflow=False)
 		frames.append(data)
-	# print ("finished recording")
-	# print("time to stream: " + str(time.time()-t))
-	 
-	# # stop Recording
-	# stream.stop_stream()
-	# stream.close()
-	# audio.terminate()
+	# print("time to record: " + str(time.time()-t))
 	
 	waveFile = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
 	waveFile.setnchannels(CHANNELS)
@@ -64,35 +47,32 @@ def record(length, audio, stream):
 	waveFile.close()
 
 # returns a chord or 'N'
-def madmomChord(me, audio, stream):
-# def madmomChord(q):
-	record(RECORD_SECONDS, audio, stream)
+def madmomChord(me):
+	record(RECORD_SECONDS)
 
 	dcp = DeepChromaProcessor()
 	decode = DeepChromaChordRecognitionProcessor()
 	chroma = dcp('myWaveFile.wav')
 	chord = (decode(chroma)[0][2])
 	if ":maj" in chord:
-		# me.send(chord)
-		q.put(chord.replace(':maj',''))
-		# print("put in q")
+		# me.send(chord.replace(':maj',''))
 		return
-		# return chord.replace(':maj','')
 	elif ":min" in chord:
-		# me.send(chord)
-		q.put(chord.replace(':min','m'))
-		# print("put in q")
+		# me.send(chord.replace(':min','m'))
 		return
-		# return chord.replace(':min','m')
 	if chord == "N":
 		me.send(chord)
-		# q.put(chord)
-		# print("put in q")
+		# me.send(bytes(chord, 'UTF-8'))
 		return
-		# return chord
 	print ("ChordRecognizer.py: NOT ALL CASES ACCOUNTED FOR")
 	return
-	# return chord
+
+# call at the end of the module's use
+def closeStream():
+	# stop Recording
+	stream.stop_stream()
+	stream.close()
+	audio.terminate()
 
 # # returns a chord
 # # more instable, but ability to give confidence

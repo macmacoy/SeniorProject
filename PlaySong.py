@@ -4,27 +4,32 @@ import time
 import os
 import copy
 import threading
-from queue import Queue, Empty
+# from queue import Queue, Empty
 from multiprocessing import Process, Pipe
+import socket
 # from threading import Thread
 from pygame.surface import Surface
 from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
-from ChordRecognizer import madmomChord, getStream, closeStream, RECORD_SECONDS
+from ChordRecognizer import madmomChord, closeStream, RECORD_SECONDS
 
-def listenForChords(you, audio, stream):
+def listenForChords(you):
 	while True:
-		madmomChord(you,audio,stream)
+		madmomChord(you)
 
 me, you = Pipe()
-audio, stream = getStream()
+# serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# serversocket.bind(('localhost', 8089))
+# serversocket.listen(5)
 
-# q = Queue()
-threads = []
-threads.append(threading.Thread(target=listenForChords, args=(you,audio,stream)))
-threads[-1].setDaemon(True)
-threads[-1].start()
+# clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# clientsocket.connect(('localhost', 8089))
+
+
+listeningThread = threading.Thread(target=listenForChords, args=(you,))
+listeningThread.setDaemon(True)
+listeningThread.start()
 
 pygame.init()
 pygame.font.init()
@@ -36,8 +41,8 @@ chordDisplayPlacement = 0.5 * screenSize[1]
 chordFontSize = 100
 chordFont = pygame.font.SysFont('Comic Sans MS', chordFontSize)
 
-flags = FULLSCREEN | DOUBLEBUF
-# flags = DOUBLEBUF
+# flags = FULLSCREEN | DOUBLEBUF
+flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 chordDisplay = Surface(chordDisplaySize)
@@ -55,11 +60,11 @@ def isInTimeRange(chord, timeRangeOnScreen):
 	else:
 		return False
 
-# def userHasQuit():
-# 	for event in pygame.event.get():
-# 		if event.type == pygame.QUIT:
-# 			return True
-# 	return False
+def userHasQuit():
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			return True
+	return False
 
 def getColor(chord):
 	if chord == "G":
@@ -80,26 +85,24 @@ song = Song("tests/test_song.json")
 chords = song.chords
 lyrics = song.lyrics
 
-start = time.time()
-now = time.time() - start
-lastChordCheck = now
-checkChordInterval = 0.35
-
 totalScore = float(0)
 chordScore = float(0)
 hit = []
 for chord in chords:
 	hit.append(False)
 
+start = time.time()
+now = time.time() - start
+lastChordCheck = now
+checkChordInterval = 0.5
+
 chordIndex = 0
 
 timeRangeOnScreen = {"start":0.0, "end":0.0};
 while now < song.duration:
 	# user quits
-	# if userHasQuit():
-	# 	sys.exit()
-
-	now = time.time() - start
+	if userHasQuit():
+		sys.exit()
 
 	if (now > chords[chordIndex]["end"]):
 			chordIndex += 1
@@ -119,12 +122,19 @@ while now < song.duration:
 				lastPixelOfChord = ((chord["end"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
 			else:
 				lastPixelOfChord = chordDisplaySize[0]
+			# t = time.time()
+			# connection, address = serversocket.accept()
+			# connection.setblocking(False)
+			# buf = connection.recv(64)
+			# if len(buf) > 0:
+			# 	print(buf)
+			# print("time to get: " + str(time.time()-t))
 			if (now > (lastChordCheck + checkChordInterval)):
 				c = me.recv()
 				if c == chords[chordIndex]["chord"]:
-					hit[i] = True
+					hit[chordIndex] = True
 				lastChordCheck = now
-				print(c)
+				# print(c)
 				# try:
 					# print (q.get())
 					# q.task_done()
@@ -167,5 +177,7 @@ while now < song.duration:
 	pygame.display.update(chordDisplayRect)
 	# pygame.display.flip()
 
-closeStream(audio,stream)
+	now = time.time() - start
+
+# closeStream()
 sys.exit()
