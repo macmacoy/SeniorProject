@@ -212,7 +212,7 @@ def PlaySong():
 	sys.exit()
 
 def PlayerStats():
-	
+
 
 ## initialize graphics engine
 pygame.init()
