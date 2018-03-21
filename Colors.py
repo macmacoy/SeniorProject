@@ -2,6 +2,7 @@
 backgroundColor = 0, 0, 0
 white = 255, 255, 255
 lightGray = 220, 220, 220
+lightMediumGray = 170, 170, 170
 mediumGray = 110, 110, 110
 darkGray = 70, 70, 70
 
