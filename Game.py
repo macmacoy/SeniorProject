@@ -11,8 +11,7 @@ from pygame.locals import *
 from Song import Song
 from Images import chordImages, feedbackImages
 
-def PlaySong(): # take in song file path
-	song = Song("tests/test_song.json")
+def PlaySong(song): # take in song object
 	chords = song.chords
 	lyrics = song.lyrics
 
@@ -249,6 +248,46 @@ def SongsMenu():
 	inputBoxSize = (screenSize[0]/3, screenSize[1]/15)
 	songInputBox = InputBox(screenSize[0]/2 - inputBoxSize[0]/2, screenSize[1]/8, inputBoxSize[0], inputBoxSize[1], "Song")
 	artistInputBox = InputBox(screenSize[0]/2 - inputBoxSize[0]/2, screenSize[1]/5, inputBoxSize[0], inputBoxSize[1], "Artist")
+	songRectSize = (screenSize[0]/2, screenSize[1]/10)
+	firstSongRectPlacement = (screenSize[0]/2 - songRectSize[0]/2, screenSize[1]/3)
+	spaceBetweenSongs = 30 #px
+	songFont = pygame.font.SysFont('Comic Sans MS', 40)
+
+	nextPrevButtonFont = pygame.font.SysFont('Comic Sans MS', 40)
+	prevText = nextPrevButtonFont.render("<<--", False, Colors.lightGray)
+	nextText = nextPrevButtonFont.render("-->>", False, Colors.lightGray)
+	prevButtonPlacement = (screenSize[0]/2 - 50, screenSize[1] - 100)
+	nextButtonPlacement = (screenSize[0]/2 + 50, screenSize[1] - 100)
+	prevTextPlacement = (screenSize[0]/2 - 50 - prevText.get_rect().width/2, screenSize[1] - 40)
+	nextTextPlacement = (screenSize[0]/2 + 50 - nextText.get_rect().width/2, screenSize[1] - 40)
+	nextPrevButtonSize = (screenSize[0]/15, screenSize[1]/20)
+	prevButton = Rect(prevButtonPlacement, nextPrevButtonSize)
+	nextButton = Rect(nextButtonPlacement, nextPrevButtonSize)
+	pageNumPlacement = (screenSize[0]/2, prevTextPlacement[1])
+
+	songsDirPath = "save files/songs"
+	songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
+	songs = []
+	for songFilePath in songFilePaths:
+		song = Song('save files/songs/' + songFilePath)
+		songs.append(song)
+	pageRects = [[]]
+	pageTexts = [[]]
+	pageNum = 1
+	songOnPageIndex = 0
+	for song in songs:
+		songRectPlacement = (firstSongRectPlacement[0], firstSongRectPlacement[1] + songOnPageIndex*(songRectSize[1] + spaceBetweenSongs))
+		if songRectPlacement[1]+songRectSize[1] > prevTextPlacement[1] - songRectSize[1]:
+			songRectPlacement = firstSongRectPlacement
+			pageNum = pageNum + 1
+			pageRects.append([])
+			pageTexts.append([])
+			songOnPageIndex = 0
+		else:
+			songOnPageIndex = songOnPageIndex + 1
+		pageRects[pageNum-1].append(Rect(songRectPlacement, songRectSize))
+		pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.darkGray))
+	pageNum = 1
 
 	song = ''
 	artist = ''
@@ -264,12 +303,35 @@ def SongsMenu():
 		for event in pygame.event.get():
 			songInputBox.handle_event(event)
 			artistInputBox.handle_event(event)
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				mouse_pos = event.pos
+				if nextButton.collidepoint(mouse_pos) and pageNum < len(pageRects):
+					pageNum = pageNum + 1
+				elif prevButton.collidepoint(mouse_pos) and pageNum > 1:
+					pageNum = pageNum - 1
 		songInputBox.update()
 		artistInputBox.update()
 		screen.fill(Colors.backgroundColor)
 		songInputBox.draw(screen)
 		artistInputBox.draw(screen)
+
+		for i in range(0,len(pageRects[pageNum-1])):
+			pygame.draw.rect(screen, Colors.white, pageRects[pageNum-1][i])
+			textPlacement = (pageRects[pageNum-1][i].x+pageRects[pageNum-1][i].width/2-pageTexts[pageNum-1][i].get_rect().width/2,pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
+			screen.blit(pageTexts[pageNum-1][i], textPlacement)
+
+		if pageNum < len(pageRects):
+			pygame.draw.rect(screen, Colors.black, nextButton)
+			screen.blit(nextText, nextButtonPlacement)
+		if pageNum > 1:
+			pygame.draw.rect(screen, Colors.black, prevButton)
+			screen.blit(prevText, prevButtonPlacement)
+
+		screen.blit(prevText, prevButtonPlacement)
+		screen.blit(nextPrevButtonFont.render(str(pageNum), False, Colors.lightGray), pageNumPlacement)
+
 		pygame.display.flip()
+
 
 class InputBox:
 
@@ -345,13 +407,14 @@ pygame.font.init()
 
 screenSize = (1400, 800)
 
-## set up full display
+# set up full display
 # flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
 flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
-# PlaySong()
+# songFilePath = 'test_song.json'
+# PlaySong(Song('save files/songs/' + songFilePath))
 # MainMenu()
 SongsMenu()
 
