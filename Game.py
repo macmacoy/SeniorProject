@@ -12,6 +12,11 @@ from Song import Song
 from Images import chordImages, feedbackImages
 
 def PlaySong(song): # take in song object
+
+	flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
+	# flags = DOUBLEBUF
+	screen = pygame.display.set_mode(screenSize, flags)
+
 	chords = song.chords
 	lyrics = song.lyrics
 
@@ -51,7 +56,12 @@ def PlaySong(song): # take in song object
 	currentTimeMarker.fill(Colors.darkGray)
 	for i in range(0, len(feedbackImages)):
 		feedbackImages[i] = pygame.transform.scale(feedbackImages[i], (int(feedbackImages[i].get_width()/3.5), int(feedbackImages[i].get_height()/3.5)))
-	feedbackDisplay = feedbackImages[4] # initial
+	feedbackDisplay = feedbackImages[3] # initial
+	chordTextsNotHit = []
+	chordTextsHit = []
+	for chord in chords:
+		chordTextsNotHit.append(chordFont.render(chord["chord"], False, Colors.mediumGray))
+		chordTextsHit.append(chordFont.render(chord["chord"], False, Colors.white))
 
 	timeIntervalOnScreen = 5.0 # seconds
 
@@ -71,22 +81,24 @@ def PlaySong(song): # take in song object
 		else:
 			return ((float(1) - (float(1)/float(6))*timeoff))
 
-	def updateFeedbackScore():
-		if(hit[chordIndex]):
-			chordScore[chordIndex] = score(now-chords[chordIndex]["start"]-RECORD_SECONDS)
+	def updateFeedbackScore(hit):
+		if(hit):
+			chordScore[chordIndex] = score(now-chords[chordIndex]["start"]-ChordRecognizer.RECORD_SECONDS)
 		else:
 			chordScore[chordIndex] = 0
 		totalScore = 0
+		initial = 10*[.5]
 		for j in range(0,chordIndex+1):
 			totalScore += chordScore[j]
-		totalScore = totalScore / (chordIndex+1)
-		if (totalScore > 90):
-			return feedbackImages[7]
-		elif (totalScore > 80):
+		for i in initial:
+			totalScore += i
+		totalScore *= 100
+		totalScore = totalScore / (chordIndex+1 + len(initial))
+		if (totalScore > 85):
 			return feedbackImages[6]
-		elif (totalScore > 70):
+		elif (totalScore > 75):
 			return feedbackImages[5]
-		elif (totalScore > 60):
+		elif (totalScore > 65):
 			return feedbackImages[4]
 		elif (totalScore > 50):
 			return feedbackImages[3]
@@ -108,9 +120,13 @@ def PlaySong(song): # take in song object
 	chordScore = len(chords)*[float(0)]
 	hit = len(chords)*[False]
 
-	clock = pygame.time.Clock()
-	start = toSeconds(pygame.time.get_ticks())
-	now = start
+	## pygame clock was doing some preemptive rendering or something
+	# clock = pygame.time.Clock()
+	# start = toSeconds(pygame.time.get_ticks())
+	# now = start
+
+	start = time.time() + timeIntervalOnScreen/2
+	now = time.time() - start
 
 	chordIndex = 0
 	lyricIndex = 0
@@ -125,7 +141,7 @@ def PlaySong(song): # take in song object
 
 		if (now > chords[chordIndex]["end"]):
 			if(not hit[chordIndex]):
-				feedbackDisplay = updateFeedbackScore()
+				feedbackDisplay = updateFeedbackScore(False)
 			chordIndex += 1
 			chordChanged = True
 		if (now > lyrics[lyricIndex]["end"]):
@@ -152,16 +168,16 @@ def PlaySong(song): # take in song object
 					c = q.get_nowait() # or q.get(timeout=.1)
 					if c == chords[chordIndex]["chord"]:
 						if hit[chordIndex] == False:
-							feedbackDisplay = updateFeedbackScore()
+							feedbackDisplay = updateFeedbackScore(True)
 						hit[chordIndex] = True
 				except Empty:
 				    pass
 				if hit[i]:
 					chordDisplay.fill(Colors.getColorForChord(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
-					chordText = chordFont.render(chord["chord"], False, Colors.white)
+					chordText = chordTextsHit[i]
 				else:
 					chordDisplay.fill(Colors.lightGray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
-					chordText = chordFont.render(chord["chord"], False, Colors.mediumGray)
+					chordText = chordTextsNotHit[i]
 				firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
 				chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-(chordFontSize/3)))
 			i += 1
@@ -194,12 +210,18 @@ def PlaySong(song): # take in song object
 			# pygame.display.flip()
 		pygame.display.flip()
 
-		clock.tick()
-		now = toSeconds(pygame.time.get_ticks()) - start
+		# clock.tick()
+		# now = toSeconds(pygame.time.get_ticks()) - start
+		now = time.time() - start
 
-	print ("fps: " + str(clock.get_fps()))
+	# flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
+	flags = DOUBLEBUF
+	screen = pygame.display.set_mode(screenSize, flags)
+
+	EndOfSongScreen(totalScore)
+
+	# print ("fps: " + str(clock.get_fps()))
 	# closeStream()
-	sys.exit()
 
 def userHasQuit():
 	for event in pygame.event.get():
@@ -233,8 +255,10 @@ def MainMenu():
 				mouse_pos = event.pos
 				if playSongButton.collidepoint(mouse_pos):
 					print("play song was pressed")
+					SongsMenu()
 				elif playerStatsButton.collidepoint(mouse_pos):
 					print("player stats button was pressed")
+					PlayerStatsScreen()
 
 		screen.fill(Colors.backgroundColor)
 
@@ -256,9 +280,12 @@ def SongsMenu():
 	titleFont = pygame.font.SysFont('Comic Sans MS', 60)
 	nextPrevButtonFont = pygame.font.SysFont('Comic Sans MS', 40)
 	pageNumFont = pygame.font.SysFont('Comic Sans MS', 40)
+	playButtonFont = pygame.font.SysFont('Comic Sans MS', 40)
+	backButtonFont = pygame.font.SysFont('Comic Sans MS', 70)
 
 	mySongsTitleText = titleFont.render("My songs", False, Colors.lightGray)
-	downloadSongsTitleText = titleFont.render("Dowload a song", False, Colors.lightGray)
+	downloadSongsTitleText = titleFont.render("Download a song", False, Colors.lightGray)
+	playButtonText = playButtonFont.render("PLAY", False, Colors.white)
 	prevText = nextPrevButtonFont.render("<", False, Colors.lightGray)
 	nextText = nextPrevButtonFont.render(">", False, Colors.lightGray)
 	prevButtonPlacement = (screenSize[0]*.75 - 50 - prevText.get_rect().width/2, screenSize[1] - 70)
@@ -272,6 +299,10 @@ def SongsMenu():
 	nextButton = Rect(nextButtonPlacement, nextPrevButtonSize)
 	pageNumPlacement = (screenSize[0]*.75, prevTextPlacement[1])
 	playSongButtonSize = (screenSize[0]/17, screenSize[1]/17)
+	backButtonPlacement = (30, 15)
+	backButtonText = backButtonFont.render("<", False, Colors.lightGray)
+	backButtonSize = (backButtonText.get_rect().width, backButtonText.get_rect().height)
+	backButton = Rect(backButtonPlacement, backButtonSize)
 
 	songsDirPath = "save files/songs"
 	songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
@@ -351,10 +382,22 @@ def SongsMenu():
 					pageNum = pageNum + 1
 				elif prevButton.collidepoint(mouse_pos) and pageNum > 1:
 					pageNum = pageNum - 1
+				elif backButton.collidepoint(mouse_pos):
+					return
 				else:
-					for playSongButton in playSongButtons[pageNum-1]:
-						if playSongButton.collidepoint(mouse_pos):
+					for i in range(0,len(playSongButtons[pageNum-1])):
+						if playSongButtons[pageNum-1][i].collidepoint(mouse_pos):
 							print("song pressed")
+							songFound = False
+							songIndex = 0
+							for page in playSongButtons:
+								for playSongButton in page:
+									if not songFound:
+										if playSongButton == playSongButtons[pageNum-1][i]:
+											songFound = True
+										else:
+											songIndex = songIndex + 1
+							PlaySong(songs[songIndex])
 		songInputBox.update()
 		artistInputBox.update()
 		screen.fill(Colors.backgroundColor)
@@ -369,6 +412,8 @@ def SongsMenu():
 			textPlacement = (pageRects[pageNum-1][i].x+15, pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
 			screen.blit(pageTexts[pageNum-1][i], textPlacement)
 			pygame.draw.rect(screen, Colors.mediumGray, playSongButtons[pageNum-1][i])
+			playSongButtonTextPlacement2 = (playSongButtons[pageNum-1][i].x + playSongButtons[pageNum-1][i].width/2 - playButtonText.get_rect().width/2, playSongButtons[pageNum-1][i].y + playSongButtons[pageNum-1][i].height/2 - playButtonText.get_rect().height/2)
+			screen.blit(playButtonText, playSongButtonTextPlacement2)
 
 		if pageNum < len(pageRects):
 			screen.blit(nextText, nextTextPlacement)
@@ -377,9 +422,9 @@ def SongsMenu():
 
 		pageNumText = pageNumFont.render(str(pageNum), False, Colors.lightGray)
 		screen.blit(pageNumText, (pageNumPlacement[0] - pageNumText.get_rect().width/2, pageNumPlacement[1]))
+		screen.blit(backButtonText, backButtonPlacement)
 
 		pygame.display.flip()
-
 
 class InputBox:
 
@@ -449,6 +494,12 @@ class InputBox:
     		return submittedText
     	return ''
 
+def EndOfSongScreen():
+	return
+
+def PlayerStatsScreen():
+	return
+
 ## initialize graphics engine
 pygame.init()
 pygame.font.init()
@@ -461,10 +512,11 @@ flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
+MainMenu()
+
 # songFilePath = 'test_song.json'
 # PlaySong(Song('save files/songs/' + songFilePath))
-# MainMenu()
-SongsMenu()
+# SongsMenu()
 
 
 
