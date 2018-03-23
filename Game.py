@@ -246,24 +246,32 @@ def MainMenu():
 
 def SongsMenu():
 	inputBoxSize = (screenSize[0]/3, screenSize[1]/15)
-	songInputBox = InputBox(screenSize[0]/2 - inputBoxSize[0]/2, screenSize[1]/8, inputBoxSize[0], inputBoxSize[1], "Song")
-	artistInputBox = InputBox(screenSize[0]/2 - inputBoxSize[0]/2, screenSize[1]/5, inputBoxSize[0], inputBoxSize[1], "Artist")
-	songRectSize = (screenSize[0]/2, screenSize[1]/10)
-	firstSongRectPlacement = (screenSize[0]/2 - songRectSize[0]/2, screenSize[1]/3)
+	songInputBox = InputBox(screenSize[0]/4 - inputBoxSize[0]/2, screenSize[1]/2.4, inputBoxSize[0], inputBoxSize[1], "Song")
+	artistInputBox = InputBox(screenSize[0]/4 - inputBoxSize[0]/2, screenSize[1]/2, inputBoxSize[0], inputBoxSize[1], "Artist")
+	songRectSize = (screenSize[0]/2.5, screenSize[1]/14)
+	firstSongRectPlacement = (screenSize[0]*.75 - songRectSize[0]/2, screenSize[1]/4)
 	spaceBetweenSongs = 30 #px
-	songFont = pygame.font.SysFont('Comic Sans MS', 40)
 
+	songFont = pygame.font.SysFont('Comic Sans MS', 40)
+	titleFont = pygame.font.SysFont('Comic Sans MS', 60)
 	nextPrevButtonFont = pygame.font.SysFont('Comic Sans MS', 40)
-	prevText = nextPrevButtonFont.render("<<--", False, Colors.lightGray)
-	nextText = nextPrevButtonFont.render("-->>", False, Colors.lightGray)
-	prevButtonPlacement = (screenSize[0]/2 - 50, screenSize[1] - 100)
-	nextButtonPlacement = (screenSize[0]/2 + 50, screenSize[1] - 100)
-	prevTextPlacement = (screenSize[0]/2 - 50 - prevText.get_rect().width/2, screenSize[1] - 40)
-	nextTextPlacement = (screenSize[0]/2 + 50 - nextText.get_rect().width/2, screenSize[1] - 40)
+	pageNumFont = pygame.font.SysFont('Comic Sans MS', 40)
+
+	mySongsTitleText = titleFont.render("My songs", False, Colors.lightGray)
+	downloadSongsTitleText = titleFont.render("Dowload a song", False, Colors.lightGray)
+	prevText = nextPrevButtonFont.render("<", False, Colors.lightGray)
+	nextText = nextPrevButtonFont.render(">", False, Colors.lightGray)
+	prevButtonPlacement = (screenSize[0]*.75 - 50 - prevText.get_rect().width/2, screenSize[1] - 70)
+	nextButtonPlacement = (screenSize[0]*.75 + 50 - nextText.get_rect().width/2, screenSize[1] - 70)
+	prevTextPlacement = prevButtonPlacement
+	nextTextPlacement = nextButtonPlacement
+	mySongsTitleTextPlacement = (firstSongRectPlacement[0] + songRectSize[0]/2 - mySongsTitleText.get_rect().width/2, firstSongRectPlacement[1] - 75)
+	downloadSongsTitleTextPlacement = (screenSize[0]/4 - downloadSongsTitleText.get_rect().width/2, screenSize[1]/2.4 - 75)
 	nextPrevButtonSize = (screenSize[0]/15, screenSize[1]/20)
 	prevButton = Rect(prevButtonPlacement, nextPrevButtonSize)
 	nextButton = Rect(nextButtonPlacement, nextPrevButtonSize)
-	pageNumPlacement = (screenSize[0]/2, prevTextPlacement[1])
+	pageNumPlacement = (screenSize[0]*.75, prevTextPlacement[1])
+	playSongButtonSize = (screenSize[0]/17, screenSize[1]/17)
 
 	songsDirPath = "save files/songs"
 	songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
@@ -273,20 +281,24 @@ def SongsMenu():
 		songs.append(song)
 	pageRects = [[]]
 	pageTexts = [[]]
+	playSongButtons = [[]]
 	pageNum = 1
 	songOnPageIndex = 0
 	for song in songs:
 		songRectPlacement = (firstSongRectPlacement[0], firstSongRectPlacement[1] + songOnPageIndex*(songRectSize[1] + spaceBetweenSongs))
-		if songRectPlacement[1]+songRectSize[1] > prevTextPlacement[1] - songRectSize[1]:
+		if songRectPlacement[1]+songRectSize[1] > pageNumPlacement[1]:
 			songRectPlacement = firstSongRectPlacement
 			pageNum = pageNum + 1
 			pageRects.append([])
 			pageTexts.append([])
+			playSongButtons.append([])
 			songOnPageIndex = 0
 		else:
 			songOnPageIndex = songOnPageIndex + 1
 		pageRects[pageNum-1].append(Rect(songRectPlacement, songRectSize))
 		pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.darkGray))
+		playSongButtonPlacement = (songRectPlacement[0] + songRectSize[0] - playSongButtonSize[0] - 10, songRectPlacement[1]+5)
+		playSongButtons[pageNum-1].append(Rect(playSongButtonPlacement, playSongButtonSize))
 	pageNum = 1
 
 	song = ''
@@ -297,8 +309,38 @@ def SongsMenu():
 		if(songInput != '' or artistInput != ''):
 			song = songInput
 			artist = artistInput
+			# create new song
 			print(song)
 			print(artist)
+			## replicated code (bad I know)
+			songsDirPath = "save files/songs"
+			songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
+			songs = []
+			for songFilePath in songFilePaths:
+				song = Song('save files/songs/' + songFilePath)
+				songs.append(song)
+			pageRects = [[]]
+			pageTexts = [[]]
+			playSongButtons = [[]]
+			pageNum = 1
+			songOnPageIndex = 0
+			for song in songs:
+				songRectPlacement = (firstSongRectPlacement[0], firstSongRectPlacement[1] + songOnPageIndex*(songRectSize[1] + spaceBetweenSongs))
+				if songRectPlacement[1]+songRectSize[1] > pageNumPlacement[1]:
+					songRectPlacement = firstSongRectPlacement
+					pageNum = pageNum + 1
+					pageRects.append([])
+					pageTexts.append([])
+					playSongButtons.append([])
+					songOnPageIndex = 0
+				else:
+					songOnPageIndex = songOnPageIndex + 1
+				pageRects[pageNum-1].append(Rect(songRectPlacement, songRectSize))
+				pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.darkGray))
+				playSongButtonPlacement = (songRectPlacement[0] + songRectSize[0] - playSongButtonSize[0] - 10, songRectPlacement[1]+5)
+				playSongButtons[pageNum-1].append(Rect(playSongButtonPlacement, playSongButtonSize))
+			pageNum = 1
+			## replicated code (bad I know)
 
 		for event in pygame.event.get():
 			songInputBox.handle_event(event)
@@ -309,26 +351,32 @@ def SongsMenu():
 					pageNum = pageNum + 1
 				elif prevButton.collidepoint(mouse_pos) and pageNum > 1:
 					pageNum = pageNum - 1
+				else:
+					for playSongButton in playSongButtons[pageNum-1]:
+						if playSongButton.collidepoint(mouse_pos):
+							print("song pressed")
 		songInputBox.update()
 		artistInputBox.update()
 		screen.fill(Colors.backgroundColor)
 		songInputBox.draw(screen)
 		artistInputBox.draw(screen)
+		screen.blit(downloadSongsTitleText, downloadSongsTitleTextPlacement)
 
+		screen.blit(mySongsTitleText, mySongsTitleTextPlacement)
 		for i in range(0,len(pageRects[pageNum-1])):
 			pygame.draw.rect(screen, Colors.white, pageRects[pageNum-1][i])
-			textPlacement = (pageRects[pageNum-1][i].x+pageRects[pageNum-1][i].width/2-pageTexts[pageNum-1][i].get_rect().width/2,pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
+			# textPlacement = (pageRects[pageNum-1][i].x+pageRects[pageNum-1][i].width/2-pageTexts[pageNum-1][i].get_rect().width/2,pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
+			textPlacement = (pageRects[pageNum-1][i].x+15, pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
 			screen.blit(pageTexts[pageNum-1][i], textPlacement)
+			pygame.draw.rect(screen, Colors.mediumGray, playSongButtons[pageNum-1][i])
 
 		if pageNum < len(pageRects):
-			pygame.draw.rect(screen, Colors.black, nextButton)
-			screen.blit(nextText, nextButtonPlacement)
+			screen.blit(nextText, nextTextPlacement)
 		if pageNum > 1:
-			pygame.draw.rect(screen, Colors.black, prevButton)
-			screen.blit(prevText, prevButtonPlacement)
+			screen.blit(prevText, prevTextPlacement)
 
-		screen.blit(prevText, prevButtonPlacement)
-		screen.blit(nextPrevButtonFont.render(str(pageNum), False, Colors.lightGray), pageNumPlacement)
+		pageNumText = pageNumFont.render(str(pageNum), False, Colors.lightGray)
+		screen.blit(pageNumText, (pageNumPlacement[0] - pageNumText.get_rect().width/2, pageNumPlacement[1]))
 
 		pygame.display.flip()
 
