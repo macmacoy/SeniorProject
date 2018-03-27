@@ -68,5 +68,5 @@ class Song(object):
 		self.duration = self.duration * (self.tempo / bps)
 		self.tempo = bps
 
-	def getSongDifficulty(): ## value is difficulty as an int between 1 and 6
-		return 0
+	def getSongDifficulty(self): ## value is difficulty as an int between 1 and 6
+		return 4

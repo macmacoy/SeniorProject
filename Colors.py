@@ -7,17 +7,20 @@ lightMediumGray = 170, 170, 170
 mediumGray = 110, 110, 110
 darkGray = 70, 70, 70
 
-def getColorForScore(score):
-	if score > .85:
-		return (153, 255, 51)
-	if score > .75:
-		return (204, 255, 51)
-	if score > .65:
-		return (255, 255, 0)
-	if score > .5:
-		return (255, 153, 0)
-	else:
-		return (204, 51, 0)
+def getColorForLevel(level):
+	if level == 1:
+		return (51, 204, 51)
+	elif level == 2:
+		return (0, 153, 255)
+	elif level == 3:
+		return (215, 215, 0)
+	elif level == 4:
+		return (255, 153, 51)
+	elif level == 5:
+		return (255, 102, 102)
+	elif level == 6:
+		return (102, 102, 255)
+	return white
 
 def getColorForChord(chord):
 	if chord == "G":

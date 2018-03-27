@@ -9,6 +9,7 @@ from pygame.surface import Surface
 from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
+from Player import Player
 from Images import chordImages, feedbackImages, starsImages
 
 def PlaySong(song, player): # take in song object
@@ -54,9 +55,7 @@ def PlaySong(song, player): # take in song object
 	chordDisplay = Surface(chordDisplaySize)
 	currentTimeMarker = Surface(currentTimeMarkerSize)
 	currentTimeMarker.fill(Colors.darkGray)
-	for i in range(0, len(feedbackImages)):
-		feedbackImages[i] = pygame.transform.scale(feedbackImages[i], (int(feedbackImages[i].get_width()/3.5), int(feedbackImages[i].get_height()/3.5)))
-	feedbackDisplay = feedbackImages[3] # initial
+	feedbackDisplay = getFeedbackImage(51, scaledForPlaySong=True) # initial
 	chordTextsNotHit = []
 	chordTextsHit = []
 	for chord in chords:
@@ -94,7 +93,7 @@ def PlaySong(song, player): # take in song object
 			totalScore += i
 		totalScore *= 100
 		totalScore = totalScore / (chordIndex+1 + len(initial))
-		return getFeedbackImage(totalScore)
+		return getFeedbackImage(totalScore, scaledForPlaySong=True)
 
 	def scaleForCurrentChord(image):
 		return pygame.transform.scale(image, (int(image.get_width()/1), int(image.get_height()/1)))
@@ -209,19 +208,40 @@ def PlaySong(song, player): # take in song object
 	# print ("fps: " + str(clock.get_fps()))
 	# closeStream()
 
-def getFeedbackImage(totalScore):
-		if (totalScore > 85):
+def getFeedbackImage(totalScore, scaledForPlaySong=False):
+	if (totalScore > 85):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[6], (int(feedbackImages[6].get_width()/3.5), int(feedbackImages[6].get_height()/3.5)))
+		else:
 			return feedbackImages[6]
-		elif (totalScore > 75):
+	elif (totalScore > 75):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[5], (int(feedbackImages[5].get_width()/3.5), int(feedbackImages[5].get_height()/3.5)))
+		else:
 			return feedbackImages[5]
-		elif (totalScore > 65):
+	elif (totalScore > 65):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[4], (int(feedbackImages[4].get_width()/3.5), int(feedbackImages[4].get_height()/3.5)))
+		else:
 			return feedbackImages[4]
-		elif (totalScore > 50):
+	elif (totalScore > 50):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[3], (int(feedbackImages[3].get_width()/3.5), int(feedbackImages[3].get_height()/3.5)))
+		else:
 			return feedbackImages[3]
-		elif (totalScore > 40):
+	elif (totalScore > 40):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[2], (int(feedbackImages[2].get_width()/3.5), int(feedbackImages[2].get_height()/3.5)))
+		else:
 			return feedbackImages[2]
-		elif (totalScore > 30):
+	elif (totalScore > 30):
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[1], (int(feedbackImages[1].get_width()/3.5), int(feedbackImages[1].get_height()/3.5)))
+		else:
 			return feedbackImages[1]
+	else:
+		if scaledForPlaySong:
+			return pygame.transform.scale(feedbackImages[0], (int(feedbackImages[0].get_width()/3.5), int(feedbackImages[0].get_height()/3.5)))
 		else:
 			return feedbackImages[0]
 
@@ -250,7 +270,7 @@ def userHasQuit():
 # def toSeconds(millis):
 # 	return float(millis)*0.001
 
-def MainMenu():
+def MainMenu(player):
 	buttonSize = (screenSize[0]/5, screenSize[1]/7)
 	playSongButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]/3)
 	playerStatsButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]/2)
@@ -272,10 +292,8 @@ def MainMenu():
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				mouse_pos = event.pos
 				if playSongButton.collidepoint(mouse_pos):
-					print("play song was pressed")
-					SongsMenu()
+					SongsMenu(player)
 				elif playerStatsButton.collidepoint(mouse_pos):
-					print("player stats button was pressed")
 					PlayerStatsScreen()
 
 		screen.fill(Colors.backgroundColor)
@@ -286,7 +304,7 @@ def MainMenu():
 		screen.blit(playerStatsButtonText, playerStatsButtonTextPlacement)
 		pygame.display.flip()
 
-def SongsMenu():
+def SongsMenu(player):
 	inputBoxSize = (screenSize[0]/3, screenSize[1]/15)
 	songInputBox = InputBox(screenSize[0]/4 - inputBoxSize[0]/2, screenSize[1]/2.4, inputBoxSize[0], inputBoxSize[1], "Song")
 	artistInputBox = InputBox(screenSize[0]/4 - inputBoxSize[0]/2, screenSize[1]/2, inputBoxSize[0], inputBoxSize[1], "Artist")
@@ -328,6 +346,7 @@ def SongsMenu():
 	for songFilePath in songFilePaths:
 		song = Song('save files/songs/' + songFilePath)
 		songs.append(song)
+	# sort by recently played?
 	pageRects = [[]]
 	pageTexts = [[]]
 	playSongButtons = [[]]
@@ -415,7 +434,9 @@ def SongsMenu():
 											songFound = True
 										else:
 											songIndex = songIndex + 1
-							PlaySong(songs[songIndex])
+							PlaySong(songs[songIndex], player)
+			elif event.type == pygame.QUIT:
+				sys.exit()
 		songInputBox.update()
 		artistInputBox.update()
 		screen.fill(Colors.backgroundColor)
@@ -518,10 +539,11 @@ def EndOfSongScreen(song, totalScore, player):
 	scaledStarsImage = pygame.transform.scale(starsImage, (int(starsImage.get_width()/3), int(starsImage.get_height()/3)))
 	timeToWait = 1.5
 	timeToExpand = 4
-	timeToStayInMiddle = 4
-	timeToMoveLeft = 3
-	timeToWait2 = 2
-	timeToWait3 = 4
+	timeToStayInMiddle = 2
+	timeToMoveLeft = 2.5
+	timeToWait2 = 0.5
+	timeToWait3 = 1
+	pointsIncreasePerSec = 5
 
 	starsPlacement = (screenSize[0]/2 - scaledStarsImage.get_width()/2, screenSize[1]/1.4 - scaledStarsImage.get_height()/2)
 
@@ -536,14 +558,32 @@ def EndOfSongScreen(song, totalScore, player):
 	pointsRectSize = (screenSize[0]/5, screenSize[1]/1.5)
 	pointsRectPlacement = (screenSize[0]*3/4 - pointsRectSize[0]/2, screenSize[1]/2 - pointsRectSize[1]/2)
 	pointsRect = Rect(pointsRectPlacement, pointsRectSize)
-	# pointIncreaseRate = 
 
-	levelFont = pygame.font.SysFont('Comic Sans MS', 40)
-	pointsFont = pygame.font.SysFont('Comic Sans MS', 30)
+	levelFont = pygame.font.SysFont('Comic Sans MS', 60)
+	pointsFont = pygame.font.SysFont('Comic Sans MS', 40)
 	prevLevel = player.level
 	prevPoints = player.points
-	pointsFromSong = totalScore * song.g
+	player.playedSong(totalScore, song)
+	level = player.level
+	points = player.points
 
+	prevPointsText = pointsFont.render(str(int(prevPoints)) + " pts", False, Colors.white)
+	pointsText = pointsFont.render(str(int(points)) + " pts", False, Colors.white)
+	prevPointsTextPlacment = (pointsRectPlacement[0] + pointsRectSize[0] + 5, pointsRectPlacement[1] + pointsRectSize[1] - pointsRectSize[1]*((prevPoints - player.pointsNeededForLevel[prevLevel])/player.pointsNeededForLevel[prevLevel+1]) - prevPointsText.get_rect().height/2)
+	pointsTextPlacement = (pointsRectPlacement[0] + pointsRectSize[0] + 5, pointsRectPlacement[1] + pointsRectSize[1] - pointsRectSize[1]*((points - player.pointsNeededForLevel[level])/player.pointsNeededForLevel[level+1]) - pointsText.get_rect().height/2)
+	levelText = levelFont.render(str(prevLevel), False, Colors.white)
+	levelTextPlacement = (pointsRectPlacement[0] + pointsRectSize[0]/2 - levelText.get_rect().width/2, pointsRectPlacement[1] + pointsRectSize[1] + 10)
+	playerPointsRectSize = (pointsRectSize[0], pointsRectSize[1]*((prevPoints - player.pointsNeededForLevel[prevLevel])/player.pointsNeededForLevel[prevLevel+1]))
+	playerPointsRectPlacement = (pointsRectPlacement[0], pointsRectPlacement[1] + pointsRectSize[1] - pointsRectSize[1]*((prevPoints - player.pointsNeededForLevel[prevLevel])/player.pointsNeededForLevel[prevLevel+1])+2)
+	playerPointsRect = Rect(playerPointsRectPlacement, playerPointsRectSize)
+	coverPrevPointsTextRect = Rect(prevPointsTextPlacment[0], prevPointsTextPlacment[1], prevPointsText.get_rect().width, prevPointsText.get_rect().height)
+	coverLevelTextRect = Rect(levelTextPlacement[0], levelTextPlacement[1], levelText.get_rect().width, levelText.get_rect().height)
+
+	toPlaySongMenuButtonFont = pygame.font.SysFont('Comic Sans MS', 40)
+	toPlaySongMenuButtonText = toPlaySongMenuButtonFont.render(">", False, Colors.white)
+	toPlaySongMenuButtonSize = (toPlaySongMenuButtonText.get_rect().width, toPlaySongMenuButtonText.get_rect().height)
+	toPlaySongMenuButtonPlacement = (screenSize[0]*9/10, screenSize[1]*9/10)
+	toPlaySongMenuButton = Rect(toPlaySongMenuButtonPlacement, toPlaySongMenuButtonSize)
 
 	start = time.time()
 	now = time.time() - start
@@ -602,9 +642,61 @@ def EndOfSongScreen(song, totalScore, player):
 	now = time.time() - start
 	while now < timeToWait3:
 		pygame.draw.rect(screen, Colors.lightGray, pointsRect)
-
+		pygame.draw.rect(screen, Colors.getColorForLevel(prevLevel), playerPointsRect)
+		screen.blit(levelText, levelTextPlacement)
+		screen.blit(prevPointsText, prevPointsTextPlacment)
 		pygame.display.flip()
 		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	last = now
+	tempPoints = prevPoints
+	tempLevel = prevLevel
+	increasing = True
+	frate = .01
+	while increasing:
+		if now - last > frate:
+			last = now
+			tempPoints = tempPoints + frate*pointsIncreasePerSec
+			if tempPoints > player.pointsNeededForLevel[tempLevel+1]:
+				tempLevel = tempLevel + 1
+				levelText = levelFont.render(str(tempLevel), False, Colors.white)
+		playerPointsRectSize = (pointsRectSize[0], pointsRectSize[1]*((tempPoints - player.pointsNeededForLevel[tempLevel])/player.pointsNeededForLevel[tempLevel+1]))
+		playerPointsRectPlacement = (pointsRectPlacement[0], pointsRectPlacement[1] + pointsRectSize[1] - pointsRectSize[1]*((tempPoints - player.pointsNeededForLevel[tempLevel])/player.pointsNeededForLevel[tempLevel+1])+2)
+		playerPointsRect = Rect(playerPointsRectPlacement, playerPointsRectSize)
+		pygame.draw.rect(screen, Colors.backgroundColor, coverPrevPointsTextRect)
+		pygame.draw.rect(screen, Colors.lightGray, pointsRect)
+		pygame.draw.rect(screen, Colors.getColorForLevel(tempLevel), playerPointsRect)
+		pygame.draw.rect(screen, Colors.backgroundColor, coverLevelTextRect)
+		screen.blit(levelText, levelTextPlacement)
+		pygame.display.flip()
+		now = time.time() - start
+		if tempPoints >= points:
+			increasing = False
+		if userHasQuit():
+			sys.exit()
+
+	while True:
+		playerPointsRectSize = (pointsRectSize[0], pointsRectSize[1]*((tempPoints - player.pointsNeededForLevel[tempLevel])/player.pointsNeededForLevel[tempLevel+1]))
+		playerPointsRectPlacement = (pointsRectPlacement[0], pointsRectPlacement[1] + pointsRectSize[1] - pointsRectSize[1]*((tempPoints - player.pointsNeededForLevel[tempLevel])/player.pointsNeededForLevel[tempLevel+1])+2)
+		playerPointsRect = Rect(playerPointsRectPlacement, playerPointsRectSize)
+		pygame.draw.rect(screen, Colors.lightGray, pointsRect)
+		pygame.draw.rect(screen, Colors.getColorForLevel(level), playerPointsRect)
+		pygame.draw.rect(screen, Colors.backgroundColor, coverPrevPointsTextRect)
+		screen.blit(levelText, levelTextPlacement)
+		screen.blit(pointsText, pointsTextPlacement)
+		screen.blit(toPlaySongMenuButtonText, toPlaySongMenuButtonPlacement)
+		pygame.display.flip()
+		for event in pygame.event.get():
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				mouse_pos = event.pos
+				if toPlaySongMenuButton.collidepoint(mouse_pos):
+					return
+			if event.type == pygame.QUIT:
+				sys.exit()
 
 def PlayerStatsScreen():
 	return
@@ -623,12 +715,12 @@ flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
-EndOfSongScreen(80, player)
-# MainMenu()
+songFilePath = 'test_song.json'
+song = Song('save files/songs/' + songFilePath)
+EndOfSongScreen(song, 80, player)
+# MainMenu(player)
 
 # songFilePath = 'test_song.json'
 # PlaySong(Song('save files/songs/' + songFilePath), player)
 # SongsMenu()
-
-
 

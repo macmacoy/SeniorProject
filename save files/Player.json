@@ -1,5 +1,17 @@
 {
-	"name": "mac!", 
-	"points": 0, 
-	"level": 1,
+    "name": "mac!",
+    "points": 6.4,
+    "level": 2,
+    "songsPlayed": {
+        "songs": [
+            "Take it Easy",
+            "Drops of Jupiter",
+            "Test song"
+        ],
+        "artists": [
+            "The Eagles",
+            "Train",
+            "Mac & Taylor"
+        ]
+    }
 }
