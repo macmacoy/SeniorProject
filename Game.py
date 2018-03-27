@@ -9,9 +9,9 @@ from pygame.surface import Surface
 from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
-from Images import chordImages, feedbackImages
+from Images import chordImages, feedbackImages, starsImages
 
-def PlaySong(song): # take in song object
+def PlaySong(song, player): # take in song object
 
 	flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
 	# flags = DOUBLEBUF
@@ -94,21 +94,7 @@ def PlaySong(song): # take in song object
 			totalScore += i
 		totalScore *= 100
 		totalScore = totalScore / (chordIndex+1 + len(initial))
-		if (totalScore > 85):
-			return feedbackImages[6]
-		elif (totalScore > 75):
-			return feedbackImages[5]
-		elif (totalScore > 65):
-			return feedbackImages[4]
-		elif (totalScore > 50):
-			return feedbackImages[3]
-		elif (totalScore > 40):
-			return feedbackImages[2]
-		elif (totalScore > 30):
-			return feedbackImages[1]
-		else:
-			return feedbackImages[0]
-			print("feedback display changed")
+		return getFeedbackImage(totalScore)
 
 	def scaleForCurrentChord(image):
 		return pygame.transform.scale(image, (int(image.get_width()/1), int(image.get_height()/1)))
@@ -218,10 +204,42 @@ def PlaySong(song): # take in song object
 	flags = DOUBLEBUF
 	screen = pygame.display.set_mode(screenSize, flags)
 
-	EndOfSongScreen(totalScore)
+	EndOfSongScreen(song, totalScore, player)
 
 	# print ("fps: " + str(clock.get_fps()))
 	# closeStream()
+
+def getFeedbackImage(totalScore):
+		if (totalScore > 85):
+			return feedbackImages[6]
+		elif (totalScore > 75):
+			return feedbackImages[5]
+		elif (totalScore > 65):
+			return feedbackImages[4]
+		elif (totalScore > 50):
+			return feedbackImages[3]
+		elif (totalScore > 40):
+			return feedbackImages[2]
+		elif (totalScore > 30):
+			return feedbackImages[1]
+		else:
+			return feedbackImages[0]
+
+def getStarsImage(totalScore):
+	if (totalScore > 85):
+		return starsImages[6]
+	elif (totalScore > 75):
+		return starsImages[5]
+	elif (totalScore > 65):
+		return starsImages[4]
+	elif (totalScore > 50):
+		return starsImages[3]
+	elif (totalScore > 40):
+		return starsImages[2]
+	elif (totalScore > 30):
+		return starsImages[1]
+	else:
+		return starsImages[0]
 
 def userHasQuit():
 	for event in pygame.event.get():
@@ -229,8 +247,8 @@ def userHasQuit():
 			return True
 	return False
 
-def toSeconds(millis):
-	return float(millis)*0.001
+# def toSeconds(millis):
+# 	return float(millis)*0.001
 
 def MainMenu():
 	buttonSize = (screenSize[0]/5, screenSize[1]/7)
@@ -494,11 +512,104 @@ class InputBox:
     		return submittedText
     	return ''
 
-def EndOfSongScreen():
-	return
+def EndOfSongScreen(song, totalScore, player):
+	feedbackImage = getFeedbackImage(totalScore)
+	starsImage = getStarsImage(totalScore)
+	scaledStarsImage = pygame.transform.scale(starsImage, (int(starsImage.get_width()/3), int(starsImage.get_height()/3)))
+	timeToWait = 1.5
+	timeToExpand = 4
+	timeToStayInMiddle = 4
+	timeToMoveLeft = 3
+	timeToWait2 = 2
+	timeToWait3 = 4
+
+	starsPlacement = (screenSize[0]/2 - scaledStarsImage.get_width()/2, screenSize[1]/1.4 - scaledStarsImage.get_height()/2)
+
+	feedbackFont = pygame.font.SysFont('Comic Sans MS', 60)
+	if totalScore > 50:
+		feedbackText = feedbackFont.render("Nice!", False, Colors.white)
+	else:
+		feedbackText = feedbackFont.render("Keep working!", False, Colors.white)
+
+	feedbackTextPlacement = (screenSize[0]/2 - feedbackText.get_rect().width/2, screenSize[1]/1.2)
+
+	pointsRectSize = (screenSize[0]/5, screenSize[1]/1.5)
+	pointsRectPlacement = (screenSize[0]*3/4 - pointsRectSize[0]/2, screenSize[1]/2 - pointsRectSize[1]/2)
+	pointsRect = Rect(pointsRectPlacement, pointsRectSize)
+	# pointIncreaseRate = 
+
+	levelFont = pygame.font.SysFont('Comic Sans MS', 40)
+	pointsFont = pygame.font.SysFont('Comic Sans MS', 30)
+	prevLevel = player.level
+	prevPoints = player.points
+	pointsFromSong = totalScore * song.g
+
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToWait:
+		pygame.display.flip()
+		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToExpand:
+		scaledFeedbackImage = pygame.transform.scale(feedbackImage, (int(feedbackImage.get_width()/(1.8*timeToExpand/(now+.01))), int(feedbackImage.get_height()/(1.8*timeToExpand/(now+.01)))))
+		feedbackPlacement = (screenSize[0]/2 - scaledFeedbackImage.get_width()/2, screenSize[1]/2.8 - scaledFeedbackImage.get_height()/2)
+		screen.blit(scaledFeedbackImage, feedbackPlacement)
+		pygame.display.flip()
+		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToStayInMiddle:
+		screen.blit(scaledFeedbackImage, feedbackPlacement)
+		screen.blit(scaledStarsImage, starsPlacement)
+		screen.blit(feedbackText, feedbackTextPlacement)
+		pygame.display.flip()
+		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToMoveLeft:
+		scaledFeedbackImage = pygame.transform.scale(feedbackImage, (int(feedbackImage.get_width()/(1.8 + 1*(now/timeToMoveLeft))), int(feedbackImage.get_height()/(1.8 + 1*(now/timeToMoveLeft)))))
+		scaledStarsImage = pygame.transform.scale(starsImage, (int(starsImage.get_width()/(3 + 1*(now/timeToMoveLeft))), int(starsImage.get_height()/(3 + 1*(now/timeToMoveLeft)))))
+		feedbackPlacement = (screenSize[0]/(2+2*(now/timeToMoveLeft)) - scaledFeedbackImage.get_width()/2, screenSize[1]/(2.8 - 0.5*now/timeToMoveLeft) - scaledFeedbackImage.get_height()/2)
+		starsPlacement = (screenSize[0]/(2+2*(now/timeToMoveLeft)) - scaledStarsImage.get_width()/2, screenSize[1]/(1.4 + 0.2*now/timeToMoveLeft) - scaledStarsImage.get_height()/2)
+		screen.fill(Colors.backgroundColor)
+		screen.blit(scaledFeedbackImage, feedbackPlacement)
+		screen.blit(scaledStarsImage, starsPlacement)
+		pygame.display.flip()
+		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToWait2:
+		pygame.display.flip()
+		now = time.time() - start
+		if userHasQuit():
+			sys.exit()
+
+	start = time.time()
+	now = time.time() - start
+	while now < timeToWait3:
+		pygame.draw.rect(screen, Colors.lightGray, pointsRect)
+
+		pygame.display.flip()
+		now = time.time() - start
 
 def PlayerStatsScreen():
 	return
+
+player = Player()
 
 ## initialize graphics engine
 pygame.init()
@@ -512,10 +623,11 @@ flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
-MainMenu()
+EndOfSongScreen(80, player)
+# MainMenu()
 
 # songFilePath = 'test_song.json'
-# PlaySong(Song('save files/songs/' + songFilePath))
+# PlaySong(Song('save files/songs/' + songFilePath), player)
 # SongsMenu()
 
 

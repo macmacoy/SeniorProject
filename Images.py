@@ -9,6 +9,14 @@ feedbackImages = [pygame.image.load(os.path.join('images/feedback', '0.png')),
 					pygame.image.load(os.path.join('images/feedback', '5.png')),
 					pygame.image.load(os.path.join('images/feedback', '6.png'))]
 
+starsImages = [pygame.image.load(os.path.join('images/feedback', '0stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '1stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '2stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '3stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '4stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '5stars.png')),
+					pygame.image.load(os.path.join('images/feedback', '6stars.png'))]
+
 chordImages = {"A":pygame.image.load(os.path.join('images/chords', 'A.gif')),
 				"A#":pygame.image.load(os.path.join('images/chords', 'A#.gif')),
 				"A#m":pygame.image.load(os.path.join('images/chords', 'A#m.gif')),
