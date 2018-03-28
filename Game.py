@@ -101,6 +101,13 @@ def PlaySong(song, player): # take in song object
 	def scaleForNextChord(image):
 		return pygame.transform.scale(image, (int(image.get_width()/1), int(image.get_height()/1)))
 
+	def readKeyInput():
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				sys.exit()
+			elif event.type == pygame.K_ESCAPE:
+				return
+
 	totalScore = float(0)
 	chordScore = len(chords)*[float(0)]
 	hit = len(chords)*[False]
@@ -112,92 +119,112 @@ def PlaySong(song, player): # take in song object
 
 	start = time.time() + timeIntervalOnScreen/2
 	now = time.time() - start
+	pausedTime = 0
 
 	chordIndex = 0
 	lyricIndex = 0
 	chordChanged = True
 	lyricChanged = True
 
+	paused = False
 	timeRangeOnScreen = {"start":0.0, "end":0.0}
-	while now < song.duration:
-		# user quits
-		if userHasQuit():
-			sys.exit()
+	while now < song.duration + timeIntervalOnScreen/2:
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				sys.exit()
+			elif event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_ESCAPE:
+					# flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
+					flags = DOUBLEBUF
+					screen = pygame.display.set_mode(screenSize, flags)
+					return
+				elif event.key == pygame.K_SPACE:
+					if paused:
+						now = time.time() - start
+						start = start + (now - pausedTime)
+						now = pausedTime
+						paused = False
+					else:
+						pausedTime = now
+						paused = True
 
-		if (now > chords[chordIndex]["end"]):
-			if(not hit[chordIndex]):
-				feedbackDisplay = updateFeedbackScore(False)
-			chordIndex += 1
-			chordChanged = True
-		if (now > lyrics[lyricIndex]["end"]):
-			lyricIndex += 1
-			lyricChanged = True
+		if not paused:
+			if (now > chords[chordIndex]["end"]):
+				if(not hit[chordIndex]):
+					feedbackDisplay = updateFeedbackScore(False)
+				if chords[chordIndex] != chords[-1]:
+					chordIndex += 1
+				chordChanged = True
+			if (now > lyrics[lyricIndex]["end"]):
+				if lyrics[lyricIndex] != lyrics[-1]:
+					lyricIndex += 1
+				lyricChanged = True
 
-		timeRangeOnScreen["start"] = now-timeIntervalOnScreen/2
-		timeRangeOnScreen["end"] = now+timeIntervalOnScreen/2
+			timeRangeOnScreen["start"] = now-timeIntervalOnScreen/2
+			timeRangeOnScreen["end"] = now+timeIntervalOnScreen/2
 
-		firstPixelOfChord = 0
-		lastPixelOfChord = 0
-		i = 0
-		for chord in chords:
-			if isInTimeRange(chord,timeRangeOnScreen):
-				if chord["start"] > timeRangeOnScreen["start"]:
-					firstPixelOfChord = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
-				else:
-					firstPixelOfChord = 0
-				if chord["end"] < timeRangeOnScreen["end"]:
-					lastPixelOfChord = ((chord["end"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
-				else:
-					lastPixelOfChord = chordDisplaySize[0]
-				try:  
-					c = q.get_nowait() # or q.get(timeout=.1)
-					if c == chords[chordIndex]["chord"]:
-						if hit[chordIndex] == False:
-							feedbackDisplay = updateFeedbackScore(True)
-						hit[chordIndex] = True
-				except Empty:
-				    pass
-				if hit[i]:
-					chordDisplay.fill(Colors.getColorForChord(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
-					chordText = chordTextsHit[i]
-				else:
-					chordDisplay.fill(Colors.lightGray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
-					chordText = chordTextsNotHit[i]
-				firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
-				chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-(chordFontSize/3)))
-			i += 1
-		chordDisplay.fill(Colors.backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
+			firstPixelOfChord = 0
+			lastPixelOfChord = 0
+			i = 0
+			for chord in chords:
+				if isInTimeRange(chord,timeRangeOnScreen):
+					if chord["start"] > timeRangeOnScreen["start"]:
+						firstPixelOfChord = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
+					else:
+						firstPixelOfChord = 0
+					if chord["end"] < timeRangeOnScreen["end"]:
+						lastPixelOfChord = ((chord["end"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
+					else:
+						lastPixelOfChord = chordDisplaySize[0]
+					try:  
+						c = q.get_nowait() # or q.get(timeout=.1)
+						if c == chords[chordIndex]["chord"]:
+							if hit[chordIndex] == False:
+								feedbackDisplay = updateFeedbackScore(True)
+							hit[chordIndex] = True
+					except Empty:
+					    pass
+					if hit[i]:
+						chordDisplay.fill(Colors.getColorForChord(chord["chord"]), Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+						chordText = chordTextsHit[i]
+					else:
+						chordDisplay.fill(Colors.lightGray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
+						chordText = chordTextsNotHit[i]
+					firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
+					chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-(chordFontSize/3)))
+				i += 1
+			chordDisplay.fill(Colors.backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
 
-		if lyricChanged:
-			screen.fill(Colors.backgroundColor)
-			lyricText = lyricFont.render(lyrics[lyricIndex]["lyric"], False, Colors.white)
-			centeredLyricPlacement = (lyricPlacement[0]-lyricText.get_rect().width/2, lyricPlacement[1])
-			screen.blit(lyricText, centeredLyricPlacement)
+			if lyricChanged:
+				screen.fill(Colors.backgroundColor)
+				lyricText = lyricFont.render(lyrics[lyricIndex]["lyric"], False, Colors.white)
+				centeredLyricPlacement = (lyricPlacement[0]-lyricText.get_rect().width/2, lyricPlacement[1])
+				screen.blit(lyricText, centeredLyricPlacement)
 
-		# screen.blit(colorfulBackground, (0,0))
-		screen.blit(chordDisplay, chordDisplayPlacement)
-		screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
-		screen.blit(feedbackDisplay, feedbackPlacement)
+			# screen.blit(colorfulBackground, (0,0))
+			screen.blit(chordDisplay, chordDisplayPlacement)
+			screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
+			screen.blit(feedbackDisplay, feedbackPlacement)
 
-		scaledCurrentImageChord = scaleForCurrentChord(chordImages[chords[chordIndex]["chord"]])
-		scaledCurrentChordImagePlacement = (currentChordImagePlacement[0] - scaledCurrentImageChord.get_rect().width/2, currentChordImagePlacement[1])
-		screen.blit(scaledCurrentImageChord, scaledCurrentChordImagePlacement)
-		if(chordIndex != len(chords)-1):
-			scaledNextImageChord = scaleForNextChord(chordImages[chords[chordIndex+1]["chord"]])
-			scaledNextChordImagePlacement = (nextChordImagePlacement[0] - scaledNextImageChord.get_rect().width/2, nextChordImagePlacement[1])
-			screen.blit(scaledNextImageChord, scaledNextChordImagePlacement)
+			scaledCurrentImageChord = scaleForCurrentChord(chordImages[chords[chordIndex]["chord"]])
+			scaledCurrentChordImagePlacement = (currentChordImagePlacement[0] - scaledCurrentImageChord.get_rect().width/2, currentChordImagePlacement[1])
+			screen.blit(scaledCurrentImageChord, scaledCurrentChordImagePlacement)
+			if(chordIndex != len(chords)-1):
+				scaledNextImageChord = scaleForNextChord(chordImages[chords[chordIndex+1]["chord"]])
+				scaledNextChordImagePlacement = (nextChordImagePlacement[0] - scaledNextImageChord.get_rect().width/2, nextChordImagePlacement[1])
+				screen.blit(scaledNextImageChord, scaledNextChordImagePlacement)
 
-		# if lyricChanged:
-		# 	lyricChanged = False
-		# 	pygame.display.flip()
-		# else:
-		# 	pygame.display.update(chordDisplay.get_rect())
-			# pygame.display.flip()
-		pygame.display.flip()
+			# if lyricChanged:
+			# 	lyricChanged = False
+			# 	pygame.display.flip()
+			# else:
+			# 	pygame.display.update(chordDisplay.get_rect())
+				# pygame.display.flip()
+			pygame.display.flip()
 
-		# clock.tick()
-		# now = toSeconds(pygame.time.get_ticks()) - start
-		now = time.time() - start
+			# clock.tick()
+			# now = toSeconds(pygame.time.get_ticks()) - start
+			now = time.time() - start
 
 	# flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
 	flags = DOUBLEBUF
@@ -715,10 +742,10 @@ flags = DOUBLEBUF
 screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
-songFilePath = 'test_song.json'
-song = Song('save files/songs/' + songFilePath)
-EndOfSongScreen(song, 80, player)
-# MainMenu(player)
+# songFilePath = 'test_song.json'
+# song = Song('save files/songs/' + songFilePath)
+# EndOfSongScreen(song, 80, player)
+MainMenu(player)
 
 # songFilePath = 'test_song.json'
 # PlaySong(Song('save files/songs/' + songFilePath), player)
