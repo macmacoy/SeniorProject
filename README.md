@@ -1,3 +1,19 @@
-Senior Project for Mac Macoy and Taylor Walker
+# Welcome to /project name here/!
+### /project name here/ is an guitar game for beginners and experienced players alike that want to learn new songs by playing a game! 
 
-The final product will be a game that listens to a player play chords on an acoustic guitar for a given song and gives gamified feedback.
+The exciting features that /project name here/ currently has are:
+
+* Chord recognition
+* Download **any** song to play and sing along
+* Scrolling chord graphics
+* Lyric graphics
+* Player feedback during and after playing a song
+* Song difficulty rating
+* Earn points and level up
+
+Cool features we'd love to add:
+
+* Recognize **all** chords (currently only major & minor chords are detected)
+* Anything else you think would make /project name here/ more fun!
+
+Anyone is welcome to contribute! Rock on!
