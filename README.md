@@ -1,7 +1,11 @@
 # Welcome to /project name here/!
-### /project name here/ is an guitar game for beginners and experienced players alike that want to learn new songs by playing a game! 
+**/project name here/ is an guitar game for beginners and experienced players alike that want to learn new songs by playing a game!**
 
-The exciting features that /project name here/ currently has are:
+All you need to play:
+* A guitar
+* A laptop with a microphone
+
+The exciting features that /project name here/ currently has:
 
 * Chord recognition
 * Download **any** song to play and sing along
