@@ -52,6 +52,7 @@ class Player(object):
 		# score: 0-100
 		# songDifficulty: 1-6
 		if(not self.havePlayedSong(song)):
+			print("have not played song")
 			self.points = self.points + (score/100)*song.getSongDifficulty()
 			if(self.points > self.pointsNeededForLevel[self.level+1] and self.level < 6):
 				self.level = self.level + 1
@@ -61,7 +62,8 @@ class Player(object):
 			self.songsPlayed["difficulties"].append(song.getSongDifficulty())
 		else:
 			index = self.songsPlayed["songs"].index(song.name)
-			if((score/100)*song.getSongDifficulty() - (self.songsPlayed["scores"][index]/100)*self.songsPlayed["difficulties"][index]):
+			if((score/100)*song.getSongDifficulty() > (self.songsPlayed["scores"][index]/100)*self.songsPlayed["difficulties"][index]):
+				print("score updated")
 				self.points = self.points + (score/100)*song.getSongDifficulty() - (self.songsPlayed["scores"][index]/100)*song.getSongDifficulty()
 				self.songsPlayed["scores"][index] = score
 				if(self.points > self.pointsNeededForLevel[self.level+1] and self.level < 6):
@@ -73,9 +75,7 @@ class Player(object):
 
 	def havePlayedSong(self, song):
 		if song.name in self.songsPlayed["songs"]:
-			index = self.songsPlayed["songs"].index(song.name)
-			if song.artist == self.songsPlayed["artists"][index]:
-				return True
+			return True
 		return False
 
 	def reorderPlayedSongs(self, song):
