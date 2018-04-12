@@ -1,11 +1,11 @@
-# Welcome to /project name here/!
-**/project name here/ is an guitar game for beginners and experienced players alike that want to learn new songs by playing a game!**
+# Welcome to JamSesh!
+**JamSesh is an guitar game for beginners and experienced players alike that want to learn new songs by playing a game!**
 
 All you need to play:
 * A guitar
 * A laptop with a microphone
 
-The exciting features that /project name here/ currently has:
+The exciting features that JamSesh currently has:
 
 * Chord recognition
 * Download **any** song to play and sing along
