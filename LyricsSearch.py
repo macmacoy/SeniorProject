@@ -1,15 +1,8 @@
 '''
-  * You'll need to download xmltodict and BeautifulSoup
-  * Easiest method to do so: "(sudo) pip install pycurl xmltodict BeautifulSoup json"
-
   * ViewLyrics Open Searcher
   * Developed by PedroHLC
   * Converted to python by Rikels
   * Updated to Python 3 by fr31
-  * Last update: 18-07-2016
-
-  * lyricswikia Lyric returner
-  * Developed by Rikels
   * Last update: 18-07-2016
 '''
 
@@ -42,7 +35,7 @@ def MiniLyrics(artist, title):
   search_useragent = "MiniLyrics"
   search_md5watermark = b"Mlv1clt4.0"
 
-  # hex is a registered value in python, so i used hexx as an alternative
+  # "hex" is a registered value in python; "hexx" is used as an alternative
   def hexToStr(hexx):
     string = ''
     i = 0
@@ -96,10 +89,10 @@ def MiniLyrics(artist, title):
     try:
       r = requests.post(url, data=data, headers=headers)
       return (r.text)
-    except Exception as exceptio:
-      print(exceoptio)
+    except Exception as exception:
+      print(exception)
       pass
-    # if the request was denied, or the connection was interrupted, retrying. (up to five times)
+    # if the request was denied, or the connection was interrupted, retry (up to five times)
     fail_count = 0
     while (r.text == "") and (fail_count < 5):
       fail_count += 1
@@ -207,31 +200,3 @@ def MiniLyrics(artist, title):
       results = sorted(results, key=lambda result: (result["downloads"]))
       results.reverse()
   return(results)
-
-# function to return lyrics grabbed from lyricwikia
-def LyricWikia(artist, title):
-  url = 'http://lyrics.wikia.com/api.php?action=lyrics&artist={artist}&song={title}&fmt=json&func=getSong'.format(artist=artist,
-                                                          title=title).replace(" ","%20")
-  r = requests.get(url, timeout=15)
-  # We got some bad formatted JSON data... So we need to fix stuff :/
-  returned = r.text
-  returned = returned.replace("\'", "\"")
-  returned = returned.replace("song = ", "")
-  returned = json.loads(returned)
-  if returned["lyrics"] != "Not found":
-    # set the url to the url we just recieved, and retrieving it
-    r = requests.get(returned["url"], timeout=15)
-    soup = BeautifulSoup(r.text)
-    soup = soup.find("div", {"class": "lyricbox"})
-    [elem.extract() for elem in soup.findAll('div')]
-    [elem.replaceWith('\n') for elem in soup.findAll('br')]
-    #with old BeautifulSoup the following is needed..? For recent versions, this isn't needed/doesn't work
-    try:
-      soup = BeautifulSoup(str(soup), convertEntities=BeautifulSoup.HTML_ENTITIES)
-    except:
-      pass
-    soup = BeautifulSoup(re.sub(r'(<!--[.\s\S]*-->)', '', str(soup)))
-    [elem.extract() for elem in soup.findAll('script')]
-    return(soup.getText())
-  else:
-    return()

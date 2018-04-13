@@ -69,4 +69,72 @@ class Song(object):
 		self.tempo = bps
 
 	def getSongDifficulty(self): ## value is difficulty as an int between 1 and 6
-		return 4
+		chordDifficulties = {
+      "A" : 2,
+      "A#" : 3,
+      "B" : 3,
+      "C" : 1,
+      "C#" : 3,
+      "D" : 1,
+      "D#" : 3,
+      "E" : 1,
+      "F" : 2,
+      "F#" : 2,
+      "G" : 1,
+      "G#" : 3,
+      "Am" : 1,
+      "A#m" : 2,
+      "Bm" : 3,
+      "Cm" : 3,
+      "C#m" : 2,
+      "Dm" : 1,
+      "D#m" : 2,
+      "Em" : 1,
+      "Fm" : 3,
+      "F#m" : 2,
+      "Gm" : 2,
+      "G#m" : 2
+    }
+
+    chordDifficultyTotal = 0
+    for chord in self.chords:
+      chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
+    chordDifficultyScore = (chordDifficultyTotal/len(self.chords)) * 2
+
+    chordDurationTotal = 0
+    durations = []
+    for chord in self.chords:
+      chordDurationTotal = chordDurationTotal + (chord["end"] - chord["start"])
+      durations.append(chord["end"] - chord["start"])
+    avgChordDuration = (chordDurationTotal/len(self.chords))
+    if avgChordDuration <= 1:
+      avgChordDurationScore = 6
+    elif avgChordDuration <= 2:
+      avgChordDurationScore = 5
+    elif avgChordDuration <= 3:
+      avgChordDurationScore = 4
+    elif avgChordDuration <= 4:
+      avgChordDurationScore = 3
+    elif avgChordDuration <= 5:
+      avgChordDurationScore = 2
+    else:
+      avgChordDurationScore = 1
+
+    durations.sort()
+    topTenPercent = len(durations) * 0.1
+    durationTotal = 0
+    for duration in durations[:topTenPercent]: 
+      durationTotal = durationTotal + duration
+    topTenAvg = durationTotal/topTenPercent
+    if topTenAvg <= 1:
+      fastestChordDurationScore = 6
+    elif topTenAvg <= 2:
+      fastestChordDurationScore = 4
+    else:
+      fastestChordDurationScore = 2
+
+    difficultyScore = (0.6 * chordDifficultyScore) 
+                    + (0.25 * avgChordDurationScore) 
+                    + (0.15 * fastestChordDurationScore)
+
+    return int(round(difficultyScore))

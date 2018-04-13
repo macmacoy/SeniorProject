@@ -18,7 +18,7 @@ class Song:
     self.lyrics = []
 
   def toJSON(self):
-    filename = "song_" + ''.join(self.title.split()).lower() + "_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
+    filename = "save files/songs/song_" + ''.join(self.title.split()).lower() + "_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
     with open(filename, 'w') as outfile:
       json.dump(self, outfile, default=lambda o: o.__dict__, sort_keys=False, indent=4)
 
@@ -26,9 +26,11 @@ def getLyrics(songTitle, songArtist):
   lyrics = LyricsSearch.MiniLyrics(songArtist, songTitle)
   highest = {"rating": 0, "rating_count": 0}
   for result in lyrics[:5]:
+    # print(result)
     if ((result["rating"]) > (highest["rating"])) and (result["filetype"] == "lrc"):
       highest = result
   url = highest["url"]
+  print(url)
   response = urlopen(url)
   data = response.read()            # a `bytes` object
   raw_lyrics = data.decode('utf-8') # a `str`; this step can't be used if data is binary
