@@ -84,16 +84,15 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
     song.chords.append({"timestamp": round(event["beat_time"], 2), "chord": eventChord})
   print(lyrics)
   for line in lyrics.splitlines():
-    if len(line) == 0:
-      continue
-    elif (line[0] != '[') or (not line[1].isdigit()):
-      continue
-    else:
-      minutes = line[1:3]
-      seconds = line[4:6]
-      milliseconds = line[7:9]
-      timestamp = (int(minutes) * 60) + int(seconds) + (int(milliseconds) / 100.0)
-      song.lyrics.append({"timestamp": timestamp, "lyric": line[10:]})
+    if line and line.strip():
+      if (line[0] != '[') or (not line[1].isdigit()):
+        continue
+      else:
+        minutes = line[1:3]
+        seconds = line[4:6]
+        milliseconds = line[7:9]
+        timestamp = (int(minutes) * 60) + int(seconds) + (int(milliseconds) / 100.0)
+        song.lyrics.append({"timestamp": timestamp, "lyric": line[10:]})
   return song
 
 def downloadSong(songTitle, songArtist):
