@@ -5,6 +5,7 @@ import threading
 import Colors
 import ChordRecognizer
 import Font
+import SongFileBuilder
 from queue import Queue, Empty
 from pygame.surface import Surface
 from pygame.rect import Rect
@@ -377,8 +378,9 @@ def SongsMenu(player):
 	songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
 	songs = []
 	for songFilePath in songFilePaths:
-		song = Song('save files/songs/' + songFilePath)
-		songs.append(song)
+		if(songFilePath != ".DS_Store"):
+			song = Song('save files/songs/' + songFilePath)
+			songs.append(song)
 	# sort by recently played?
 	pageRects = [[]]
 	pageTexts = [[]]
@@ -411,15 +413,15 @@ def SongsMenu(player):
 			song = songInput
 			artist = artistInput
 			# create new song
-			print(song)
-			print(artist)
+			SongFileBuilder.downloadSong(songTitle, songArtist)
 			## replicated code (bad I know)
 			songsDirPath = "save files/songs"
 			songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
 			songs = []
 			for songFilePath in songFilePaths:
-				song = Song('save files/songs/' + songFilePath)
-				songs.append(song)
+				if(songFilePath != ".DS_Store"):
+					song = Song('save files/songs/' + songFilePath)
+					songs.append(song)
 			pageRects = [[]]
 			pageTexts = [[]]
 			playSongButtons = [[]]
@@ -838,3 +840,4 @@ MainMenu(player)
 # PlaySong(Song('save files/songs/' + songFilePath), player)
 # SongsMenu()
 
+# SongFileBuilder.downloadSong("Take It Easy", "The Eagles")

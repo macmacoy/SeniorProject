@@ -19,8 +19,19 @@ class Song:
 
   def toJSON(self):
     filename = "save files/songs/song_" + ''.join(self.title.split()).lower() + "_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
+    data = {}
+    data["title"] = self.title
+    data["artist"] = self.artist
+    data["youtube_url"] = self.youtube_url
+    data["duration"] = self.duration
+    data["tempo"] = self.tempo
+    data["capo"] = self.capo
+    data["chords"] = self.chords
+    data["lyrics"] = self.lyrics
+    # with open(filename, 'w', encoding='utf8') as json_file:
+    #   json.dump(data, json_file, indent=4)
     with open(filename, 'w') as outfile:
-      json.dump(self, outfile, default=lambda o: o.__dict__, sort_keys=False, indent=4)
+      json.dump(data, outfile, indent=4)
 
 def getLyrics(songTitle, songArtist):
   lyrics = LyricsSearch.MiniLyrics(songArtist, songTitle)
@@ -71,8 +82,11 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
         eventChord = chord
         break
     song.chords.append({"timestamp": round(event["beat_time"], 2), "chord": eventChord})
+  print(lyrics)
   for line in lyrics.splitlines():
-    if (line[0] != '[') or (not line[1].isdigit()):
+    if len(line) == 0:
+      continue
+    elif (line[0] != '[') or (not line[1].isdigit()):
       continue
     else:
       minutes = line[1:3]
@@ -82,9 +96,7 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
       song.lyrics.append({"timestamp": timestamp, "lyric": line[10:]})
   return song
 
-def main():
-  songTitle = input("Title: ")
-  songArtist = input("Artist: ")
+def downloadSong(songTitle, songArtist):
 
   lyrics = getLyrics(songTitle, songArtist)
   youtubeUrl = getYoutubeUrl(songTitle, songArtist)

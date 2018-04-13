@@ -4,32 +4,34 @@ class Song(object):
 
 	def __init__(self, filename):
 
+		# with open(filename, encoding='utf8') as json_data:
+		# 		data = json.load(json_data)
 		with open(filename) as json_data:
-				data = json.load(json_data)
+			data = json.load(json_data)
 
-				self.name = data.get("title")
-				self.artist = data.get("artist")
-				self.duration = data.get("duration")
-				self.tempo = data.get("tempo")
-				self.capo = data.get("capo")
-				if(self.capo == None):
-					self.capo = 0
+			self.name = data.get("title")
+			self.artist = data.get("artist")
+			self.duration = data.get("duration")
+			self.tempo = data.get("tempo")
+			self.capo = data.get("capo")
+			if(self.capo == None):
+				self.capo = 0
 
-				chord_data = data.get("chords")
-				self.chords = []
-				for i in range(0, len(chord_data)):
-					if i < len(chord_data) - 1:
-						self.chords.append({"start":chord_data[i]["timestamp"], "end":chord_data[i+1]["timestamp"], "chord":chord_data[i]["chord"]})
-					else:
-						self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
-				
-				lyric_data = data.get("lyrics")
-				self.lyrics = []
-				for i in range(0, len(lyric_data)):
-					if i < len(lyric_data) - 1:
-						self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":lyric_data[i+1]["timestamp"], "lyric":lyric_data[i]["lyric"]})
-					else:
-						self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":self.duration, "lyric":lyric_data[i]["lyric"]})
+			chord_data = data.get("chords")
+			self.chords = []
+			for i in range(0, len(chord_data)):
+				if i < len(chord_data) - 1:
+					self.chords.append({"start":chord_data[i]["timestamp"], "end":chord_data[i+1]["timestamp"], "chord":chord_data[i]["chord"]})
+				else:
+					self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
+			
+			lyric_data = data.get("lyrics")
+			self.lyrics = []
+			for i in range(0, len(lyric_data)):
+				if i < len(lyric_data) - 1:
+					self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":lyric_data[i+1]["timestamp"], "lyric":lyric_data[i]["lyric"]})
+				else:
+					self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":self.duration, "lyric":lyric_data[i]["lyric"]})
 
 		self.majorChords = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 		self.minorChords = ["Am","A#m","Bm","Cm","C#m","Dm","D#m","Em","Fm","F#m","Gm","G#m"]
