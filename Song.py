@@ -5,31 +5,31 @@ class Song(object):
 	def __init__(self, filename):
 
 		with open(filename) as json_data:
-		    data = json.load(json_data)
+				data = json.load(json_data)
 
-		    self.name = data.get("title")
-		    self.artist = data.get("artist")
-		    self.duration = data.get("duration")
-		    self.tempo = data.get("tempo")
-		    self.capo = data.get("capo")
-		    if(self.capo == None):
-		    	self.capo = 0
+				self.name = data.get("title")
+				self.artist = data.get("artist")
+				self.duration = data.get("duration")
+				self.tempo = data.get("tempo")
+				self.capo = data.get("capo")
+				if(self.capo == None):
+					self.capo = 0
 
-		    chord_data = data.get("chords")
-		    self.chords = []
-		    for i in range(0, len(chord_data)):
-		    	if i < len(chord_data) - 1:
-		    		self.chords.append({"start":chord_data[i]["timestamp"], "end":chord_data[i+1]["timestamp"], "chord":chord_data[i]["chord"]})
-		    	else:
-		    		self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
-		    
-		    lyric_data = data.get("lyrics")
-		    self.lyrics = []
-		    for i in range(0, len(lyric_data)):
-		    	if i < len(lyric_data) - 1:
-		    		self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":lyric_data[i+1]["timestamp"], "lyric":lyric_data[i]["lyric"]})
-		    	else:
-		    		self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":self.duration, "lyric":lyric_data[i]["lyric"]})
+				chord_data = data.get("chords")
+				self.chords = []
+				for i in range(0, len(chord_data)):
+					if i < len(chord_data) - 1:
+						self.chords.append({"start":chord_data[i]["timestamp"], "end":chord_data[i+1]["timestamp"], "chord":chord_data[i]["chord"]})
+					else:
+						self.chords.append({"start":chord_data[i]["timestamp"], "end":self.duration, "chord":chord_data[i]["chord"]})
+				
+				lyric_data = data.get("lyrics")
+				self.lyrics = []
+				for i in range(0, len(lyric_data)):
+					if i < len(lyric_data) - 1:
+						self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":lyric_data[i+1]["timestamp"], "lyric":lyric_data[i]["lyric"]})
+					else:
+						self.lyrics.append({"start":lyric_data[i]["timestamp"], "end":self.duration, "lyric":lyric_data[i]["lyric"]})
 
 		self.majorChords = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 		self.minorChords = ["Am","A#m","Bm","Cm","C#m","Dm","D#m","Em","Fm","F#m","Gm","G#m"]
@@ -69,72 +69,45 @@ class Song(object):
 		self.tempo = bps
 
 	def getSongDifficulty(self): ## value is difficulty as an int between 1 and 6
-		chordDifficulties = {
-      "A" : 2,
-      "A#" : 3,
-      "B" : 3,
-      "C" : 1,
-      "C#" : 3,
-      "D" : 1,
-      "D#" : 3,
-      "E" : 1,
-      "F" : 2,
-      "F#" : 2,
-      "G" : 1,
-      "G#" : 3,
-      "Am" : 1,
-      "A#m" : 2,
-      "Bm" : 3,
-      "Cm" : 3,
-      "C#m" : 2,
-      "Dm" : 1,
-      "D#m" : 2,
-      "Em" : 1,
-      "Fm" : 3,
-      "F#m" : 2,
-      "Gm" : 2,
-      "G#m" : 2
-    }
+		chordDifficulties = {"A":2,"A#":3,"B":3,"C":1,"C#":3,"D":1,"D#":3,"E":1,"F":2,"F#":2,"G":1,"G#":3,"Am":1,"A#m":2,"Bm":3,"Cm":3,"C#m":2,"Dm":1,"D#m":2,"Em":1,"Fm":3,"F#m":2,"Gm":2,"G#m":2}
+		
+		chordDifficultyTotal=0
+		for chord in self.chords:
+			chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
+		chordDifficultyScore = (chordDifficultyTotal/len(self.chords)) * 2
 
-    chordDifficultyTotal = 0
-    for chord in self.chords:
-      chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
-    chordDifficultyScore = (chordDifficultyTotal/len(self.chords)) * 2
+		chordDurationTotal = 0
+		durations = []
+		for chord in self.chords:
+			chordDurationTotal = chordDurationTotal + (chord["end"] - chord["start"])
+			durations.append(chord["end"] - chord["start"])
+		avgChordDuration = (chordDurationTotal/len(self.chords))
+		if avgChordDuration <= 1:
+			avgChordDurationScore = 6
+		elif avgChordDuration <= 2:
+			avgChordDurationScore = 5
+		elif avgChordDuration <= 3:
+			avgChordDurationScore = 4
+		elif avgChordDuration <= 4:
+			avgChordDurationScore = 3
+		elif avgChordDuration <= 5:
+			avgChordDurationScore = 2
+		else:
+			avgChordDurationScore = 1
 
-    chordDurationTotal = 0
-    durations = []
-    for chord in self.chords:
-      chordDurationTotal = chordDurationTotal + (chord["end"] - chord["start"])
-      durations.append(chord["end"] - chord["start"])
-    avgChordDuration = (chordDurationTotal/len(self.chords))
-    if avgChordDuration <= 1:
-      avgChordDurationScore = 6
-    elif avgChordDuration <= 2:
-      avgChordDurationScore = 5
-    elif avgChordDuration <= 3:
-      avgChordDurationScore = 4
-    elif avgChordDuration <= 4:
-      avgChordDurationScore = 3
-    elif avgChordDuration <= 5:
-      avgChordDurationScore = 2
-    else:
-      avgChordDurationScore = 1
+		durations.sort()
+		topTenPercent = len(durations) * 0.1
+		durationTotal = 0
+		for duration in durations[:topTenPercent]: 
+			durationTotal = durationTotal + duration
+		topTenAvg = durationTotal/topTenPercent
+		if topTenAvg <= 1:
+			fastestChordDurationScore = 6
+		elif topTenAvg <= 2:
+			fastestChordDurationScore = 4
+		else:
+			fastestChordDurationScore = 2
 
-    durations.sort()
-    topTenPercent = len(durations) * 0.1
-    durationTotal = 0
-    for duration in durations[:topTenPercent]: 
-      durationTotal = durationTotal + duration
-    topTenAvg = durationTotal/topTenPercent
-    if topTenAvg <= 1:
-      fastestChordDurationScore = 6
-    elif topTenAvg <= 2:
-      fastestChordDurationScore = 4
-    else:
-      fastestChordDurationScore = 2
+		difficultyScore = (0.6 * chordDifficultyScore) + (0.25 * avgChordDurationScore) + (0.15 * fastestChordDurationScore)
 
-    difficultyScore = (0.6 * chordDifficultyScore) 
-                    + (0.25 * avgChordDurationScore) 
-                    + (0.15 * fastestChordDurationScore)
-
-    return int(round(difficultyScore))
+		return int(round(difficultyScore))
