@@ -64,7 +64,13 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
   else:
     song.capo = rawSongData["capo"]
   for event in rawSongData["song_events"]:
-    song.chords.append({"timestamp": round(event["beat_time"], 2), "chord": event["name"]})
+    recognizableChords = ["A#m","C#m","D#m","F#m","G#m","Am","Bm","Cm","Dm","Em","Fm","Gm","A#","C#","D#","F#","G#","A","B","C","D","E","F","G"]
+    eventChord = ""
+    for chord in recognizableChords:
+      if event["name"].startswith(chord):
+        eventChord = chord
+        break
+    song.chords.append({"timestamp": round(event["beat_time"], 2), "chord": eventChord})
   for line in lyrics.splitlines():
     if (line[0] != '[') or (not line[1].isdigit()):
       continue
