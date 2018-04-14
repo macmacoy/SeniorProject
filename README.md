@@ -18,6 +18,6 @@ The exciting features that JamSesh currently has:
 Cool features we'd love to add:
 
 * Recognize **all** chords (currently only major & minor chords are detected)
-* Anything else you think would make /project name here/ more fun!
+* Anything else you think would make JamSesh more fun!
 
 Anyone is welcome to contribute! Rock on!
