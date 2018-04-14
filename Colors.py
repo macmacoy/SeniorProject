@@ -28,6 +28,18 @@ lightMediumGray = silver
 mediumGray = concrete
 darkGray = asbestos
 
+majorChords = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
+minorChords = ["Am","A#m","Bm","Cm","C#m","Dm","D#m","Em","Fm","F#m","Gm","G#m"]
+chords = majorChords + minorChords
+colors = [turquoise, emerald, peterriver, amethyst, sunflower, carrot]
+chordColors = {}
+colorIndex = 0
+for chord in chords:
+	chordColors[chord] = colors[colorIndex]
+	colorIndex = colorIndex + 1
+	if colorIndex > 5:
+		colorIndex = 0
+
 def getColorForLevel(level):
 	if level == 1:
 		return emerald
@@ -44,14 +56,4 @@ def getColorForLevel(level):
 	return white
 
 def getColorForChord(chord):
-	if chord == "G":
-		return (2, 224, 9)
-	if chord == "Em":
-		return (226, 151, 0)
-	if chord == "C":
-		return (219, 12, 8)
-	if chord == "D":
-		return (4, 89, 226)
-	else:
-		print("chord color not found")
-		return (200,0,0)
+	return chordColors[chord]

@@ -35,11 +35,16 @@ chordImages = {"A":pygame.image.load(os.path.join('images/chords', 'A.gif')),
 				"Em":pygame.image.load(os.path.join('images/chords', 'Em.gif')),
 				"F":pygame.image.load(os.path.join('images/chords', 'F.gif')),
 				"F#":pygame.image.load(os.path.join('images/chords', 'F#.gif')),
+				"F#m":pygame.image.load(os.path.join('images/chords', 'F#.gif')),
 				"Fm":pygame.image.load(os.path.join('images/chords', 'Fm.gif')),
 				"G":pygame.image.load(os.path.join('images/chords', 'G.gif')),
 				"G#":pygame.image.load(os.path.join('images/chords', 'G#.gif')),
 				"G#m":pygame.image.load(os.path.join('images/chords', 'G#m.gif')),
 				"Gm":pygame.image.load(os.path.join('images/chords', 'Gm.gif')),
 				"":pygame.image.load(os.path.join('images/chords', 'blank.png'))}
+
+edgeImage = pygame.image.load(os.path.join('images/background', 'edge.png'))
+
+titleBackground = pygame.image.load(os.path.join('images/background', 'title.png'))
 
 # colorfulBackground = pygame.image.load(os.path.join('images/background', 'colorful.jpg'))

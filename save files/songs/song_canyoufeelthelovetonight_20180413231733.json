@@ -1,0 +1,628 @@
+{
+    "title": "Can You Feel The Love Tonight",
+    "artist": "Elton John\r",
+    "youtube_url": "KjgWWjkNbhU",
+    "duration": 247.0,
+    "tempo": 126,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": ""
+        },
+        {
+            "timestamp": 0.48,
+            "chord": ""
+        },
+        {
+            "timestamp": 0.96,
+            "chord": "B"
+        },
+        {
+            "timestamp": 1.45,
+            "chord": "F"
+        },
+        {
+            "timestamp": 3.41,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 5.39,
+            "chord": "B"
+        },
+        {
+            "timestamp": 7.38,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 9.35,
+            "chord": "B"
+        },
+        {
+            "timestamp": 11.25,
+            "chord": "F"
+        },
+        {
+            "timestamp": 13.11,
+            "chord": "B"
+        },
+        {
+            "timestamp": 14.04,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 15.44,
+            "chord": "B"
+        },
+        {
+            "timestamp": 16.38,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 17.32,
+            "chord": "B"
+        },
+        {
+            "timestamp": 19.23,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 21.63,
+            "chord": "B"
+        },
+        {
+            "timestamp": 23.55,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 25.41,
+            "chord": "B"
+        },
+        {
+            "timestamp": 27.36,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 29.28,
+            "chord": "F"
+        },
+        {
+            "timestamp": 31.16,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 33.52,
+            "chord": "B"
+        },
+        {
+            "timestamp": 35.43,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 37.41,
+            "chord": "B"
+        },
+        {
+            "timestamp": 39.78,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 41.68,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 43.57,
+            "chord": "B"
+        },
+        {
+            "timestamp": 45.49,
+            "chord": "F"
+        },
+        {
+            "timestamp": 47.44,
+            "chord": "B"
+        },
+        {
+            "timestamp": 49.41,
+            "chord": "F"
+        },
+        {
+            "timestamp": 51.34,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 53.23,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 55.11,
+            "chord": "B"
+        },
+        {
+            "timestamp": 56.99,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 58.87,
+            "chord": "F"
+        },
+        {
+            "timestamp": 60.74,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 64.52,
+            "chord": "B"
+        },
+        {
+            "timestamp": 66.4,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 68.28,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 70.18,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 72.07,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 73.02,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 73.97,
+            "chord": "F"
+        },
+        {
+            "timestamp": 75.85,
+            "chord": "B"
+        },
+        {
+            "timestamp": 79.63,
+            "chord": "F"
+        },
+        {
+            "timestamp": 81.54,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 83.43,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 85.31,
+            "chord": "B"
+        },
+        {
+            "timestamp": 87.2,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 89.09,
+            "chord": "F"
+        },
+        {
+            "timestamp": 90.99,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 94.76,
+            "chord": "B"
+        },
+        {
+            "timestamp": 96.64,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 98.5,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 100.4,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 102.3,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 103.25,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 104.2,
+            "chord": "B"
+        },
+        {
+            "timestamp": 105.15,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 106.11,
+            "chord": "B"
+        },
+        {
+            "timestamp": 108.07,
+            "chord": "F"
+        },
+        {
+            "timestamp": 111.91,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 113.81,
+            "chord": "B"
+        },
+        {
+            "timestamp": 115.7,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 117.61,
+            "chord": "B"
+        },
+        {
+            "timestamp": 119.51,
+            "chord": "F"
+        },
+        {
+            "timestamp": 121.42,
+            "chord": "B"
+        },
+        {
+            "timestamp": 122.38,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 123.36,
+            "chord": "B"
+        },
+        {
+            "timestamp": 124.33,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 125.31,
+            "chord": "B"
+        },
+        {
+            "timestamp": 127.26,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 129.2,
+            "chord": "B"
+        },
+        {
+            "timestamp": 131.11,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 133.02,
+            "chord": "B"
+        },
+        {
+            "timestamp": 135.44,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 137.35,
+            "chord": "F"
+        },
+        {
+            "timestamp": 139.25,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 141.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 143.03,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 144.96,
+            "chord": "B"
+        },
+        {
+            "timestamp": 146.87,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 149.25,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 151.15,
+            "chord": "B"
+        },
+        {
+            "timestamp": 153.47,
+            "chord": "F"
+        },
+        {
+            "timestamp": 155.38,
+            "chord": "B"
+        },
+        {
+            "timestamp": 159.23,
+            "chord": "F"
+        },
+        {
+            "timestamp": 161.15,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 163.03,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 164.92,
+            "chord": "B"
+        },
+        {
+            "timestamp": 166.8,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 168.67,
+            "chord": "F"
+        },
+        {
+            "timestamp": 170.55,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 174.31,
+            "chord": "B"
+        },
+        {
+            "timestamp": 176.18,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 178.04,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 179.93,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 181.82,
+            "chord": "B"
+        },
+        {
+            "timestamp": 182.76,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 183.69,
+            "chord": "F"
+        },
+        {
+            "timestamp": 185.55,
+            "chord": "B"
+        },
+        {
+            "timestamp": 189.28,
+            "chord": "F"
+        },
+        {
+            "timestamp": 191.17,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 193.02,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 194.87,
+            "chord": "B"
+        },
+        {
+            "timestamp": 196.74,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 198.6,
+            "chord": "F"
+        },
+        {
+            "timestamp": 200.46,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 204.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 206.03,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 209.79,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 211.65,
+            "chord": "B"
+        },
+        {
+            "timestamp": 212.58,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 213.51,
+            "chord": "B"
+        },
+        {
+            "timestamp": 214.44,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 215.37,
+            "chord": "B"
+        },
+        {
+            "timestamp": 217.22,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 219.08,
+            "chord": "B"
+        },
+        {
+            "timestamp": 220.93,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 222.77,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 224.69,
+            "chord": "Cm"
+        },
+        {
+            "timestamp": 226.64,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 228.09,
+            "chord": "B"
+        },
+        {
+            "timestamp": 229.99,
+            "chord": ""
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.0,
+            "lyric": "Title: Can you feel the love tonight"
+        },
+        {
+            "timestamp": 3.0,
+            "lyric": "From movie: The Lion King"
+        },
+        {
+            "timestamp": 6.0,
+            "lyric": "Song by: Elton John"
+        },
+        {
+            "timestamp": 9.0,
+            "lyric": "[01:15.50][01:47.30][03:35.00]"
+        },
+        {
+            "timestamp": 15.9,
+            "lyric": "There's a calm surrender"
+        },
+        {
+            "timestamp": 19.9,
+            "lyric": "To the rush of day"
+        },
+        {
+            "timestamp": 23.9,
+            "lyric": "When the heat of the rolling world"
+        },
+        {
+            "timestamp": 28.0,
+            "lyric": "Can be turned away"
+        },
+        {
+            "timestamp": 32.0,
+            "lyric": "And enchanted moment"
+        },
+        {
+            "timestamp": 36.0,
+            "lyric": "And it sees me through"
+        },
+        {
+            "timestamp": 39.8,
+            "lyric": "It's enough for this restless warrior"
+        },
+        {
+            "timestamp": 43.8,
+            "lyric": "Just to be with you"
+        },
+        {
+            "timestamp": 47.8,
+            "lyric": "[02:37.00][03:07.40]And can you feel the love tonight?"
+        },
+        {
+            "timestamp": 55.8,
+            "lyric": "[02:45.60]It is where we are"
+        },
+        {
+            "timestamp": 63.4,
+            "lyric": "It is enough for this wide-eyed wanderer"
+        },
+        {
+            "timestamp": 70.0,
+            "lyric": "[02:59.60]That we got this far"
+        },
+        {
+            "timestamp": 78.0,
+            "lyric": "And can you feel the love tonight"
+        },
+        {
+            "timestamp": 86.0,
+            "lyric": "How it's laid to rest?"
+        },
+        {
+            "timestamp": 94.0,
+            "lyric": "[03:22.60][03:38.00]It's enough to make kings and vagabonds"
+        },
+        {
+            "timestamp": 100.0,
+            "lyric": "[03:29.50][03:44.30]Believe the very best"
+        },
+        {
+            "timestamp": 123.6,
+            "lyric": "There's a time for everyone"
+        },
+        {
+            "timestamp": 127.3,
+            "lyric": "If they only learn"
+        },
+        {
+            "timestamp": 131.2,
+            "lyric": "That the twisting kaleidoscope"
+        },
+        {
+            "timestamp": 135.1,
+            "lyric": "Moves us all in turn"
+        },
+        {
+            "timestamp": 139.4,
+            "lyric": "There's a rhyme and reason"
+        },
+        {
+            "timestamp": 143.2,
+            "lyric": "To the wild outdoors"
+        },
+        {
+            "timestamp": 147.0,
+            "lyric": "When the heart of this star-crossed voyager"
+        },
+        {
+            "timestamp": 151.0,
+            "lyric": "Beats in time with yours"
+        },
+        {
+            "timestamp": 173.4,
+            "lyric": "It's enough for this wide-eyed wanderer"
+        },
+        {
+            "timestamp": 195.6,
+            "lyric": "How it's laid to rest"
+        }
+    ]
+}

@@ -74,8 +74,12 @@ class Song(object):
 		chordDifficulties = {"A":2,"A#":3,"B":3,"C":1,"C#":3,"D":1,"D#":3,"E":1,"F":2,"F#":2,"G":1,"G#":3,"Am":1,"A#m":2,"Bm":3,"Cm":3,"C#m":2,"Dm":1,"D#m":2,"Em":1,"Fm":3,"F#m":2,"Gm":2,"G#m":2}
 		
 		chordDifficultyTotal=0
+		keys = list(chordDifficulties.keys())
 		for chord in self.chords:
-			chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
+			if chord in keys:
+				chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
+			else:
+				chordDifficultyTotal = chordDifficultyTotal + 1
 		chordDifficultyScore = (chordDifficultyTotal/len(self.chords)) * 2
 
 		chordDurationTotal = 0
