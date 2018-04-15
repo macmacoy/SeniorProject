@@ -1,0 +1,432 @@
+{
+    "title": "Agape",
+    "artist": "Bear's Den\r",
+    "youtube_url": "q1MmYVcDyMs",
+    "duration": 263.0,
+    "tempo": 156,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": ""
+        },
+        {
+            "timestamp": 5.13,
+            "chord": "E"
+        },
+        {
+            "timestamp": 14.36,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 17.44,
+            "chord": "B"
+        },
+        {
+            "timestamp": 18.97,
+            "chord": "E"
+        },
+        {
+            "timestamp": 20.51,
+            "chord": "A"
+        },
+        {
+            "timestamp": 23.58,
+            "chord": "E"
+        },
+        {
+            "timestamp": 28.19,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 28.96,
+            "chord": "E"
+        },
+        {
+            "timestamp": 30.49,
+            "chord": "B"
+        },
+        {
+            "timestamp": 32.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 33.56,
+            "chord": "A"
+        },
+        {
+            "timestamp": 35.1,
+            "chord": "E"
+        },
+        {
+            "timestamp": 38.94,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 42.02,
+            "chord": "B"
+        },
+        {
+            "timestamp": 45.09,
+            "chord": "A"
+        },
+        {
+            "timestamp": 48.17,
+            "chord": "E"
+        },
+        {
+            "timestamp": 51.23,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 54.3,
+            "chord": "B"
+        },
+        {
+            "timestamp": 57.38,
+            "chord": "A"
+        },
+        {
+            "timestamp": 60.44,
+            "chord": "E"
+        },
+        {
+            "timestamp": 63.52,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 66.58,
+            "chord": "B"
+        },
+        {
+            "timestamp": 69.66,
+            "chord": "A"
+        },
+        {
+            "timestamp": 72.74,
+            "chord": "E"
+        },
+        {
+            "timestamp": 75.8,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 78.88,
+            "chord": "B"
+        },
+        {
+            "timestamp": 81.95,
+            "chord": "A"
+        },
+        {
+            "timestamp": 85.02,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 86.55,
+            "chord": "A"
+        },
+        {
+            "timestamp": 89.62,
+            "chord": "E"
+        },
+        {
+            "timestamp": 94.24,
+            "chord": "B"
+        },
+        {
+            "timestamp": 95.77,
+            "chord": "E"
+        },
+        {
+            "timestamp": 97.3,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 100.0,
+            "chord": "A"
+        },
+        {
+            "timestamp": 103.06,
+            "chord": "E"
+        },
+        {
+            "timestamp": 106.13,
+            "chord": "B"
+        },
+        {
+            "timestamp": 108.4,
+            "chord": "E"
+        },
+        {
+            "timestamp": 109.94,
+            "chord": "A"
+        },
+        {
+            "timestamp": 113.0,
+            "chord": "E"
+        },
+        {
+            "timestamp": 116.06,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 117.6,
+            "chord": "E"
+        },
+        {
+            "timestamp": 119.14,
+            "chord": "B"
+        },
+        {
+            "timestamp": 120.67,
+            "chord": "E"
+        },
+        {
+            "timestamp": 122.21,
+            "chord": "A"
+        },
+        {
+            "timestamp": 125.28,
+            "chord": "E"
+        },
+        {
+            "timestamp": 128.35,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 131.44,
+            "chord": "E"
+        },
+        {
+            "timestamp": 132.2,
+            "chord": "B"
+        },
+        {
+            "timestamp": 133.74,
+            "chord": "A"
+        },
+        {
+            "timestamp": 136.81,
+            "chord": "E"
+        },
+        {
+            "timestamp": 141.42,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 143.72,
+            "chord": "B"
+        },
+        {
+            "timestamp": 146.78,
+            "chord": "A"
+        },
+        {
+            "timestamp": 149.86,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 152.93,
+            "chord": "A"
+        },
+        {
+            "timestamp": 156.0,
+            "chord": "E"
+        },
+        {
+            "timestamp": 159.07,
+            "chord": "B"
+        },
+        {
+            "timestamp": 162.15,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 164.84,
+            "chord": "A"
+        },
+        {
+            "timestamp": 167.9,
+            "chord": "E"
+        },
+        {
+            "timestamp": 170.97,
+            "chord": "B"
+        },
+        {
+            "timestamp": 173.27,
+            "chord": "E"
+        },
+        {
+            "timestamp": 174.8,
+            "chord": "A"
+        },
+        {
+            "timestamp": 177.06,
+            "chord": "E"
+        },
+        {
+            "timestamp": 177.83,
+            "chord": "B"
+        },
+        {
+            "timestamp": 180.9,
+            "chord": "A"
+        },
+        {
+            "timestamp": 183.97,
+            "chord": "B"
+        },
+        {
+            "timestamp": 187.04,
+            "chord": "A"
+        },
+        {
+            "timestamp": 190.11,
+            "chord": "B"
+        },
+        {
+            "timestamp": 193.18,
+            "chord": "A"
+        },
+        {
+            "timestamp": 196.24,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 199.32,
+            "chord": "A"
+        },
+        {
+            "timestamp": 202.41,
+            "chord": "E"
+        },
+        {
+            "timestamp": 205.49,
+            "chord": "B"
+        },
+        {
+            "timestamp": 208.55,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 211.63,
+            "chord": "A"
+        },
+        {
+            "timestamp": 214.7,
+            "chord": "E"
+        },
+        {
+            "timestamp": 217.77,
+            "chord": "B"
+        },
+        {
+            "timestamp": 219.3,
+            "chord": "E"
+        },
+        {
+            "timestamp": 220.84,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 223.91,
+            "chord": "A"
+        },
+        {
+            "timestamp": 226.99,
+            "chord": "E"
+        },
+        {
+            "timestamp": 230.05,
+            "chord": "B"
+        },
+        {
+            "timestamp": 233.12,
+            "chord": "A"
+        },
+        {
+            "timestamp": 236.18,
+            "chord": "B"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.25,
+            "lyric": "\uff21\uff47\uff41\uff50\uff45"
+        },
+        {
+            "timestamp": 3.34,
+            "lyric": "\u3000\u3000\u5504\uff1a\u30e1\u30ed\u30ad\u30e5\u30a2"
+        },
+        {
+            "timestamp": 8.77,
+            "lyric": "\u4f5c\u8a5e:\u5ca1\u5d0e\u5f8b\u5b50"
+        },
+        {
+            "timestamp": 12.77,
+            "lyric": "[01:18.18][04:04.42]"
+        },
+        {
+            "timestamp": 15.19,
+            "lyric": "[01:00.90][01:56.05][03:15.75][03:28.84][03:41.64]\u3000Would you call me if you need my love?"
+        },
+        {
+            "timestamp": 18.53,
+            "lyric": "[01:03.87][01:59.11][03:18.81][03:31.65][03:44.72]\u3000\u3069\u3053\u306b\u3044\u305f\u3063\u3066\u805e\u3053\u3048\u308b"
+        },
+        {
+            "timestamp": 21.71,
+            "lyric": "[01:07.21][02:02.34][03:22.11][03:35.07][03:48.06]\u3000\u541b\u304c\u304f\u308c\u308b\u3000\uff21\uff47\uff41\uff50\uff45"
+        },
+        {
+            "timestamp": 24.9,
+            "lyric": "[01:10.37][02:05.58][03:25.25][03:38.16][03:51.28]\u3000\u529b\u306e\u304b\u304e\u308a\u3000\uff24\uff49\uff56\uff45!"
+        },
+        {
+            "timestamp": 35.74,
+            "lyric": "\u3000\u307f\u3064\u3081\u308b\u3000\u89e6\u308c\u3042\u3046\u3000\u305d\u306e\u6642"
+        },
+        {
+            "timestamp": 41.83,
+            "lyric": "\u3000\u611b\u306f\u4e8c\u4eba\u3092\u8a66\u3057\u3066\u3044\u308b"
+        },
+        {
+            "timestamp": 48.34,
+            "lyric": "[01:43.58]\u3000Time is now"
+        },
+        {
+            "timestamp": 51.59,
+            "lyric": "Time is now(Are you ready?)"
+        },
+        {
+            "timestamp": 54.68,
+            "lyric": "\u3000\u3053\u306e\u4e16\u306e\u679c\u3066\u307e\u3067"
+        },
+        {
+            "timestamp": 91.07,
+            "lyric": "\u3000\u4fe1\u3058\u308b\u3000\u5fdc\u3048\u308b\u3000\u305d\u306e\u77ac\u9593"
+        },
+        {
+            "timestamp": 97.07,
+            "lyric": "\u3000\u611b\u304c\u50d5\u3089\u3092\u3072\u3068\u3064\u306b\u3059\u308b"
+        },
+        {
+            "timestamp": 106.75,
+            "lyric": "Time is now"
+        },
+        {
+            "timestamp": 110.15,
+            "lyric": "\u3000\u3069\u3053\u307e\u3067\u3082\u751f\u304d\u3066"
+        },
+        {
+            "timestamp": 133.35,
+            "lyric": ""
+        },
+        {
+            "timestamp": 278.1,
+            "lyric": "Lyrics by Terry"
+        }
+    ]
+}

@@ -12,7 +12,7 @@ from pygame.rect import Rect
 from pygame.locals import *
 from Song import Song
 from Player import Player
-from Images import chordImages, feedbackImages, starsImages
+from Images import chordImages, feedbackImages, starsImages, edgeImage, titleBackground
 
 def PlaySong(song, player): # take in song object
 
@@ -61,8 +61,12 @@ def PlaySong(song, player): # take in song object
 	chordTextsNotHit = []
 	chordTextsHit = []
 	for chord in chords:
-		chordTextsNotHit.append(chordFont.render(chord["chord"], False, Colors.mediumGray))
-		chordTextsHit.append(chordFont.render(chord["chord"], False, Colors.white))
+		if chord["chord"] != "":
+			chordTextsNotHit.append(chordFont.render(chord["chord"], False, Colors.mediumGray))
+			chordTextsHit.append(chordFont.render(chord["chord"], False, Colors.white))
+		else:
+			chordTextsNotHit.append(chordFont.render("NC", False, Colors.mediumGray))
+			chordTextsHit.append(chordFont.render("NC", False, Colors.white))
 
 	timeIntervalOnScreen = 5.0 # seconds
 
@@ -102,6 +106,9 @@ def PlaySong(song, player): # take in song object
 
 	def scaleForNextChord(image):
 		return pygame.transform.scale(image, (int(image.get_width()/1), int(image.get_height()/1)))
+
+	def scaleChordDisplayEdge(image):
+		return pygame.transform.scale(image, (int(image.get_width()/4.2), int(image.get_height()/4.2)))
 
 	def readKeyInput():
 		for event in pygame.event.get():
@@ -168,10 +175,14 @@ def PlaySong(song, player): # take in song object
 			firstPixelOfChord = 0
 			lastPixelOfChord = 0
 			i = 0
+			firstPixels = []
+			chordTexts = []
+			chordTextPlacements = []
 			for chord in chords:
 				if isInTimeRange(chord,timeRangeOnScreen):
 					if chord["start"] > timeRangeOnScreen["start"]:
 						firstPixelOfChord = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
+						firstPixels.append(firstPixelOfChord)
 					else:
 						firstPixelOfChord = 0
 					if chord["end"] < timeRangeOnScreen["end"]:
@@ -179,8 +190,8 @@ def PlaySong(song, player): # take in song object
 					else:
 						lastPixelOfChord = chordDisplaySize[0]
 					try:  
-						c = q.get_nowait() # or q.get(timeout=.1)
-						if c == chords[chordIndex]["chord"]:
+						# c = q.get_nowait() # or q.get(timeout=.1)
+						if q.get_nowait() == chords[chordIndex]["chord"]:
 							if hit[chordIndex] == False:
 								feedbackDisplay = updateFeedbackScore(True)
 							hit[chordIndex] = True
@@ -193,7 +204,9 @@ def PlaySong(song, player): # take in song object
 						chordDisplay.fill(Colors.lightGray, Rect(firstPixelOfChord, 0, lastPixelOfChord-firstPixelOfChord, chordDisplaySize[1]))
 						chordText = chordTextsNotHit[i]
 					firstPixelOfText = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
-					chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-chordText.get_rect().height/2))
+					chordTexts.append(chordText)
+					chordTextPlacements.append((firstPixelOfText+50,(chordDisplaySize[1]/2)-chordText.get_rect().height/2+chordDisplayPlacement[1]))
+					# chordDisplay.blit(chordText, (firstPixelOfText+25,(chordDisplaySize[1]/2)-chordText.get_rect().height/2))
 				i += 1
 			chordDisplay.fill(Colors.backgroundColor, Rect(lastPixelOfChord, 0, chordDisplaySize[0]-lastPixelOfChord, chordDisplaySize[1]))
 
@@ -205,7 +218,6 @@ def PlaySong(song, player): # take in song object
 
 			# screen.blit(colorfulBackground, (0,0))
 			screen.blit(chordDisplay, chordDisplayPlacement)
-			screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
 			screen.blit(feedbackDisplay, feedbackPlacement)
 
 			if(chordIndex == len(chords)-1):
@@ -221,6 +233,14 @@ def PlaySong(song, player): # take in song object
 				scaledNextChordImagePlacement = (nextChordImagePlacement[0] - scaledNextImageChord.get_rect().width/2, nextChordImagePlacement[1])
 				screen.blit(scaledNextImageChord, scaledNextChordImagePlacement)
 
+			for firstPixel in firstPixels:
+				scaledEdgeImage = scaleChordDisplayEdge(edgeImage)
+				screen.blit(scaledEdgeImage, (firstPixel - scaledEdgeImage.get_rect().width/2, chordDisplayPlacement[1]-1))
+
+			for z in range(0, len(chordTexts)):
+				screen.blit(chordTexts[z], chordTextPlacements[z])
+
+			screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
 			# if lyricChanged:
 			# 	lyricChanged = False
 			# 	pygame.display.flip()
@@ -306,8 +326,8 @@ def userHasQuit():
 
 def MainMenu(player):
 	buttonSize = (screenSize[0]/5, screenSize[1]/7)
-	playSongButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]/3)
-	playerStatsButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]/2)
+	playSongButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]*.45)
+	playerStatsButtonPlacement = (screenSize[0]/2 - buttonSize[0]/2, screenSize[1]*.65)
 
 	buttonTextSize = 40
 	buttonFont = Font.body(buttonTextSize)
@@ -318,6 +338,10 @@ def MainMenu(player):
 
 	playSongButton = Rect(playSongButtonPlacement, buttonSize)
 	playerStatsButton = Rect(playerStatsButtonPlacement, buttonSize)
+
+	def scaleBackground(image):
+		scalingFactor = screenSize[0] / image.get_width()
+		return pygame.transform.scale(image, (int(image.get_width()*scalingFactor), int(image.get_height()*scalingFactor)))
 
 	while True:
 		for event in pygame.event.get():
@@ -330,7 +354,7 @@ def MainMenu(player):
 				elif playerStatsButton.collidepoint(mouse_pos):
 					PlayerStatsScreen(player)
 
-		screen.fill(Colors.backgroundColor)
+		screen.blit(scaleBackground(titleBackground), (0,0))
 
 		pygame.draw.rect(screen, Colors.white, playSongButton)  # draw button
 		pygame.draw.rect(screen, Colors.white, playerStatsButton)  # draw button
@@ -413,7 +437,7 @@ def SongsMenu(player):
 			song = songInput
 			artist = artistInput
 			# create new song
-			SongFileBuilder.downloadSong(songTitle, songArtist)
+			SongFileBuilder.downloadSong(songInput, artistInput)
 			## replicated code (bad I know)
 			songsDirPath = "save files/songs"
 			songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]

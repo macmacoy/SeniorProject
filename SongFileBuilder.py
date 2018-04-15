@@ -82,7 +82,6 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
         eventChord = chord
         break
     song.chords.append({"timestamp": round(event["beat_time"], 2), "chord": eventChord})
-  print(lyrics)
   for line in lyrics.splitlines():
     if line and line.strip():
       if (line[0] != '[') or (not line[1].isdigit()):

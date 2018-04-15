@@ -1,35 +1,15 @@
 {
-    "name": "mac!",
-    "points": 6.2452000000000005,
-    "level": 2,
+    "name": "Player",
+    "points": 0,
+    "level": 1,
     "songsPlayed": {
         "songs": [
-            "Drops of Jupiter",
-            "Take it Easy",
-            "This is Our Song",
-            "Test song",
-            "Hey Jude"
         ],
         "artists": [
-            "Train",
-            "Mac & Taylor",
-            "Mac & Taylor",
-            "Mac & Taylor",
-            "Mac & Taylor"
         ],
         "scores": [
-            0.9,
-            0.7,
-            0.0,
-            0.0,
-            0.0
         ],
         "difficulties": [
-            3,
-            4,
-            4,
-            4,
-            4
         ]
     }
 }

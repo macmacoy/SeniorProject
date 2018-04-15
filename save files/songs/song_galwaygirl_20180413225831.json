@@ -1,0 +1,748 @@
+{
+    "title": "Galway Girl",
+    "artist": "Ed Sheeran\r",
+    "youtube_url": "87gWaABqGYs",
+    "duration": 200.0,
+    "tempo": 99,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": ""
+        },
+        {
+            "timestamp": 3.01,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 3.91,
+            "chord": "A"
+        },
+        {
+            "timestamp": 5.43,
+            "chord": "E"
+        },
+        {
+            "timestamp": 6.34,
+            "chord": "D"
+        },
+        {
+            "timestamp": 8.72,
+            "chord": "A"
+        },
+        {
+            "timestamp": 10.21,
+            "chord": "E"
+        },
+        {
+            "timestamp": 12.63,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 13.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 15.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 15.94,
+            "chord": "D"
+        },
+        {
+            "timestamp": 17.44,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 18.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 19.83,
+            "chord": "E"
+        },
+        {
+            "timestamp": 21.63,
+            "chord": "A"
+        },
+        {
+            "timestamp": 22.23,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 23.13,
+            "chord": "A"
+        },
+        {
+            "timestamp": 24.64,
+            "chord": "E"
+        },
+        {
+            "timestamp": 25.53,
+            "chord": "D"
+        },
+        {
+            "timestamp": 27.03,
+            "chord": "Bm"
+        },
+        {
+            "timestamp": 27.93,
+            "chord": "A"
+        },
+        {
+            "timestamp": 29.43,
+            "chord": "E"
+        },
+        {
+            "timestamp": 31.82,
+            "chord": "D"
+        },
+        {
+            "timestamp": 32.72,
+            "chord": "A"
+        },
+        {
+            "timestamp": 34.23,
+            "chord": "E"
+        },
+        {
+            "timestamp": 35.13,
+            "chord": "D"
+        },
+        {
+            "timestamp": 37.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 39.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 41.44,
+            "chord": "D"
+        },
+        {
+            "timestamp": 42.33,
+            "chord": "A"
+        },
+        {
+            "timestamp": 43.83,
+            "chord": "E"
+        },
+        {
+            "timestamp": 44.73,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 46.23,
+            "chord": "D"
+        },
+        {
+            "timestamp": 47.13,
+            "chord": "A"
+        },
+        {
+            "timestamp": 48.64,
+            "chord": "E"
+        },
+        {
+            "timestamp": 49.84,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 51.94,
+            "chord": "A"
+        },
+        {
+            "timestamp": 53.43,
+            "chord": "E"
+        },
+        {
+            "timestamp": 54.33,
+            "chord": "D"
+        },
+        {
+            "timestamp": 55.84,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 56.74,
+            "chord": "A"
+        },
+        {
+            "timestamp": 58.23,
+            "chord": "E"
+        },
+        {
+            "timestamp": 60.02,
+            "chord": "A"
+        },
+        {
+            "timestamp": 60.62,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 61.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 63.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 63.93,
+            "chord": "D"
+        },
+        {
+            "timestamp": 65.43,
+            "chord": "Bm"
+        },
+        {
+            "timestamp": 66.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 67.84,
+            "chord": "E"
+        },
+        {
+            "timestamp": 70.23,
+            "chord": "D"
+        },
+        {
+            "timestamp": 71.13,
+            "chord": "A"
+        },
+        {
+            "timestamp": 72.63,
+            "chord": "E"
+        },
+        {
+            "timestamp": 73.53,
+            "chord": "D"
+        },
+        {
+            "timestamp": 75.93,
+            "chord": "A"
+        },
+        {
+            "timestamp": 77.43,
+            "chord": "E"
+        },
+        {
+            "timestamp": 79.83,
+            "chord": "D"
+        },
+        {
+            "timestamp": 80.73,
+            "chord": "A"
+        },
+        {
+            "timestamp": 82.24,
+            "chord": "E"
+        },
+        {
+            "timestamp": 83.14,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 84.63,
+            "chord": "D"
+        },
+        {
+            "timestamp": 85.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 87.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 87.93,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 89.43,
+            "chord": "D"
+        },
+        {
+            "timestamp": 90.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 91.84,
+            "chord": "E"
+        },
+        {
+            "timestamp": 92.74,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 94.24,
+            "chord": "D"
+        },
+        {
+            "timestamp": 95.14,
+            "chord": "A"
+        },
+        {
+            "timestamp": 96.64,
+            "chord": "E"
+        },
+        {
+            "timestamp": 97.53,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 99.94,
+            "chord": "A"
+        },
+        {
+            "timestamp": 101.43,
+            "chord": "E"
+        },
+        {
+            "timestamp": 102.33,
+            "chord": "D"
+        },
+        {
+            "timestamp": 103.83,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 104.73,
+            "chord": "A"
+        },
+        {
+            "timestamp": 106.24,
+            "chord": "E"
+        },
+        {
+            "timestamp": 108.63,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 109.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 111.03,
+            "chord": "E"
+        },
+        {
+            "timestamp": 111.92,
+            "chord": "D"
+        },
+        {
+            "timestamp": 113.42,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 114.32,
+            "chord": "A"
+        },
+        {
+            "timestamp": 115.83,
+            "chord": "E"
+        },
+        {
+            "timestamp": 118.24,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 119.42,
+            "chord": "A"
+        },
+        {
+            "timestamp": 120.62,
+            "chord": "E"
+        },
+        {
+            "timestamp": 121.82,
+            "chord": "D"
+        },
+        {
+            "timestamp": 124.23,
+            "chord": "A"
+        },
+        {
+            "timestamp": 125.42,
+            "chord": "E"
+        },
+        {
+            "timestamp": 127.83,
+            "chord": "D"
+        },
+        {
+            "timestamp": 128.73,
+            "chord": "A"
+        },
+        {
+            "timestamp": 130.23,
+            "chord": "E"
+        },
+        {
+            "timestamp": 131.13,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 132.64,
+            "chord": "D"
+        },
+        {
+            "timestamp": 133.54,
+            "chord": "A"
+        },
+        {
+            "timestamp": 135.04,
+            "chord": "E"
+        },
+        {
+            "timestamp": 135.94,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 137.44,
+            "chord": "D"
+        },
+        {
+            "timestamp": 138.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 139.84,
+            "chord": "E"
+        },
+        {
+            "timestamp": 140.73,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 142.24,
+            "chord": "D"
+        },
+        {
+            "timestamp": 143.14,
+            "chord": "A"
+        },
+        {
+            "timestamp": 144.63,
+            "chord": "E"
+        },
+        {
+            "timestamp": 145.53,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 147.03,
+            "chord": "D"
+        },
+        {
+            "timestamp": 147.93,
+            "chord": "A"
+        },
+        {
+            "timestamp": 149.44,
+            "chord": "E"
+        },
+        {
+            "timestamp": 150.34,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 151.84,
+            "chord": "D"
+        },
+        {
+            "timestamp": 152.74,
+            "chord": "A"
+        },
+        {
+            "timestamp": 154.24,
+            "chord": "E"
+        },
+        {
+            "timestamp": 155.14,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 156.65,
+            "chord": "D"
+        },
+        {
+            "timestamp": 157.54,
+            "chord": "A"
+        },
+        {
+            "timestamp": 159.04,
+            "chord": "E"
+        },
+        {
+            "timestamp": 159.94,
+            "chord": "F#m"
+        },
+        {
+            "timestamp": 161.44,
+            "chord": "D"
+        },
+        {
+            "timestamp": 162.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 163.84,
+            "chord": "E"
+        },
+        {
+            "timestamp": 165.05,
+            "chord": "F#m"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.0,
+            "lyric": "She played the fiddle in an Irish band"
+        },
+        {
+            "timestamp": 2.58,
+            "lyric": "But she fell in love with an English man"
+        },
+        {
+            "timestamp": 5.14,
+            "lyric": "Kissed her on the neck and then I took her by the hand"
+        },
+        {
+            "timestamp": 7.32,
+            "lyric": "Said, \"Baby, I just want to dance\""
+        },
+        {
+            "timestamp": 8.5,
+            "lyric": ""
+        },
+        {
+            "timestamp": 9.25,
+            "lyric": "I met her on Grafton street right outside of the bar"
+        },
+        {
+            "timestamp": 12.06,
+            "lyric": "She shared a cigarette with me while her brother played the guitar"
+        },
+        {
+            "timestamp": 14.56,
+            "lyric": "She asked me what does it mean, the Gaelic ink on your arm?"
+        },
+        {
+            "timestamp": 16.99,
+            "lyric": "Said it was one of my friend's songs, do you want to drink on?"
+        },
+        {
+            "timestamp": 18.99,
+            "lyric": ""
+        },
+        {
+            "timestamp": 19.36,
+            "lyric": "She took Jamie as a chaser, Jack for the fun"
+        },
+        {
+            "timestamp": 21.8,
+            "lyric": "She got Arthur on the table with Johnny riding a shotgun"
+        },
+        {
+            "timestamp": 24.42,
+            "lyric": "Chatted some more, one more drink at the bar"
+        },
+        {
+            "timestamp": 26.66,
+            "lyric": "Then put Van on the jukebox, got up to dance"
+        },
+        {
+            "timestamp": 28.22,
+            "lyric": ""
+        },
+        {
+            "timestamp": 28.66,
+            "lyric": "You know, she played the fiddle in an Irish band"
+        },
+        {
+            "timestamp": 31.53,
+            "lyric": "But she fell in love with an English man"
+        },
+        {
+            "timestamp": 33.9,
+            "lyric": "Kissed her on the neck and then I took her by the hand"
+        },
+        {
+            "timestamp": 36.21,
+            "lyric": "Said, \"Baby, I just want to dance\""
+        },
+        {
+            "timestamp": 38.02,
+            "lyric": "With my pretty little Galway Girl"
+        },
+        {
+            "timestamp": 42.76,
+            "lyric": "You're my pretty little Galway Girl"
+        },
+        {
+            "timestamp": 45.7,
+            "lyric": ""
+        },
+        {
+            "timestamp": 48.01,
+            "lyric": "You know she beat me at darts and then she beat me at pool"
+        },
+        {
+            "timestamp": 50.44,
+            "lyric": "And then she kissed me like there was nobody else in the room"
+        },
+        {
+            "timestamp": 52.94,
+            "lyric": "As last orders were called was when she stood on the stool"
+        },
+        {
+            "timestamp": 55.31,
+            "lyric": "After dancing the c\u00e9ili singing to trad tunes"
+        },
+        {
+            "timestamp": 57.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 57.86,
+            "lyric": "I never heard Carrickfergus ever sung so sweet"
+        },
+        {
+            "timestamp": 59.99,
+            "lyric": "Acapella in the bar using her feet for a beat"
+        },
+        {
+            "timestamp": 62.54,
+            "lyric": "Oh, I could have that voice playing on repeat for a week"
+        },
+        {
+            "timestamp": 64.98,
+            "lyric": "And in this packed out room swear she was singing to me"
+        },
+        {
+            "timestamp": 66.48,
+            "lyric": ""
+        },
+        {
+            "timestamp": 67.1,
+            "lyric": "You know, she played the fiddle in an Irish band"
+        },
+        {
+            "timestamp": 69.85,
+            "lyric": "But she fell in love with an English man"
+        },
+        {
+            "timestamp": 72.28,
+            "lyric": "Kissed her on the neck and then I took her by the hand"
+        },
+        {
+            "timestamp": 74.59,
+            "lyric": "Said, \"Baby, I just want to dance\""
+        },
+        {
+            "timestamp": 76.58,
+            "lyric": "My pretty little Galway Girl"
+        },
+        {
+            "timestamp": 80.45,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 84.76,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 89.57,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 93.68,
+            "lyric": ""
+        },
+        {
+            "timestamp": 96.06,
+            "lyric": "And now we've outstayed our welcome and it's closing time"
+        },
+        {
+            "timestamp": 98.55,
+            "lyric": "I was holding her hand, her hand was holding mine"
+        },
+        {
+            "timestamp": 100.99,
+            "lyric": "Our coats both smell of smoke, whisky and wine"
+        },
+        {
+            "timestamp": 103.61,
+            "lyric": "As we fill up our lungs with the cold air of the night"
+        },
+        {
+            "timestamp": 105.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 105.91,
+            "lyric": "I walked her home then she took me inside"
+        },
+        {
+            "timestamp": 108.16,
+            "lyric": "To finish some Doritos and another bottle of wine"
+        },
+        {
+            "timestamp": 110.66,
+            "lyric": "I swear I'm gonna put you in a song that I write"
+        },
+        {
+            "timestamp": 113.09,
+            "lyric": "About a Galway Girl and a perfect night"
+        },
+        {
+            "timestamp": 114.9,
+            "lyric": ""
+        },
+        {
+            "timestamp": 115.46,
+            "lyric": "She played the fiddle in an Irish band"
+        },
+        {
+            "timestamp": 117.83,
+            "lyric": "But she fell in love with an English man"
+        },
+        {
+            "timestamp": 120.33,
+            "lyric": "Kissed her on the neck and then I took her by the hand"
+        },
+        {
+            "timestamp": 122.64,
+            "lyric": "Said, \"Baby, I just want to dance\""
+        },
+        {
+            "timestamp": 124.57,
+            "lyric": "My pretty little Galway Girl"
+        },
+        {
+            "timestamp": 128.06,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 132.81,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 137.55,
+            "lyric": "My, my, my, my, my, my, my Galway Girl"
+        },
+        {
+            "timestamp": 141.73,
+            "lyric": ""
+        },
+        {
+            "timestamp": 145.0,
+            "lyric": "Synchronized by Satria Rizal"
+        }
+    ]
+}

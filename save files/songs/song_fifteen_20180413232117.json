@@ -1,0 +1,616 @@
+{
+    "title": "Fifteen",
+    "artist": "Taylor Swift\r",
+    "youtube_url": "Pb-K2tXWK4w",
+    "duration": 304.0,
+    "tempo": 95,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": ""
+        },
+        {
+            "timestamp": 5.74,
+            "chord": "G"
+        },
+        {
+            "timestamp": 8.29,
+            "chord": "C"
+        },
+        {
+            "timestamp": 10.81,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 12.06,
+            "chord": "G"
+        },
+        {
+            "timestamp": 13.32,
+            "chord": "C"
+        },
+        {
+            "timestamp": 15.82,
+            "chord": "G"
+        },
+        {
+            "timestamp": 18.34,
+            "chord": "C"
+        },
+        {
+            "timestamp": 20.85,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 23.36,
+            "chord": "C"
+        },
+        {
+            "timestamp": 25.88,
+            "chord": "G"
+        },
+        {
+            "timestamp": 30.89,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 33.41,
+            "chord": "C"
+        },
+        {
+            "timestamp": 35.92,
+            "chord": "G"
+        },
+        {
+            "timestamp": 38.43,
+            "chord": "C"
+        },
+        {
+            "timestamp": 40.94,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 43.46,
+            "chord": "C"
+        },
+        {
+            "timestamp": 46.01,
+            "chord": "G"
+        },
+        {
+            "timestamp": 48.51,
+            "chord": "C"
+        },
+        {
+            "timestamp": 51.0,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 53.5,
+            "chord": "C"
+        },
+        {
+            "timestamp": 58.54,
+            "chord": "G"
+        },
+        {
+            "timestamp": 61.05,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 63.56,
+            "chord": "D"
+        },
+        {
+            "timestamp": 66.08,
+            "chord": "C"
+        },
+        {
+            "timestamp": 68.59,
+            "chord": "G"
+        },
+        {
+            "timestamp": 71.1,
+            "chord": "D"
+        },
+        {
+            "timestamp": 73.61,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 76.13,
+            "chord": "C"
+        },
+        {
+            "timestamp": 78.63,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 81.15,
+            "chord": "D"
+        },
+        {
+            "timestamp": 83.67,
+            "chord": "G"
+        },
+        {
+            "timestamp": 86.18,
+            "chord": "C"
+        },
+        {
+            "timestamp": 88.68,
+            "chord": "D"
+        },
+        {
+            "timestamp": 91.18,
+            "chord": "G"
+        },
+        {
+            "timestamp": 93.72,
+            "chord": "C"
+        },
+        {
+            "timestamp": 96.24,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 98.74,
+            "chord": "C"
+        },
+        {
+            "timestamp": 101.26,
+            "chord": "G"
+        },
+        {
+            "timestamp": 103.76,
+            "chord": "C"
+        },
+        {
+            "timestamp": 106.28,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 108.8,
+            "chord": "C"
+        },
+        {
+            "timestamp": 111.31,
+            "chord": "G"
+        },
+        {
+            "timestamp": 113.82,
+            "chord": "C"
+        },
+        {
+            "timestamp": 116.33,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 118.84,
+            "chord": "C"
+        },
+        {
+            "timestamp": 121.36,
+            "chord": "G"
+        },
+        {
+            "timestamp": 123.88,
+            "chord": "C"
+        },
+        {
+            "timestamp": 126.39,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 128.91,
+            "chord": "C"
+        },
+        {
+            "timestamp": 131.41,
+            "chord": "G"
+        },
+        {
+            "timestamp": 133.92,
+            "chord": "C"
+        },
+        {
+            "timestamp": 136.43,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 138.95,
+            "chord": "C"
+        },
+        {
+            "timestamp": 143.97,
+            "chord": "G"
+        },
+        {
+            "timestamp": 146.48,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 148.99,
+            "chord": "D"
+        },
+        {
+            "timestamp": 151.51,
+            "chord": "C"
+        },
+        {
+            "timestamp": 154.02,
+            "chord": "G"
+        },
+        {
+            "timestamp": 156.53,
+            "chord": "D"
+        },
+        {
+            "timestamp": 159.04,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 161.55,
+            "chord": "C"
+        },
+        {
+            "timestamp": 164.08,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 166.6,
+            "chord": "D"
+        },
+        {
+            "timestamp": 169.1,
+            "chord": "G"
+        },
+        {
+            "timestamp": 171.61,
+            "chord": "C"
+        },
+        {
+            "timestamp": 174.12,
+            "chord": "D"
+        },
+        {
+            "timestamp": 176.65,
+            "chord": "G"
+        },
+        {
+            "timestamp": 179.15,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 182.93,
+            "chord": "C"
+        },
+        {
+            "timestamp": 185.44,
+            "chord": "D"
+        },
+        {
+            "timestamp": 186.69,
+            "chord": "C"
+        },
+        {
+            "timestamp": 189.21,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 191.73,
+            "chord": "D"
+        },
+        {
+            "timestamp": 194.22,
+            "chord": "G"
+        },
+        {
+            "timestamp": 195.48,
+            "chord": "D"
+        },
+        {
+            "timestamp": 196.75,
+            "chord": "C"
+        },
+        {
+            "timestamp": 199.26,
+            "chord": "G"
+        },
+        {
+            "timestamp": 209.32,
+            "chord": "C"
+        },
+        {
+            "timestamp": 211.82,
+            "chord": "G"
+        },
+        {
+            "timestamp": 214.33,
+            "chord": "C"
+        },
+        {
+            "timestamp": 216.85,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 219.37,
+            "chord": "C"
+        },
+        {
+            "timestamp": 224.4,
+            "chord": "G"
+        },
+        {
+            "timestamp": 226.91,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 229.41,
+            "chord": "D"
+        },
+        {
+            "timestamp": 231.92,
+            "chord": "C"
+        },
+        {
+            "timestamp": 234.45,
+            "chord": "G"
+        },
+        {
+            "timestamp": 236.96,
+            "chord": "D"
+        },
+        {
+            "timestamp": 239.47,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 241.97,
+            "chord": "C"
+        },
+        {
+            "timestamp": 244.48,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 246.99,
+            "chord": "D"
+        },
+        {
+            "timestamp": 249.51,
+            "chord": "G"
+        },
+        {
+            "timestamp": 250.78,
+            "chord": "D"
+        },
+        {
+            "timestamp": 252.03,
+            "chord": "C"
+        },
+        {
+            "timestamp": 254.54,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 257.06,
+            "chord": "C"
+        },
+        {
+            "timestamp": 259.56,
+            "chord": "D"
+        },
+        {
+            "timestamp": 262.07,
+            "chord": "G"
+        },
+        {
+            "timestamp": 264.59,
+            "chord": "C"
+        },
+        {
+            "timestamp": 267.1,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 268.37,
+            "chord": "C"
+        },
+        {
+            "timestamp": 270.88,
+            "chord": "G"
+        },
+        {
+            "timestamp": 277.15,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 278.41,
+            "chord": "C"
+        },
+        {
+            "timestamp": 280.92,
+            "chord": "G"
+        },
+        {
+            "timestamp": 284.7,
+            "chord": "C"
+        },
+        {
+            "timestamp": 287.2,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 289.73,
+            "chord": "C"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 8.8,
+            "lyric": "You take a deep breath and you walk through the doors"
+        },
+        {
+            "timestamp": 12.4,
+            "lyric": "It\u2019s the morning of your very first day"
+        },
+        {
+            "timestamp": 18.26,
+            "lyric": "You say hi to your friends you ain\u2019t seen in a while"
+        },
+        {
+            "timestamp": 22.76,
+            "lyric": "Try and stay out of everybody\u2019s way"
+        },
+        {
+            "timestamp": 28.93,
+            "lyric": "It\u2019s your freshman year and you\u2019re gonna be here for"
+        },
+        {
+            "timestamp": 33.91,
+            "lyric": "the next four years in this town"
+        },
+        {
+            "timestamp": 38.59,
+            "lyric": "Hoping one of those senior boys will wink at you and"
+        },
+        {
+            "timestamp": 43.34,
+            "lyric": "say"
+        },
+        {
+            "timestamp": 43.94,
+            "lyric": "You know I haven\u2019t seen you around, before"
+        },
+        {
+            "timestamp": 51.7,
+            "lyric": "[02:46.08]Cause when you\u2019re fifteen and somebody tells you they"
+        },
+        {
+            "timestamp": 57.2,
+            "lyric": "[02:51.99]love you"
+        },
+        {
+            "timestamp": 58.93,
+            "lyric": "[02:53.79]You\u2019re gonna believe them"
+        },
+        {
+            "timestamp": 62.27,
+            "lyric": "And when you\u2019re fifteen felling like there\u2019s nothing"
+        },
+        {
+            "timestamp": 69.17,
+            "lyric": "to figure out"
+        },
+        {
+            "timestamp": 73.13,
+            "lyric": "Well count to ten, take in this is life before you"
+        },
+        {
+            "timestamp": 78.74,
+            "lyric": "know who you\u2019re gonna be fifteen"
+        },
+        {
+            "timestamp": 87.46,
+            "lyric": "You sit in class next to a redhead named Abigail and"
+        },
+        {
+            "timestamp": 91.8,
+            "lyric": "soon enough you\u2019re best friends"
+        },
+        {
+            "timestamp": 97.37,
+            "lyric": "Laughing at the other girls who think they\u2019re so cool"
+        },
+        {
+            "timestamp": 101.68,
+            "lyric": "We\u2019ll be out of here as soon as we can"
+        },
+        {
+            "timestamp": 107.9,
+            "lyric": "And then you\u2019re on you\u2019re very first date and he\u2019s got"
+        },
+        {
+            "timestamp": 112.74,
+            "lyric": "a car and you\u2019re felling like flying"
+        },
+        {
+            "timestamp": 118.39,
+            "lyric": "And you\u2019re mama\u2019s waiting up and you\u2019re thinking he\u2019s"
+        },
+        {
+            "timestamp": 122.29,
+            "lyric": "the one"
+        },
+        {
+            "timestamp": 122.86,
+            "lyric": "And you\u2019re dancing \u2018round your room when the night"
+        },
+        {
+            "timestamp": 126.93,
+            "lyric": "ends"
+        },
+        {
+            "timestamp": 128.42,
+            "lyric": "When the night ends"
+        },
+        {
+            "timestamp": 131.38,
+            "lyric": "[03:48.61]"
+        },
+        {
+            "timestamp": 142.88,
+            "lyric": "Back then I swore I was gonna marry him someday"
+        },
+        {
+            "timestamp": 147.51,
+            "lyric": "But I realized some bigger dreams of mine"
+        },
+        {
+            "timestamp": 153.51,
+            "lyric": "And Abigail gave everything she had to a boy"
+        },
+        {
+            "timestamp": 160.35,
+            "lyric": "Who changed his mind and we both cried"
+        },
+        {
+            "timestamp": 178.86,
+            "lyric": "Fifteen, don\u2019t forget to look before"
+        },
+        {
+            "timestamp": 184.9,
+            "lyric": "you fall"
+        },
+        {
+            "timestamp": 189.4,
+            "lyric": "I\u2019ve found time can heat most anything"
+        },
+        {
+            "timestamp": 192.78,
+            "lyric": "And you just might find who you\u2019re supposed to be"
+        },
+        {
+            "timestamp": 198.12,
+            "lyric": "I didn\u2019t know who I was supposed to be"
+        },
+        {
+            "timestamp": 205.57,
+            "lyric": "At fifteen"
+        },
+        {
+            "timestamp": 210.52,
+            "lyric": "Take a deep breath girl"
+        },
+        {
+            "timestamp": 213.09,
+            "lyric": "Take a deep breath as you walk through the doors"
+        },
+        {
+            "timestamp": 219.94,
+            "lyric": "Du Caraio! very nice \\o\\"
+        }
+    ]
+}
