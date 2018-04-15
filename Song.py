@@ -102,7 +102,7 @@ class Song(object):
 			avgChordDurationScore = 1
 
 		durations.sort()
-		topTenPercent = len(durations) * 0.1
+		topTenPercent = int(len(durations) * 0.1)
 		durationTotal = 0
 		for duration in durations[:topTenPercent]: 
 			durationTotal = durationTotal + duration
