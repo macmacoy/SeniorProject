@@ -87,6 +87,9 @@ def parseSongData(songTitle, songArtist, youtubeUrl, lyrics, rawSongData):
       if (line[0] != '[') or (not line[1].isdigit()):
         continue
       else:
+        # NOT MATCHES: \[.+\]
+        # MATCHES: \[([^\]]+)\]
+        # don't forget to strip brackets
         minutes = line[1:3]
         seconds = line[4:6]
         milliseconds = line[7:9]
