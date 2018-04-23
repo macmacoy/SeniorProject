@@ -1,0 +1,553 @@
+{
+    "title": "Take It Easy",
+    "artist": "The Eagles\r",
+    "youtube_url": "UI3F687SsoU",
+    "duration": 213.0,
+    "tempo": 139,
+    "lyric_offset": 0.75,
+    "capo": 0,
+    "chords": [
+        {
+            "timestamp": 0,
+            "chord": "G"
+        },
+        {
+            "timestamp": 4.93,
+            "chord": "C"
+        },
+        {
+            "timestamp": 6.64,
+            "chord": "D"
+        },
+        {
+            "timestamp": 8.36,
+            "chord": "G"
+        },
+        {
+            "timestamp": 11.81,
+            "chord": "C"
+        },
+        {
+            "timestamp": 15.23,
+            "chord": "G"
+        },
+        {
+            "timestamp": 21.17,
+            "chord": "G"
+        },
+        {
+            "timestamp": 23.75,
+            "chord": "C"
+        },
+        {
+            "timestamp": 25.46,
+            "chord": "G"
+        },
+        {
+            "timestamp": 27.18,
+            "chord": "D"
+        },
+        {
+            "timestamp": 29.33,
+            "chord": "C"
+        },
+        {
+            "timestamp": 31.05,
+            "chord": "G"
+        },
+        {
+            "timestamp": 34.47,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 36.19,
+            "chord": "C"
+        },
+        {
+            "timestamp": 37.91,
+            "chord": "G"
+        },
+        {
+            "timestamp": 39.61,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 41.33,
+            "chord": "C"
+        },
+        {
+            "timestamp": 43.04,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 46.05,
+            "chord": "C"
+        },
+        {
+            "timestamp": 47.76,
+            "chord": "G"
+        },
+        {
+            "timestamp": 49.49,
+            "chord": "C"
+        },
+        {
+            "timestamp": 51.21,
+            "chord": "G"
+        },
+        {
+            "timestamp": 52.94,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 54.66,
+            "chord": "C"
+        },
+        {
+            "timestamp": 56.38,
+            "chord": "G"
+        },
+        {
+            "timestamp": 68.55,
+            "chord": "C"
+        },
+        {
+            "timestamp": 70.26,
+            "chord": "G"
+        },
+        {
+            "timestamp": 71.99,
+            "chord": "D"
+        },
+        {
+            "timestamp": 73.71,
+            "chord": "C"
+        },
+        {
+            "timestamp": 75.44,
+            "chord": "G"
+        },
+        {
+            "timestamp": 77.16,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 78.89,
+            "chord": "D"
+        },
+        {
+            "timestamp": 80.62,
+            "chord": "C"
+        },
+        {
+            "timestamp": 82.35,
+            "chord": "G"
+        },
+        {
+            "timestamp": 84.09,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 85.82,
+            "chord": "C"
+        },
+        {
+            "timestamp": 87.55,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 91.01,
+            "chord": "C"
+        },
+        {
+            "timestamp": 92.75,
+            "chord": "G"
+        },
+        {
+            "timestamp": 94.48,
+            "chord": "C"
+        },
+        {
+            "timestamp": 96.2,
+            "chord": "G"
+        },
+        {
+            "timestamp": 97.88,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 99.58,
+            "chord": "C"
+        },
+        {
+            "timestamp": 101.3,
+            "chord": "G"
+        },
+        {
+            "timestamp": 109.9,
+            "chord": "C"
+        },
+        {
+            "timestamp": 112.07,
+            "chord": "G"
+        },
+        {
+            "timestamp": 113.8,
+            "chord": "D"
+        },
+        {
+            "timestamp": 115.53,
+            "chord": "C"
+        },
+        {
+            "timestamp": 117.26,
+            "chord": "G"
+        },
+        {
+            "timestamp": 118.99,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 120.73,
+            "chord": "D"
+        },
+        {
+            "timestamp": 122.47,
+            "chord": "C"
+        },
+        {
+            "timestamp": 124.22,
+            "chord": "G"
+        },
+        {
+            "timestamp": 125.96,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 127.7,
+            "chord": "C"
+        },
+        {
+            "timestamp": 129.44,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 131.17,
+            "chord": "D"
+        },
+        {
+            "timestamp": 132.89,
+            "chord": "G"
+        },
+        {
+            "timestamp": 138.08,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 139.81,
+            "chord": "G"
+        },
+        {
+            "timestamp": 141.55,
+            "chord": "D"
+        },
+        {
+            "timestamp": 143.28,
+            "chord": "C"
+        },
+        {
+            "timestamp": 145.03,
+            "chord": "G"
+        },
+        {
+            "timestamp": 148.49,
+            "chord": "C"
+        },
+        {
+            "timestamp": 151.96,
+            "chord": "G"
+        },
+        {
+            "timestamp": 153.7,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 155.45,
+            "chord": "C"
+        },
+        {
+            "timestamp": 157.2,
+            "chord": "Em"
+        },
+        {
+            "timestamp": 160.21,
+            "chord": "C"
+        },
+        {
+            "timestamp": 161.92,
+            "chord": "G"
+        },
+        {
+            "timestamp": 163.64,
+            "chord": "C"
+        },
+        {
+            "timestamp": 165.36,
+            "chord": "G"
+        },
+        {
+            "timestamp": 167.53,
+            "chord": "Am"
+        },
+        {
+            "timestamp": 169.28,
+            "chord": "C"
+        },
+        {
+            "timestamp": 171.05,
+            "chord": "G"
+        },
+        {
+            "timestamp": 174.58,
+            "chord": "C"
+        },
+        {
+            "timestamp": 178.06,
+            "chord": "G"
+        },
+        {
+            "timestamp": 181.5,
+            "chord": "C"
+        },
+        {
+            "timestamp": 184.96,
+            "chord": "G"
+        },
+        {
+            "timestamp": 188.4,
+            "chord": "C"
+        },
+        {
+            "timestamp": 191.87,
+            "chord": "G"
+        },
+        {
+            "timestamp": 193.63,
+            "chord": "D"
+        },
+        {
+            "timestamp": 195.35,
+            "chord": "C"
+        },
+        {
+            "timestamp": 198.8,
+            "chord": "G"
+        },
+        {
+            "timestamp": 200.54,
+            "chord": "D"
+        },
+        {
+            "timestamp": 202.27,
+            "chord": "C"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.52,
+            "lyric": "Artist: The Eagles"
+        },
+        {
+            "timestamp": 3.83,
+            "lyric": "Title: Take It Easy"
+        },
+        {
+            "timestamp": 6.29,
+            "lyric": "[00:06.63][00:12.19][00:24.00][00:30.36][00:43.43][00:58.12][01:00.82][01:07.98][01:14.99][01:28.36][01:43.78][02:08.01][02:17.72][02:24.38][02:38.00][02:53.02][03:08.24][03:21.71][03:23.56]."
+        },
+        {
+            "timestamp": 7.48,
+            "lyric": "[01:45.87][01:57.64]--- --- --- ---"
+        },
+        {
+            "timestamp": 17.2,
+            "lyric": "Well I'm a runnin' down the road"
+        },
+        {
+            "timestamp": 19.2,
+            "lyric": "try'n to loosen my load"
+        },
+        {
+            "timestamp": 20.7,
+            "lyric": "I've got seven women on my mind"
+        },
+        {
+            "timestamp": 24.4,
+            "lyric": "Four that wanna own me,"
+        },
+        {
+            "timestamp": 26.16,
+            "lyric": "two that wanna stone me"
+        },
+        {
+            "timestamp": 27.81,
+            "lyric": "One says she's a friend of mine"
+        },
+        {
+            "timestamp": 30.96,
+            "lyric": "[02:25.03]Take it easy, take it easy"
+        },
+        {
+            "timestamp": 37.72,
+            "lyric": "Don't let the sound of your"
+        },
+        {
+            "timestamp": 39.67,
+            "lyric": "own wheels drive you crazy"
+        },
+        {
+            "timestamp": 44.63,
+            "lyric": "Lighten up while you still can"
+        },
+        {
+            "timestamp": 47.84,
+            "lyric": "Don't even try to understand"
+        },
+        {
+            "timestamp": 51.44,
+            "lyric": "Just find a place to"
+        },
+        {
+            "timestamp": 53.05,
+            "lyric": "make your stand,"
+        },
+        {
+            "timestamp": 54.44,
+            "lyric": "and take it easy"
+        },
+        {
+            "timestamp": 58.86,
+            "lyric": "--- ---"
+        },
+        {
+            "timestamp": 61.87,
+            "lyric": "Well, I'm a standin' on a corner"
+        },
+        {
+            "timestamp": 64.02,
+            "lyric": "in Winslow, Arizona"
+        },
+        {
+            "timestamp": 65.67,
+            "lyric": "Such a fine sight to see"
+        },
+        {
+            "timestamp": 68.72,
+            "lyric": "It's a girl my lord"
+        },
+        {
+            "timestamp": 70.54,
+            "lyric": "in a flat-bed Ford"
+        },
+        {
+            "timestamp": 72.34,
+            "lyric": "Slowin' down to take a look at me"
+        },
+        {
+            "timestamp": 75.38,
+            "lyric": "Come on, baby, don't say maybe"
+        },
+        {
+            "timestamp": 82.2,
+            "lyric": "I gotta know if your sweet"
+        },
+        {
+            "timestamp": 84.7,
+            "lyric": "love is gonna save me"
+        },
+        {
+            "timestamp": 89.5,
+            "lyric": "We may lose and we may win,"
+        },
+        {
+            "timestamp": 92.96,
+            "lyric": "but we may never be here again"
+        },
+        {
+            "timestamp": 96.41,
+            "lyric": "So open up I'm climbin' in,"
+        },
+        {
+            "timestamp": 99.32,
+            "lyric": "so take it easy"
+        },
+        {
+            "timestamp": 131.01,
+            "lyric": "Well,"
+        },
+        {
+            "timestamp": 131.37,
+            "lyric": "I'm a runnin' down the road tryin'"
+        },
+        {
+            "timestamp": 133.37,
+            "lyric": "to loosen my load"
+        },
+        {
+            "timestamp": 134.61,
+            "lyric": "Got a world of trouble on my mind"
+        },
+        {
+            "timestamp": 138.27,
+            "lyric": "Lookin' for a lover"
+        },
+        {
+            "timestamp": 139.97,
+            "lyric": "who won't blow my cover,"
+        },
+        {
+            "timestamp": 141.72,
+            "lyric": "she's so hard to find"
+        },
+        {
+            "timestamp": 151.69,
+            "lyric": "Don't let the sound of your own wheels"
+        },
+        {
+            "timestamp": 155.1,
+            "lyric": "make you crazy"
+        },
+        {
+            "timestamp": 158.55,
+            "lyric": "Come on baby, don't say maybe"
+        },
+        {
+            "timestamp": 165.16,
+            "lyric": "I gotta know if your sweet love"
+        },
+        {
+            "timestamp": 168.81,
+            "lyric": "is gonna save me"
+        },
+        {
+            "timestamp": 173.52,
+            "lyric": "oo oo oo, oo oo oo ..."
+        },
+        {
+            "timestamp": 190.09,
+            "lyric": "Oh we got it easy"
+        },
+        {
+            "timestamp": 196.3,
+            "lyric": "We aught to take it easy"
+        },
+        {
+            "timestamp": 202.51,
+            "lyric": "=== ==="
+        },
+        {
+            "timestamp": 204.46,
+            "lyric": "rough draft: by Curly Jon"
+        }
+    ]
+}

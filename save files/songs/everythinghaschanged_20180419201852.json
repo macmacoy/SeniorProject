@@ -1,0 +1,814 @@
+{
+    "title": "Everything Has Changed",
+    "artist": "Taylor Swift\r",
+    "youtube_url": "w1oM3kQpXRo",
+    "duration": 253.0,
+    "tempo": 80,
+    "lyric_offset": -0.7,
+    "chord_offset": 1.9,
+    "capo": 2,
+    "chords": [
+        {
+            "timestamp": 0,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 9.17,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 12.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 15.16,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 18.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 21.16,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 24.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 27.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 30.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 33.17,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 36.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 37.67,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 39.17,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 42.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 45.17,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 48.16,
+            "chord": "B"
+        },
+        {
+            "timestamp": 51.18,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 52.66,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 54.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 57.17,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 60.16,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 63.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 66.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 69.17,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 72.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 75.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 87.18,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 90.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 93.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 96.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 99.17,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 102.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 105.17,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 108.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 111.18,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 114.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 115.68,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 117.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 120.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 123.18,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 126.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 129.17,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 132.19,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 135.18,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 138.17,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 141.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 144.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 147.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 150.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 153.17,
+            "chord": "B"
+        },
+        {
+            "timestamp": 156.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 159.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 162.17,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 165.19,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 168.18,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 171.19,
+            "chord": "B"
+        },
+        {
+            "timestamp": 174.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 177.19,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 180.2,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 183.19,
+            "chord": "G#m"
+        },
+        {
+            "timestamp": 186.19,
+            "chord": "B"
+        },
+        {
+            "timestamp": 189.2,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 192.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 195.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 198.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 201.19,
+            "chord": "B"
+        },
+        {
+            "timestamp": 204.19,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 207.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 210.19,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 213.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 216.19,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 219.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 222.18,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 225.19,
+            "chord": "B"
+        },
+        {
+            "timestamp": 228.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 231.19,
+            "chord": "D#m"
+        },
+        {
+            "timestamp": 234.19,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 237.18,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 238.69,
+            "chord": "C#"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.58,
+            "lyric": "\"You good to go?\""
+        },
+        {
+            "timestamp": 1.98,
+            "lyric": ""
+        },
+        {
+            "timestamp": 3.79,
+            "lyric": ""
+        },
+        {
+            "timestamp": 5.25,
+            "lyric": ""
+        },
+        {
+            "timestamp": 7.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 9.81,
+            "lyric": "All I knew "
+        },
+        {
+            "timestamp": 12.44,
+            "lyric": "This morning when I woke"
+        },
+        {
+            "timestamp": 15.62,
+            "lyric": "Is I know something now, "
+        },
+        {
+            "timestamp": 17.89,
+            "lyric": "Know something now "
+        },
+        {
+            "timestamp": 19.36,
+            "lyric": "I didn't before"
+        },
+        {
+            "timestamp": 20.91,
+            "lyric": ""
+        },
+        {
+            "timestamp": 21.64,
+            "lyric": "And all I've seen"
+        },
+        {
+            "timestamp": 24.67,
+            "lyric": "Since 18 hours ago"
+        },
+        {
+            "timestamp": 26.78,
+            "lyric": "Is green eyes and freckles and your smile "
+        },
+        {
+            "timestamp": 29.16,
+            "lyric": "In the back of my mind"
+        },
+        {
+            "timestamp": 30.65,
+            "lyric": "Making me feel right"
+        },
+        {
+            "timestamp": 32.38,
+            "lyric": ""
+        },
+        {
+            "timestamp": 33.34,
+            "lyric": "I just want to know you better "
+        },
+        {
+            "timestamp": 35.21,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 36.68,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 38.02,
+            "lyric": ""
+        },
+        {
+            "timestamp": 39.2,
+            "lyric": "I just want to know you better "
+        },
+        {
+            "timestamp": 41.19,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 42.66,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 44.51,
+            "lyric": ""
+        },
+        {
+            "timestamp": 45.28,
+            "lyric": "I just want to know you better "
+        },
+        {
+            "timestamp": 47.15,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 48.62,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 50.25,
+            "lyric": ""
+        },
+        {
+            "timestamp": 51.31,
+            "lyric": "I just want to know you "
+        },
+        {
+            "timestamp": 52.88,
+            "lyric": "Know you "
+        },
+        {
+            "timestamp": 54.58,
+            "lyric": "Know you"
+        },
+        {
+            "timestamp": 55.91,
+            "lyric": ""
+        },
+        {
+            "timestamp": 56.56,
+            "lyric": "Cause all I know is we said hello"
+        },
+        {
+            "timestamp": 59.06,
+            "lyric": "And your eyes look like coming home"
+        },
+        {
+            "timestamp": 62.4,
+            "lyric": "All I know is a simple name"
+        },
+        {
+            "timestamp": 65.22,
+            "lyric": "Everything has changed"
+        },
+        {
+            "timestamp": 68.17,
+            "lyric": ""
+        },
+        {
+            "timestamp": 68.69,
+            "lyric": "All I know is you held the door"
+        },
+        {
+            "timestamp": 71.4,
+            "lyric": "You'll be mine and I'll be yours"
+        },
+        {
+            "timestamp": 74.63,
+            "lyric": "All I know since yesterday"
+        },
+        {
+            "timestamp": 77.1,
+            "lyric": "Is everything has changed"
+        },
+        {
+            "timestamp": 80.71,
+            "lyric": ""
+        },
+        {
+            "timestamp": 87.77,
+            "lyric": "And all my walls "
+        },
+        {
+            "timestamp": 90.81,
+            "lyric": "Stood tall painted blue"
+        },
+        {
+            "timestamp": 94.39,
+            "lyric": "But I'll take 'em down"
+        },
+        {
+            "timestamp": 96.05,
+            "lyric": "Take 'em down"
+        },
+        {
+            "timestamp": 96.88,
+            "lyric": "And open up the door for you"
+        },
+        {
+            "timestamp": 98.65,
+            "lyric": ""
+        },
+        {
+            "timestamp": 99.94,
+            "lyric": "And all I feel "
+        },
+        {
+            "timestamp": 102.94,
+            "lyric": "In my stomach is butterflies "
+        },
+        {
+            "timestamp": 105.12,
+            "lyric": "The beautiful kind"
+        },
+        {
+            "timestamp": 106.17,
+            "lyric": "Making up for lost time, "
+        },
+        {
+            "timestamp": 107.64,
+            "lyric": "Taking flight"
+        },
+        {
+            "timestamp": 109.0,
+            "lyric": "Making me feel right"
+        },
+        {
+            "timestamp": 110.34,
+            "lyric": ""
+        },
+        {
+            "timestamp": 111.42,
+            "lyric": "I just want to know you better"
+        },
+        {
+            "timestamp": 112.54,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 114.65,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 116.21,
+            "lyric": ""
+        },
+        {
+            "timestamp": 117.23,
+            "lyric": "I just want to know you better"
+        },
+        {
+            "timestamp": 119.22,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 120.6,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 123.11,
+            "lyric": ""
+        },
+        {
+            "timestamp": 123.42,
+            "lyric": "I just want to know you better"
+        },
+        {
+            "timestamp": 125.2,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 126.67,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 127.59,
+            "lyric": ""
+        },
+        {
+            "timestamp": 129.17,
+            "lyric": "I just want to know you"
+        },
+        {
+            "timestamp": 130.95,
+            "lyric": "Know you "
+        },
+        {
+            "timestamp": 132.43,
+            "lyric": "Know you"
+        },
+        {
+            "timestamp": 133.79,
+            "lyric": ""
+        },
+        {
+            "timestamp": 134.48,
+            "lyric": "Cause all I know is we said hello"
+        },
+        {
+            "timestamp": 137.3,
+            "lyric": "And your eyes look like coming home"
+        },
+        {
+            "timestamp": 140.53,
+            "lyric": "All I know is a simple name"
+        },
+        {
+            "timestamp": 143.17,
+            "lyric": "Everything has changed"
+        },
+        {
+            "timestamp": 145.49,
+            "lyric": ""
+        },
+        {
+            "timestamp": 146.59,
+            "lyric": "All I know is you held the door"
+        },
+        {
+            "timestamp": 149.33,
+            "lyric": "And you'll be mine and I'll be yours"
+        },
+        {
+            "timestamp": 152.59,
+            "lyric": "All I know since yesterday"
+        },
+        {
+            "timestamp": 155.18,
+            "lyric": "Is everything has changed"
+        },
+        {
+            "timestamp": 158.4,
+            "lyric": ""
+        },
+        {
+            "timestamp": 159.89,
+            "lyric": "Come back and tell me why"
+        },
+        {
+            "timestamp": 162.93,
+            "lyric": "I'm feeling like I've missed you "
+        },
+        {
+            "timestamp": 165.71,
+            "lyric": "All this time"
+        },
+        {
+            "timestamp": 168.85,
+            "lyric": ""
+        },
+        {
+            "timestamp": 171.72,
+            "lyric": "And meet me there tonight"
+        },
+        {
+            "timestamp": 174.95,
+            "lyric": "And let me know that "
+        },
+        {
+            "timestamp": 176.38,
+            "lyric": "It's not all in my mind"
+        },
+        {
+            "timestamp": 181.3,
+            "lyric": ""
+        },
+        {
+            "timestamp": 182.66,
+            "lyric": "I just want to know you better"
+        },
+        {
+            "timestamp": 185.18,
+            "lyric": "Know you better "
+        },
+        {
+            "timestamp": 186.73,
+            "lyric": "Know you better now"
+        },
+        {
+            "timestamp": 188.72,
+            "lyric": ""
+        },
+        {
+            "timestamp": 189.37,
+            "lyric": "I just want to know you "
+        },
+        {
+            "timestamp": 191.23,
+            "lyric": "Oh, you  "
+        },
+        {
+            "timestamp": 192.71,
+            "lyric": "Oh, you "
+        },
+        {
+            "timestamp": 194.06,
+            "lyric": ""
+        },
+        {
+            "timestamp": 194.48,
+            "lyric": "All I know is we said hello"
+        },
+        {
+            "timestamp": 197.32,
+            "lyric": "Your eyes look like coming home"
+        },
+        {
+            "timestamp": 200.53,
+            "lyric": "All I know is a simple name"
+        },
+        {
+            "timestamp": 204.18,
+            "lyric": "Everything has changed"
+        },
+        {
+            "timestamp": 206.31,
+            "lyric": ""
+        },
+        {
+            "timestamp": 206.61,
+            "lyric": "All I know is you held the door"
+        },
+        {
+            "timestamp": 209.43,
+            "lyric": "You'll be mine and I'll be yours"
+        },
+        {
+            "timestamp": 212.53,
+            "lyric": "All I know since yesterday"
+        },
+        {
+            "timestamp": 215.18,
+            "lyric": "Is everything has changed"
+        },
+        {
+            "timestamp": 218.61,
+            "lyric": ""
+        },
+        {
+            "timestamp": 218.84,
+            "lyric": "All I know is you said hello"
+        },
+        {
+            "timestamp": 221.44,
+            "lyric": "So dust off your highest hopes"
+        },
+        {
+            "timestamp": 224.36,
+            "lyric": "All I know is pouring rain"
+        },
+        {
+            "timestamp": 227.19,
+            "lyric": "And everything has changed"
+        },
+        {
+            "timestamp": 229.79,
+            "lyric": ""
+        },
+        {
+            "timestamp": 230.61,
+            "lyric": "All I know is a new found brightness"
+        },
+        {
+            "timestamp": 233.55,
+            "lyric": "All my days, I'll know your face"
+        },
+        {
+            "timestamp": 236.61,
+            "lyric": "All I know since yesterday"
+        },
+        {
+            "timestamp": 240.03,
+            "lyric": "Is everything has changed"
+        },
+        {
+            "timestamp": 241.79,
+            "lyric": ""
+        },
+        {
+            "timestamp": 242.53,
+            "lyric": ""
+        },
+        {
+            "timestamp": 242.93,
+            "lyric": ""
+        },
+        {
+            "timestamp": 243.18,
+            "lyric": ""
+        }
+    ]
+}

@@ -14,6 +14,10 @@ from Song import Song
 from Player import Player
 from Images import chordImages, feedbackImages, starsImages, edgeImage, titleBackground
 
+# for makin the app
+import numpy.core._methods
+import numpy.lib.format
+
 def PlaySong(song, player): # take in song object
 
 	flags = FULLSCREEN | DOUBLEBUF # fps is 4x better in fullscreen mode
@@ -240,6 +244,10 @@ def PlaySong(song, player): # take in song object
 			for z in range(0, len(chordTexts)):
 				screen.blit(chordTexts[z], chordTextPlacements[z])
 
+			# # ## for testing
+			# pygame.draw.rect(screen, Colors.black, Rect(screenSize[0]/2, 750, 40, 40))
+			# screen.blit(lyricFont.render(str(now), False, Colors.white), (screenSize[0]/2, 750))
+
 			screen.blit(currentTimeMarker, currentTimeMarkerPlacement)
 			# if lyricChanged:
 			# 	lyricChanged = False
@@ -257,7 +265,7 @@ def PlaySong(song, player): # take in song object
 	flags = DOUBLEBUF
 	screen = pygame.display.set_mode(screenSize, flags)
 
-	EndOfSongScreen(song, totalScore, player)
+	EndOfSongScreen(song, totalScore*100, player)
 
 	# print ("fps: " + str(clock.get_fps()))
 	# closeStream()
@@ -376,17 +384,20 @@ def SongsMenu(player):
 	pageNumFont = Font.body(40)
 	playButtonFont = Font.body(25)
 	backButtonFont = Font.body(40)
+	capoDifficultyFont = Font.body(25)
 
 	mySongsTitleText = titleFont.render("My songs", False, Colors.lightGray)
 	downloadSongsTitleText = titleFont.render("Download a song", False, Colors.lightGray)
 	playButtonText = playButtonFont.render("PLAY", False, Colors.white)
 	prevText = nextPrevButtonFont.render("<", False, Colors.lightGray)
 	nextText = nextPrevButtonFont.render(">", False, Colors.lightGray)
+	capoText = capoDifficultyFont.render("Capo ", False, Colors.white)
+	difficultyText = capoDifficultyFont.render("Diff: ", False, Colors.black)
 	prevButtonPlacement = (screenSize[0]*.75 - 50 - prevText.get_rect().width/2, screenSize[1] - 70)
 	nextButtonPlacement = (screenSize[0]*.75 + 50 - nextText.get_rect().width/2, screenSize[1] - 70)
 	prevTextPlacement = prevButtonPlacement
 	nextTextPlacement = nextButtonPlacement
-	mySongsTitleTextPlacement = (firstSongRectPlacement[0] + songRectSize[0]/2 - mySongsTitleText.get_rect().width/2, firstSongRectPlacement[1] - 75)
+	mySongsTitleTextPlacement = (firstSongRectPlacement[0] + songRectSize[0]/2 - mySongsTitleText.get_rect().width/2, firstSongRectPlacement[1] - 95)
 	downloadSongsTitleTextPlacement = (screenSize[0]/4 - downloadSongsTitleText.get_rect().width/2, screenSize[1]/2.4 - 75)
 	nextPrevButtonSize = (screenSize[0]/15, screenSize[1]/20)
 	prevButton = Rect(prevButtonPlacement, nextPrevButtonSize)
@@ -397,18 +408,23 @@ def SongsMenu(player):
 	backButtonText = backButtonFont.render("<", False, Colors.lightGray)
 	backButtonSize = (backButtonText.get_rect().width, backButtonText.get_rect().height)
 	backButton = Rect(backButtonPlacement, backButtonSize)
+	capoTextPlacement = (mySongsTitleTextPlacement[0] + 215, mySongsTitleTextPlacement[1] + 55)
 
 	songsDirPath = "save files/songs"
 	songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
 	songs = []
+	z = 1
 	for songFilePath in songFilePaths:
 		if(songFilePath != ".DS_Store"):
 			song = Song('save files/songs/' + songFilePath)
 			songs.append(song)
+			print(str(song.capo))
 	# sort by recently played?
 	pageRects = [[]]
 	pageTexts = [[]]
 	playSongButtons = [[]]
+	capoTexts = [[]]
+	diffTexts = [[]]
 	pageNum = 1
 	songOnPageIndex = 0
 	for song in songs:
@@ -419,13 +435,16 @@ def SongsMenu(player):
 			pageRects.append([])
 			pageTexts.append([])
 			playSongButtons.append([])
-			songOnPageIndex = 0
+			capoTexts.append([])
+			diffTexts.append([])
+			songOnPageIndex = 1
 		else:
 			songOnPageIndex = songOnPageIndex + 1
 		pageRects[pageNum-1].append(Rect(songRectPlacement, songRectSize))
-		pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.darkGray))
+		pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.belizehole))
 		playSongButtonPlacement = (songRectPlacement[0] + songRectSize[0] - playSongButtonSize[0] - 10, songRectPlacement[1]+5)
 		playSongButtons[pageNum-1].append(Rect(playSongButtonPlacement, playSongButtonSize))
+		capoTexts[pageNum-1].append(capoDifficultyFont.render(str(song.capo), False, Colors.belizehole))
 	pageNum = 1
 
 	song = ''
@@ -442,13 +461,17 @@ def SongsMenu(player):
 			songsDirPath = "save files/songs"
 			songFilePaths = [f for f in os.listdir(songsDirPath) if os.path.isfile(os.path.join(songsDirPath, f))]
 			songs = []
+			z = 1
 			for songFilePath in songFilePaths:
 				if(songFilePath != ".DS_Store"):
 					song = Song('save files/songs/' + songFilePath)
 					songs.append(song)
+			# sort by recently played?
 			pageRects = [[]]
 			pageTexts = [[]]
 			playSongButtons = [[]]
+			capoTexts = [[]]
+			diffTexts = [[]]
 			pageNum = 1
 			songOnPageIndex = 0
 			for song in songs:
@@ -459,13 +482,17 @@ def SongsMenu(player):
 					pageRects.append([])
 					pageTexts.append([])
 					playSongButtons.append([])
-					songOnPageIndex = 0
+					capoTexts.append([])
+					diffTexts.append([])
+					songOnPageIndex = 1
 				else:
 					songOnPageIndex = songOnPageIndex + 1
 				pageRects[pageNum-1].append(Rect(songRectPlacement, songRectSize))
 				pageTexts[pageNum-1].append(songFont.render(song.name, False, Colors.belizehole))
 				playSongButtonPlacement = (songRectPlacement[0] + songRectSize[0] - playSongButtonSize[0] - 10, songRectPlacement[1]+5)
 				playSongButtons[pageNum-1].append(Rect(playSongButtonPlacement, playSongButtonSize))
+				capoTexts[pageNum-1].append(capoDifficultyFont.render(str(song.capo), False, Colors.belizehole))
+				diffTexts[pageNum-1].append(capoDifficultyFont.render(str(song.getSongDifficulty()), False, Colors.belizehole))
 			pageNum = 1
 			## replicated code (bad I know)
 
@@ -483,16 +510,9 @@ def SongsMenu(player):
 				else:
 					for i in range(0,len(playSongButtons[pageNum-1])):
 						if playSongButtons[pageNum-1][i].collidepoint(mouse_pos):
-							songFound = False
-							songIndex = 0
-							for page in playSongButtons:
-								for playSongButton in page:
-									if not songFound:
-										if playSongButton == playSongButtons[pageNum-1][i]:
-											songFound = True
-										else:
-											songIndex = songIndex + 1
+							songIndex = (pageNum-1)*len(playSongButtons[0])+i
 							PlaySong(songs[songIndex], player)
+							break;
 			elif event.type == pygame.QUIT:
 				sys.exit()
 		songInputBox.update()
@@ -503,6 +523,7 @@ def SongsMenu(player):
 		screen.blit(downloadSongsTitleText, downloadSongsTitleTextPlacement)
 
 		screen.blit(mySongsTitleText, mySongsTitleTextPlacement)
+		screen.blit(capoText, capoTextPlacement)
 		for i in range(0,len(pageRects[pageNum-1])):
 			pygame.draw.rect(screen, Colors.white, pageRects[pageNum-1][i])
 			# textPlacement = (pageRects[pageNum-1][i].x+pageRects[pageNum-1][i].width/2-pageTexts[pageNum-1][i].get_rect().width/2,pageRects[pageNum-1][i].y+pageRects[pageNum-1][i].height/3)
@@ -511,6 +532,8 @@ def SongsMenu(player):
 			pygame.draw.rect(screen, Colors.alizarin, playSongButtons[pageNum-1][i])
 			playSongButtonTextPlacement2 = (playSongButtons[pageNum-1][i].x + playSongButtons[pageNum-1][i].width/2 - playButtonText.get_rect().width/2, playSongButtons[pageNum-1][i].y + playSongButtons[pageNum-1][i].height/2 - playButtonText.get_rect().height/2)
 			screen.blit(playButtonText, playSongButtonTextPlacement2)
+			capoNumberPlacement = (textPlacement[0] + songRectSize[0] - 160, textPlacement[1] + 5)
+			screen.blit(capoTexts[pageNum-1][i], capoNumberPlacement)
 
 		if pageNum < len(pageRects):
 			screen.blit(nextText, nextTextPlacement)
@@ -855,12 +878,12 @@ screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
 # songFilePath = 'test_song.json'
-# song = Song('save files/songs/' + songFilePath)
+# song = Song('save files/songs/' + "song_22_20180413230824.json")
 # EndOfSongScreen(song, 80, player)
 MainMenu(player)
 # PlayerStatsScreen(player)
 
-# songFilePath = 'test_song.json'
+# songFilePath = 'song_letitbe_20180413153538.json'
 # PlaySong(Song('save files/songs/' + songFilePath), player)
 # SongsMenu()
 

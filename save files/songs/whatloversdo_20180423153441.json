@@ -1,0 +1,745 @@
+{
+    "title": "What Lovers Do",
+    "artist": "Maroon 5\r",
+    "youtube_url": "5Wiio4KoGe8",
+    "duration": 214.0,
+    "tempo": 110,
+    "lyric_offset": -0.5,
+    "capo": 3,
+    "chords": [
+        {
+            "timestamp": 0,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 1.4,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 1.94,
+            "chord": "F"
+        },
+        {
+            "timestamp": 4.39,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 6.32,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 10.15,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 10.7,
+            "chord": "F"
+        },
+        {
+            "timestamp": 13.15,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 15.06,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 18.88,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 19.43,
+            "chord": "F"
+        },
+        {
+            "timestamp": 21.88,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 23.79,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 27.6,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 28.15,
+            "chord": "F"
+        },
+        {
+            "timestamp": 30.6,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 32.51,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 36.33,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 36.88,
+            "chord": "F"
+        },
+        {
+            "timestamp": 39.33,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 41.24,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 45.33,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 45.87,
+            "chord": "F"
+        },
+        {
+            "timestamp": 48.05,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 50.22,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 54.04,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 54.59,
+            "chord": "F"
+        },
+        {
+            "timestamp": 56.77,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 58.96,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 62.5,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 63.05,
+            "chord": "F"
+        },
+        {
+            "timestamp": 65.5,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 67.41,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 71.23,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 71.78,
+            "chord": "F"
+        },
+        {
+            "timestamp": 74.23,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 76.13,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 79.95,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 80.5,
+            "chord": "F"
+        },
+        {
+            "timestamp": 82.95,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 84.86,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 88.68,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 89.23,
+            "chord": "F"
+        },
+        {
+            "timestamp": 91.68,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 93.59,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 97.69,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 98.23,
+            "chord": "F"
+        },
+        {
+            "timestamp": 100.42,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 102.6,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 106.41,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 106.95,
+            "chord": "F"
+        },
+        {
+            "timestamp": 109.13,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 111.32,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 115.14,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 115.68,
+            "chord": "F"
+        },
+        {
+            "timestamp": 117.86,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 120.05,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 123.87,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 124.41,
+            "chord": "F"
+        },
+        {
+            "timestamp": 126.6,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 128.78,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 130.98,
+            "chord": ""
+        },
+        {
+            "timestamp": 139.71,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 141.07,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 141.61,
+            "chord": "F"
+        },
+        {
+            "timestamp": 144.07,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 145.98,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 148.43,
+            "chord": ""
+        },
+        {
+            "timestamp": 159.33,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 160.96,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 161.51,
+            "chord": "F"
+        },
+        {
+            "timestamp": 163.69,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 165.87,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 169.68,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 170.22,
+            "chord": "F"
+        },
+        {
+            "timestamp": 172.41,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 174.59,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 178.41,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 178.96,
+            "chord": "F"
+        },
+        {
+            "timestamp": 181.14,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 183.32,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 187.14,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 187.69,
+            "chord": "F"
+        },
+        {
+            "timestamp": 189.87,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 192.05,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 194.23,
+            "chord": ""
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.91,
+            "lyric": "\"What Lovers Do (feat. SZA)\""
+        },
+        {
+            "timestamp": 0.91,
+            "lyric": "Maroon 5"
+        },
+        {
+            "timestamp": 2.61,
+            "lyric": ""
+        },
+        {
+            "timestamp": 4.11,
+            "lyric": ""
+        },
+        {
+            "timestamp": 6.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 8.97,
+            "lyric": "Say say say, hey hey now baby"
+        },
+        {
+            "timestamp": 11.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 12.87,
+            "lyric": "Oh my my, don't play now baby"
+        },
+        {
+            "timestamp": 15.77,
+            "lyric": ""
+        },
+        {
+            "timestamp": 17.77,
+            "lyric": "Say say say, hey hey now baby"
+        },
+        {
+            "timestamp": 20.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 21.87,
+            "lyric": "So let's get one thing straight now baby"
+        },
+        {
+            "timestamp": 24.47,
+            "lyric": ""
+        },
+        {
+            "timestamp": 25.57,
+            "lyric": "Tell me tell me if you love me or not"
+        },
+        {
+            "timestamp": 27.17,
+            "lyric": "Love me or not, love me or not"
+        },
+        {
+            "timestamp": 28.97,
+            "lyric": ""
+        },
+        {
+            "timestamp": 29.97,
+            "lyric": "I bet the house on you, am I lucky or not "
+        },
+        {
+            "timestamp": 31.57,
+            "lyric": "Lucky or not, lucky or not?"
+        },
+        {
+            "timestamp": 33.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 34.47,
+            "lyric": "You gotta tell me if you love me or not"
+        },
+        {
+            "timestamp": 35.97,
+            "lyric": "Love me or not, love me or not"
+        },
+        {
+            "timestamp": 37.77,
+            "lyric": ""
+        },
+        {
+            "timestamp": 38.77,
+            "lyric": "Been wishin' for you, am I lucky or not"
+        },
+        {
+            "timestamp": 40.27,
+            "lyric": "Lucky or not, lucky or not?"
+        },
+        {
+            "timestamp": 42.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 43.97,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 45.57,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 47.57,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 49.27,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 52.67,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 54.27,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 56.27,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 57.97,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 61.47,
+            "lyric": "Say say say, hey hey now baby"
+        },
+        {
+            "timestamp": 63.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 65.07,
+            "lyric": "You gon' make me hit you with that lay down, baby (oh)"
+        },
+        {
+            "timestamp": 70.07,
+            "lyric": "Say say say, hey hey now baby"
+        },
+        {
+            "timestamp": 72.47,
+            "lyric": ""
+        },
+        {
+            "timestamp": 73.77,
+            "lyric": "You know what I need, you don't have to cave, now baby"
+        },
+        {
+            "timestamp": 77.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 78.27,
+            "lyric": "Tell me, tell me if you love me or not"
+        },
+        {
+            "timestamp": 79.77,
+            "lyric": "Love me or not, love me or not"
+        },
+        {
+            "timestamp": 81.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 82.47,
+            "lyric": "I bet the house on you, am I lucky or not"
+        },
+        {
+            "timestamp": 83.97,
+            "lyric": "Lucky or not, lucky or not?"
+        },
+        {
+            "timestamp": 85.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 86.87,
+            "lyric": "You gotta tell me if you love me or not"
+        },
+        {
+            "timestamp": 88.27,
+            "lyric": "Love me or not, love me or not"
+        },
+        {
+            "timestamp": 89.97,
+            "lyric": ""
+        },
+        {
+            "timestamp": 91.07,
+            "lyric": "Been wishin' for you am I lucky or not"
+        },
+        {
+            "timestamp": 92.57,
+            "lyric": "Lucky or not, lucky or not?"
+        },
+        {
+            "timestamp": 94.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 96.17,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 97.87,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 99.97,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 101.57,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 105.07,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 106.57,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 108.67,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 110.47,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 113.57,
+            "lyric": ""
+        },
+        {
+            "timestamp": 116.87,
+            "lyric": "What lovers do"
+        },
+        {
+            "timestamp": 118.07,
+            "lyric": ""
+        },
+        {
+            "timestamp": 121.17,
+            "lyric": "What lovers do"
+        },
+        {
+            "timestamp": 122.47,
+            "lyric": ""
+        },
+        {
+            "timestamp": 125.47,
+            "lyric": "What lovers do"
+        },
+        {
+            "timestamp": 126.97,
+            "lyric": ""
+        },
+        {
+            "timestamp": 131.37,
+            "lyric": "Are we too grown for games?"
+        },
+        {
+            "timestamp": 133.17,
+            "lyric": "Are we too grown to play around?"
+        },
+        {
+            "timestamp": 135.57,
+            "lyric": "Young enough to chase"
+        },
+        {
+            "timestamp": 137.57,
+            "lyric": "But old enough to know better"
+        },
+        {
+            "timestamp": 139.77,
+            "lyric": "Are we too grown for changin'?"
+        },
+        {
+            "timestamp": 142.07,
+            "lyric": "Are we too grown to mess around?"
+        },
+        {
+            "timestamp": 144.37,
+            "lyric": "Oh and I can't wait forever baby"
+        },
+        {
+            "timestamp": 146.57,
+            "lyric": "Both of us should know better"
+        },
+        {
+            "timestamp": 148.97,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 150.47,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 152.37,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 153.97,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 157.37,
+            "lyric": ""
+        },
+        {
+            "timestamp": 159.57,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 161.17,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 163.37,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 164.87,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 168.27,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 169.97,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 172.07,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 173.57,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 177.07,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 178.57,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 180.67,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 182.27,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 185.77,
+            "lyric": "Ooooh, oooh"
+        },
+        {
+            "timestamp": 187.27,
+            "lyric": "Been wishin' for you"
+        },
+        {
+            "timestamp": 189.37,
+            "lyric": "Ooh, ooh"
+        },
+        {
+            "timestamp": 191.07,
+            "lyric": "Try to do what lovers do (ooh)"
+        },
+        {
+            "timestamp": 194.37,
+            "lyric": ""
+        }
+    ]
+}

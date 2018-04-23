@@ -1,15 +1,39 @@
 {
     "name": "Player",
-    "points": 0,
-    "level": 1,
+    "points": 10.0,
+    "level": 2,
     "songsPlayed": {
         "songs": [
+            "22",
+            "Drops of Jupiter",
+            "Take it Easy",
+            "Let It Be",
+            "Everything Has Changed",
+            "Like an Avalanche"
         ],
         "artists": [
+            "Taylor Swift\r",
+            "Train",
+            "The Eagles",
+            "The Beatles",
+            "Taylor Swift\r",
+            "Hillsong United\r"
         ],
         "scores": [
+            0.93,
+            0.87,
+            0.82,
+            0.0,
+            0.0,
+            0.0
         ],
         "difficulties": [
+            6,
+            3,
+            2,
+            3,
+            3,
+            3
         ]
     }
 }

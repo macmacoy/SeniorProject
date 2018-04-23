@@ -18,7 +18,7 @@ class Song:
     self.lyrics = []
 
   def toJSON(self):
-    filename = "save files/songs/song_" + ''.join(self.title.split()).lower() + "_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
+    filename = "save files/songs/" + ''.join(self.title.split()).lower() + "_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
     data = {}
     data["title"] = self.title
     data["artist"] = self.artist

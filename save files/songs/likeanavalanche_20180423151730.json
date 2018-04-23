@@ -1,0 +1,753 @@
+{
+    "title": "Like an Avalanche",
+    "artist": "Hillsong United\r",
+    "youtube_url": "FJ2_Gg6ka-k",
+    "duration": 265.0,
+    "tempo": 84,
+    "lyric_offset": -0.2,
+    "capo": 1,
+    "chords": [
+        {
+            "timestamp": 0.0,
+            "chord": ""
+        },
+        {
+            "timestamp": 0.56,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 1.96,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 3.39,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 4.83,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 6.25,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 7.69,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 9.11,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 12.0,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 13.41,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 14.85,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 16.29,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 17.74,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 19.13,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 20.55,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 21.97,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 23.39,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 24.82,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 26.24,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 27.66,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 29.09,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 30.53,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 31.96,
+            "chord": "Fm"
+        },
+        {
+            "timestamp": 34.82,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 36.21,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 37.64,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 39.08,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 40.52,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 41.98,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 43.44,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 44.85,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 46.28,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 47.68,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 49.1,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 50.54,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 51.98,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 53.42,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 54.83,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 57.7,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 60.57,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 61.99,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 63.43,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 66.26,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 67.7,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 69.14,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 71.97,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 73.41,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 74.85,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 76.27,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 77.71,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 80.56,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 81.98,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 83.41,
+            "chord": "Fm"
+        },
+        {
+            "timestamp": 84.85,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 86.27,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 87.7,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 89.13,
+            "chord": "Fm"
+        },
+        {
+            "timestamp": 91.97,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 93.41,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 94.85,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 96.27,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 97.7,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 99.13,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 100.57,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 101.98,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 103.41,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 104.84,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 106.28,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 107.71,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 109.13,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 110.56,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 111.99,
+            "chord": "Fm"
+        },
+        {
+            "timestamp": 114.86,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 117.72,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 119.14,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 120.57,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 123.4,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 124.84,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 126.27,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 129.13,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 130.57,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 131.99,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 133.42,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 134.85,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 137.71,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 140.56,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 143.42,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 146.26,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 147.7,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 149.13,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 151.99,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 154.84,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 157.7,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 159.13,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 160.57,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 163.42,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 166.28,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 169.12,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 170.56,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 171.98,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 174.85,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 177.69,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 180.55,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 181.99,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 183.41,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 186.27,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 189.14,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 191.98,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 193.41,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 194.84,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 197.69,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 200.54,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 203.41,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 204.85,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 206.26,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 209.11,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 210.55,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 211.99,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 214.84,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 216.27,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 217.71,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 220.6,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 222.04,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 223.48,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 224.92,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 226.35,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 229.17,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 230.56,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 231.98,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 233.41,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 234.84,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 236.26,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 237.69,
+            "chord": "Fm"
+        },
+        {
+            "timestamp": 240.55,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 241.97,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 243.4,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 244.83,
+            "chord": "F#"
+        },
+        {
+            "timestamp": 246.26,
+            "chord": "A#m"
+        },
+        {
+            "timestamp": 247.69,
+            "chord": "C#"
+        },
+        {
+            "timestamp": 249.13,
+            "chord": "G#"
+        },
+        {
+            "timestamp": 250.57,
+            "chord": "F#"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 1.43,
+            "lyric": ""
+        },
+        {
+            "timestamp": 2.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 8.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 9.67,
+            "lyric": ""
+        },
+        {
+            "timestamp": 10.0,
+            "lyric": ""
+        },
+        {
+            "timestamp": 11.0,
+            "lyric": "Beautiful God"
+        },
+        {
+            "timestamp": 14.0,
+            "lyric": "Laying Your majesty aside"
+        },
+        {
+            "timestamp": 18.6,
+            "lyric": "You reached out in love to show me life"
+        },
+        {
+            "timestamp": 21.73,
+            "lyric": ""
+        },
+        {
+            "timestamp": 25.77,
+            "lyric": "Lifted from darkness into light"
+        },
+        {
+            "timestamp": 30.0,
+            "lyric": "Oh"
+        },
+        {
+            "timestamp": 34.01,
+            "lyric": "King for a slave"
+        },
+        {
+            "timestamp": 38.44,
+            "lyric": "Trading Your righteousness for shame"
+        },
+        {
+            "timestamp": 42.62,
+            "lyric": "Despite all my pride and foolish ways"
+        },
+        {
+            "timestamp": 48.5,
+            "lyric": "Caught in Your infinite embrace"
+        },
+        {
+            "timestamp": 53.19,
+            "lyric": "Oh"
+        },
+        {
+            "timestamp": 57.21,
+            "lyric": "And I find myself here on my knees again"
+        },
+        {
+            "timestamp": 65.57,
+            "lyric": "Caught up in grace like an avalanche"
+        },
+        {
+            "timestamp": 71.43,
+            "lyric": "Nothing compares to this love love love"
+        },
+        {
+            "timestamp": 78.23,
+            "lyric": "burning in my heart"
+        },
+        {
+            "timestamp": 92.16,
+            "lyric": "Saviour and Friend"
+        },
+        {
+            "timestamp": 96.09,
+            "lyric": "Breathing Your life into my heart"
+        },
+        {
+            "timestamp": 100.39,
+            "lyric": "Your word is the lamp unto my path"
+        },
+        {
+            "timestamp": 106.06,
+            "lyric": "Forever I'm humbled by Your love"
+        },
+        {
+            "timestamp": 110.62,
+            "lyric": "Oh"
+        },
+        {
+            "timestamp": 114.22,
+            "lyric": "And I find myself here on my knees again"
+        },
+        {
+            "timestamp": 123.14,
+            "lyric": "Caught up in grace like an avalanche"
+        },
+        {
+            "timestamp": 128.95,
+            "lyric": "Nothing compares to this love love love"
+        },
+        {
+            "timestamp": 135.94,
+            "lyric": "Burning in my heart"
+        },
+        {
+            "timestamp": 160.54,
+            "lyric": "Take my life"
+        },
+        {
+            "timestamp": 164.13,
+            "lyric": "Take all that I am"
+        },
+        {
+            "timestamp": 166.13,
+            "lyric": "With all that I am I will love You"
+        },
+        {
+            "timestamp": 171.74,
+            "lyric": "Take my heart"
+        },
+        {
+            "timestamp": 174.49,
+            "lyric": "Take all that I have"
+        },
+        {
+            "timestamp": 177.17,
+            "lyric": "Jesus how I adore You"
+        },
+        {
+            "timestamp": 183.31,
+            "lyric": "Take my life"
+        },
+        {
+            "timestamp": 185.62,
+            "lyric": "Take all that I am"
+        },
+        {
+            "timestamp": 188.68,
+            "lyric": "With all that I am I will love You"
+        },
+        {
+            "timestamp": 194.42,
+            "lyric": "Take my heart"
+        },
+        {
+            "timestamp": 197.48,
+            "lyric": "Take all that I have"
+        },
+        {
+            "timestamp": 200.1,
+            "lyric": "Jesus how I adore You"
+        },
+        {
+            "timestamp": 205.84,
+            "lyric": "And I find myself here on my knees again"
+        },
+        {
+            "timestamp": 214.83,
+            "lyric": "Caught up in grace like an avalanche"
+        },
+        {
+            "timestamp": 220.44,
+            "lyric": "Nothing compares to this love love love"
+        }
+    ]
+}

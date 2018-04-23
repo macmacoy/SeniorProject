@@ -1,0 +1,489 @@
+{
+    "title": "Hey Soul Sister",
+    "artist": "Train\r",
+    "youtube_url": "kVpv8-5XWOI",
+    "duration": 218.0,
+    "tempo": 97,
+    "lyric_offset": 0,
+    "capo": 4,
+    "chords": [
+        {
+            "timestamp": 0,
+            "chord": "A"
+        },
+        {
+            "timestamp": 2.05,
+            "chord": "E"
+        },
+        {
+            "timestamp": 4.52,
+            "chord": "B"
+        },
+        {
+            "timestamp": 7.0,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 9.47,
+            "chord": "A"
+        },
+        {
+            "timestamp": 11.94,
+            "chord": "E"
+        },
+        {
+            "timestamp": 14.41,
+            "chord": "B"
+        },
+        {
+            "timestamp": 16.89,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 19.37,
+            "chord": "A"
+        },
+        {
+            "timestamp": 21.83,
+            "chord": "E"
+        },
+        {
+            "timestamp": 24.3,
+            "chord": "B"
+        },
+        {
+            "timestamp": 26.8,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 29.26,
+            "chord": "A"
+        },
+        {
+            "timestamp": 31.72,
+            "chord": "E"
+        },
+        {
+            "timestamp": 34.2,
+            "chord": "B"
+        },
+        {
+            "timestamp": 36.69,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 39.16,
+            "chord": "A"
+        },
+        {
+            "timestamp": 41.63,
+            "chord": "E"
+        },
+        {
+            "timestamp": 44.09,
+            "chord": "B"
+        },
+        {
+            "timestamp": 46.57,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 49.05,
+            "chord": "A"
+        },
+        {
+            "timestamp": 54.01,
+            "chord": "B"
+        },
+        {
+            "timestamp": 56.47,
+            "chord": "A"
+        },
+        {
+            "timestamp": 58.94,
+            "chord": "B"
+        },
+        {
+            "timestamp": 61.43,
+            "chord": "A"
+        },
+        {
+            "timestamp": 63.9,
+            "chord": "B"
+        },
+        {
+            "timestamp": 66.37,
+            "chord": "A"
+        },
+        {
+            "timestamp": 68.85,
+            "chord": "B"
+        },
+        {
+            "timestamp": 71.31,
+            "chord": "E"
+        },
+        {
+            "timestamp": 73.79,
+            "chord": "B"
+        },
+        {
+            "timestamp": 76.28,
+            "chord": "E"
+        },
+        {
+            "timestamp": 78.75,
+            "chord": "A"
+        },
+        {
+            "timestamp": 81.21,
+            "chord": "E"
+        },
+        {
+            "timestamp": 83.68,
+            "chord": "B"
+        },
+        {
+            "timestamp": 86.17,
+            "chord": "E"
+        },
+        {
+            "timestamp": 88.64,
+            "chord": "A"
+        },
+        {
+            "timestamp": 91.12,
+            "chord": "E"
+        },
+        {
+            "timestamp": 93.59,
+            "chord": "B"
+        },
+        {
+            "timestamp": 96.06,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 98.53,
+            "chord": "A"
+        },
+        {
+            "timestamp": 99.76,
+            "chord": "B"
+        },
+        {
+            "timestamp": 101.01,
+            "chord": "E"
+        },
+        {
+            "timestamp": 103.48,
+            "chord": "B"
+        },
+        {
+            "timestamp": 105.96,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 108.44,
+            "chord": "A"
+        },
+        {
+            "timestamp": 110.9,
+            "chord": "E"
+        },
+        {
+            "timestamp": 113.38,
+            "chord": "B"
+        },
+        {
+            "timestamp": 115.86,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 118.33,
+            "chord": "A"
+        },
+        {
+            "timestamp": 123.29,
+            "chord": "B"
+        },
+        {
+            "timestamp": 125.76,
+            "chord": "A"
+        },
+        {
+            "timestamp": 128.22,
+            "chord": "B"
+        },
+        {
+            "timestamp": 130.69,
+            "chord": "A"
+        },
+        {
+            "timestamp": 133.18,
+            "chord": "B"
+        },
+        {
+            "timestamp": 135.65,
+            "chord": "A"
+        },
+        {
+            "timestamp": 138.12,
+            "chord": "B"
+        },
+        {
+            "timestamp": 140.59,
+            "chord": "E"
+        },
+        {
+            "timestamp": 143.07,
+            "chord": "B"
+        },
+        {
+            "timestamp": 145.54,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 148.03,
+            "chord": "A"
+        },
+        {
+            "timestamp": 150.5,
+            "chord": "E"
+        },
+        {
+            "timestamp": 152.96,
+            "chord": "B"
+        },
+        {
+            "timestamp": 155.45,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 156.68,
+            "chord": "E"
+        },
+        {
+            "timestamp": 157.92,
+            "chord": "B"
+        },
+        {
+            "timestamp": 160.39,
+            "chord": "A"
+        },
+        {
+            "timestamp": 162.88,
+            "chord": "B"
+        },
+        {
+            "timestamp": 165.34,
+            "chord": "A"
+        },
+        {
+            "timestamp": 167.8,
+            "chord": "B"
+        },
+        {
+            "timestamp": 170.28,
+            "chord": "A"
+        },
+        {
+            "timestamp": 172.77,
+            "chord": "B"
+        },
+        {
+            "timestamp": 175.24,
+            "chord": "A"
+        },
+        {
+            "timestamp": 177.71,
+            "chord": "B"
+        },
+        {
+            "timestamp": 180.18,
+            "chord": "A"
+        },
+        {
+            "timestamp": 182.67,
+            "chord": "B"
+        },
+        {
+            "timestamp": 185.14,
+            "chord": "A"
+        },
+        {
+            "timestamp": 187.62,
+            "chord": "B"
+        },
+        {
+            "timestamp": 190.08,
+            "chord": "E"
+        },
+        {
+            "timestamp": 192.55,
+            "chord": "B"
+        },
+        {
+            "timestamp": 195.04,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 197.51,
+            "chord": "A"
+        },
+        {
+            "timestamp": 199.98,
+            "chord": "E"
+        },
+        {
+            "timestamp": 202.46,
+            "chord": "B"
+        },
+        {
+            "timestamp": 204.93,
+            "chord": "C#m"
+        },
+        {
+            "timestamp": 207.41,
+            "chord": "A"
+        },
+        {
+            "timestamp": 208.64,
+            "chord": "B"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 5.4,
+            "lyric": "Heeey heeeey heeeeey"
+        },
+        {
+            "timestamp": 11.41,
+            "lyric": "Your lipstick stains"
+        },
+        {
+            "timestamp": 13.02,
+            "lyric": ""
+        },
+        {
+            "timestamp": 14.74,
+            "lyric": "On the front lobe of my left side brains"
+        },
+        {
+            "timestamp": 20.02,
+            "lyric": "I knew I wouldn't forget you"
+        },
+        {
+            "timestamp": 22.44,
+            "lyric": "And so I went and let you blow my mind"
+        },
+        {
+            "timestamp": 31.26,
+            "lyric": "Your sweet moving"
+        },
+        {
+            "timestamp": 34.37,
+            "lyric": "The smell of you in every single dream I dream"
+        },
+        {
+            "timestamp": 40.02,
+            "lyric": "I knew when we collided"
+        },
+        {
+            "timestamp": 42.07,
+            "lyric": "You're the one I have decided"
+        },
+        {
+            "timestamp": 44.86,
+            "lyric": "Who's one of my kind"
+        },
+        {
+            "timestamp": 51.07,
+            "lyric": "Hey soul sister"
+        },
+        {
+            "timestamp": 53.31,
+            "lyric": "Ain't that mister mister on the radio, stereo"
+        },
+        {
+            "timestamp": 58.34,
+            "lyric": "The way you move ain't fair you know"
+        },
+        {
+            "timestamp": 63.31,
+            "lyric": "I don't wanna miss a single thing you do tonight"
+        },
+        {
+            "timestamp": 73.0,
+            "lyric": "Heeey heeeey heeeey"
+        },
+        {
+            "timestamp": 80.91,
+            "lyric": "Just in time,"
+        },
+        {
+            "timestamp": 84.11,
+            "lyric": "I'm so glad you have a one track mind like me"
+        },
+        {
+            "timestamp": 89.15,
+            "lyric": "You gave my life direction"
+        },
+        {
+            "timestamp": 91.44,
+            "lyric": "A game show love connection, we can't deny"
+        },
+        {
+            "timestamp": 100.14,
+            "lyric": "I'm so obsessed"
+        },
+        {
+            "timestamp": 103.37,
+            "lyric": "My heart is bound to beat right out my untrimmed chest"
+        },
+        {
+            "timestamp": 108.96,
+            "lyric": "I believe in you, like a virgin, you're Madonna"
+        },
+        {
+            "timestamp": 113.43,
+            "lyric": "And I'm always gonna wanna blow your mind"
+        },
+        {
+            "timestamp": 120.2,
+            "lyric": "Hey soul sister,"
+        },
+        {
+            "timestamp": 140.76,
+            "lyric": "Well you can cut a rug"
+        },
+        {
+            "timestamp": 142.37,
+            "lyric": "Watching you is the only drug I need"
+        },
+        {
+            "timestamp": 144.17,
+            "lyric": "So gangster, I'm so thug"
+        },
+        {
+            "timestamp": 147.22,
+            "lyric": "You're the only one I'm dreaming of"
+        },
+        {
+            "timestamp": 149.76,
+            "lyric": "You see I can be myself now finally"
+        },
+        {
+            "timestamp": 152.24,
+            "lyric": "In fact there's nothing I cant be"
+        },
+        {
+            "timestamp": 154.92,
+            "lyric": "I want the world to see you'll be with me"
+        },
+        {
+            "timestamp": 190.82,
+            "lyric": "Heeey heeeey heeeeey (tonight)"
+        }
+    ]
+}
