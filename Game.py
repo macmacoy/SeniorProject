@@ -418,7 +418,6 @@ def SongsMenu(player):
 		if(songFilePath != ".DS_Store"):
 			song = Song('save files/songs/' + songFilePath)
 			songs.append(song)
-			print(str(song.capo))
 	# sort by recently played?
 	pageRects = [[]]
 	pageTexts = [[]]
