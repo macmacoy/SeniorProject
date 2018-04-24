@@ -35,6 +35,16 @@ class Song(object):
 					if (chord_data[i]["timestamp"]+chord_offset >= 0):
 						self.chords.append({"start":chord_data[i]["timestamp"]+chord_offset, "end":self.duration+chord_offset, "chord":chord_data[i]["chord"]})
 			
+			self.visible_chords = []
+			for i in range(0, len(chord_data)):
+				if i < len(chord_data) - 1:
+					if (chord_data[i]["timestamp"]+chord_offset >= 0):
+						self.visible_chords.append({"start":chord_data[i]["timestamp"]+chord_offset, "end":chord_data[i+1]["timestamp"]+chord_offset, "chord":chord_data[i]["chord"]})
+				else:
+					if (chord_data[i]["timestamp"]+chord_offset >= 0):
+						self.visible_chords.append({"start":chord_data[i]["timestamp"]+chord_offset, "end":self.duration+chord_offset, "chord":chord_data[i]["chord"]})
+			
+
 			lyric_data = data.get("lyrics")
 			self.lyrics = []
 			for i in range(0, len(lyric_data)):
@@ -55,7 +65,7 @@ class Song(object):
 
 
 	def decrementCapo(self):
-		for chord in self.chords:
+		for chord in self.visible_chords:
 			if chord["chord"] in self.majorChords:
 				if self.majorChords.index(chord["chord"]) < len(self.majorChords)-1:
 					chord["chord"] = self.majorChords[self.majorChords.index(chord["chord"])+1]
@@ -69,7 +79,7 @@ class Song(object):
 		self.capo = self.capo - 1
 
 	def incrementCapo(self):
-		for chord in self.chords:
+		for chord in self.visible_chords:
 			if chord["chord"] in self.majorChords:
 				if self.majorChords.index(chord["chord"]) > 0:
 					chord["chord"] = self.majorChords[self.majorChords.index(chord["chord"])-1]
@@ -91,19 +101,19 @@ class Song(object):
 		
 		chordDifficultyTotal=0
 		keys = list(chordDifficulties.keys())
-		for chord in self.chords:
+		for chord in self.visible_chords:
 			if chord in keys:
 				chordDifficultyTotal = chordDifficultyTotal + chordDifficulties[chord["chord"]]
 			else:
 				chordDifficultyTotal = chordDifficultyTotal + 1
-		chordDifficultyScore = (chordDifficultyTotal/len(self.chords)) * 2
+		chordDifficultyScore = (chordDifficultyTotal/len(self.visible_chords)) * 2
 
 		chordDurationTotal = 0
 		durations = []
-		for chord in self.chords:
+		for chord in self.visible_chords:
 			chordDurationTotal = chordDurationTotal + (chord["end"] - chord["start"])
 			durations.append(chord["end"] - chord["start"])
-		avgChordDuration = (chordDurationTotal/len(self.chords))
+		avgChordDuration = (chordDurationTotal/len(self.visible_chords))
 		if avgChordDuration <= 1:
 			avgChordDurationScore = 6
 		elif avgChordDuration <= 2:

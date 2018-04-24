@@ -25,6 +25,7 @@ def PlaySong(song, player): # take in song object
 	screen = pygame.display.set_mode(screenSize, flags)
 
 	chords = song.chords
+	visible_chords = song.visible_chords
 	lyrics = song.lyrics
 
 	## start thread that listens for chords
@@ -64,13 +65,13 @@ def PlaySong(song, player): # take in song object
 	feedbackDisplay = getFeedbackImage(51, scaledForPlaySong=True) # initial
 	chordTextsNotHit = []
 	chordTextsHit = []
-	for chord in chords:
+	for chord in visible_chords:
 		if chord["chord"] != "":
 			chordTextsNotHit.append(chordFont.render(chord["chord"], False, Colors.mediumGray))
 			chordTextsHit.append(chordFont.render(chord["chord"], False, Colors.white))
 		else:
-			chordTextsNotHit.append(chordFont.render("NC", False, Colors.mediumGray))
-			chordTextsHit.append(chordFont.render("NC", False, Colors.white))
+			chordTextsNotHit.append(chordFont.render("", False, Colors.mediumGray))
+			chordTextsHit.append(chordFont.render("", False, Colors.white))
 
 	timeIntervalOnScreen = 5.0 # seconds
 
@@ -183,7 +184,7 @@ def PlaySong(song, player): # take in song object
 			firstPixels = []
 			chordTexts = []
 			chordTextPlacements = []
-			for chord in chords:
+			for chord in visible_chords:
 				if isInTimeRange(chord,timeRangeOnScreen):
 					if chord["start"] > timeRangeOnScreen["start"]:
 						firstPixelOfChord = ((chord["start"] - timeRangeOnScreen["start"])/timeIntervalOnScreen)*chordDisplaySize[0]
@@ -246,7 +247,7 @@ def PlaySong(song, player): # take in song object
 			for z in range(0, len(chordTexts)):
 				screen.blit(chordTexts[z], chordTextPlacements[z])
 
-			# # ## for testing
+			# ## for testing
 			# pygame.draw.rect(screen, Colors.black, Rect(screenSize[0]/2, 750, 40, 40))
 			# screen.blit(lyricFont.render(str(now), False, Colors.white), (screenSize[0]/2, 750))
 
@@ -822,7 +823,8 @@ def PlayerStatsScreen(player):
 	for i in range(0, len(player.songsPlayed["songs"])):
 		topSongsTexts.append(topSongsFont.render(player.songsPlayed["songs"][i], False, Colors.white))
 		topSongsDifficultyTexts.append(topSongsFont.render(str(player.songsPlayed["difficulties"][i]), False, Colors.white))
-		topSongsScoreTexts.append(topSongsFont.render((str(player.songsPlayed["scores"][i]) + "%"), False, Colors.white))
+		scoreStr = str(player.songsPlayed["scores"][i])[:4]
+		topSongsScoreTexts.append(topSongsFont.render((scoreStr + "%"), False, Colors.white))
 
 	titleText = topSongsFont.render("Song", False, Colors.orange)
 	difficultyText = topSongsFont.render("Difficulty", False, Colors.orange)
@@ -881,8 +883,8 @@ screen = pygame.display.set_mode(screenSize, flags)
 screen.set_alpha(None)
 
 # songFilePath = 'test_song.json'
-# song = Song('save files/songs/' + "song_22_20180413230824.json")
-# EndOfSongScreen(song, 80, player)
+# song = Song('save files/songs/' + "heysoulsister_20180423161909.json")
+# EndOfSongScreen(song, 94.17, player)
 MainMenu(player)
 # PlayerStatsScreen(player)
 

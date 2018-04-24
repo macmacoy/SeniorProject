@@ -1,18 +1,22 @@
 {
     "name": "Player",
-    "points": 2.306473294110933,
-    "level": 1,
+    "points": 5.2851,
+    "level": 2,
     "songsPlayed": {
         "songs": [
-            "Everything Has Changed"
+            "Hey Soul Sister",
+            "Take It Easy"
         ],
         "artists": [
-            "Taylor Swift\r"
+            "Train\r",
+            "The Eagles"
         ],
         "scores": [
-            76.8824431370311
+            94.17,
+            82.6
         ],
         "difficulties": [
+            3,
             3
         ]
     }
