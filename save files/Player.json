@@ -1,15 +1,19 @@
 {
     "name": "Player",
-    "points": 0,
+    "points": 2.306473294110933,
     "level": 1,
     "songsPlayed": {
         "songs": [
+            "Everything Has Changed"
         ],
         "artists": [
+            "Taylor Swift\r"
         ],
         "scores": [
+            76.8824431370311
         ],
         "difficulties": [
+            3
         ]
     }
 }

@@ -103,7 +103,7 @@ def PlaySong(song, player): # take in song object
 			totalScore += i
 		totalScore *= 100
 		totalScore = totalScore / (chordIndex+1 + len(initial))
-		return getFeedbackImage(totalScore, scaledForPlaySong=True)
+		return totalScore
 
 	def scaleForCurrentChord(image):
 		return pygame.transform.scale(image, (int(image.get_width()/1), int(image.get_height()/1)))
@@ -164,7 +164,8 @@ def PlaySong(song, player): # take in song object
 		if not paused:
 			if (now > chords[chordIndex]["end"]):
 				if(not hit[chordIndex]):
-					feedbackDisplay = updateFeedbackScore(False)
+					totalScore = updateFeedbackScore(False)
+					feedbackDisplay = getFeedbackImage(totalScore, scaledForPlaySong=True)
 				if chords[chordIndex] != chords[-1]:
 					chordIndex += 1
 				chordChanged = True
@@ -197,7 +198,8 @@ def PlaySong(song, player): # take in song object
 						# c = q.get_nowait() # or q.get(timeout=.1)
 						if q.get_nowait() == chords[chordIndex]["chord"]:
 							if hit[chordIndex] == False:
-								feedbackDisplay = updateFeedbackScore(True)
+								totalScore = updateFeedbackScore(True)
+								feedbackDisplay = getFeedbackImage(totalScore, scaledForPlaySong=True)
 							hit[chordIndex] = True
 					except Empty:
 					    pass
@@ -265,7 +267,9 @@ def PlaySong(song, player): # take in song object
 	flags = DOUBLEBUF
 	screen = pygame.display.set_mode(screenSize, flags)
 
-	EndOfSongScreen(song, totalScore*100, player)
+	print(str(totalScore))
+
+	EndOfSongScreen(song, totalScore, player)
 
 	# print ("fps: " + str(clock.get_fps()))
 	# closeStream()
@@ -818,7 +822,7 @@ def PlayerStatsScreen(player):
 	for i in range(0, len(player.songsPlayed["songs"])):
 		topSongsTexts.append(topSongsFont.render(player.songsPlayed["songs"][i], False, Colors.white))
 		topSongsDifficultyTexts.append(topSongsFont.render(str(player.songsPlayed["difficulties"][i]), False, Colors.white))
-		topSongsScoreTexts.append(topSongsFont.render((str(100*player.songsPlayed["scores"][i]) + "%"), False, Colors.white))
+		topSongsScoreTexts.append(topSongsFont.render((str(player.songsPlayed["scores"][i]) + "%"), False, Colors.white))
 
 	titleText = topSongsFont.render("Song", False, Colors.orange)
 	difficultyText = topSongsFont.render("Difficulty", False, Colors.orange)

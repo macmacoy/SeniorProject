@@ -1,0 +1,93 @@
+{
+    "title": "What Lovers Do",
+    "artist": "Maroon 5\r",
+    "youtube_url": "5Wiio4KoGe8",
+    "duration": 20,
+    "tempo": 110,
+    "lyric_offset": -0.5,
+    "capo": 3,
+    "chords": [
+        {
+            "timestamp": 0,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 1.4,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 1.94,
+            "chord": "F"
+        },
+        {
+            "timestamp": 4.39,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 6.32,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 10.15,
+            "chord": "Gm"
+        },
+        {
+            "timestamp": 10.7,
+            "chord": "F"
+        },
+        {
+            "timestamp": 13.15,
+            "chord": "A#"
+        },
+        {
+            "timestamp": 15.06,
+            "chord": "D#"
+        },
+        {
+            "timestamp": 18.88,
+            "chord": "Gm"
+        }
+    ],
+    "lyrics": [
+        {
+            "timestamp": 0.91,
+            "lyric": "\"What Lovers Do (feat. SZA)\""
+        },
+        {
+            "timestamp": 0.91,
+            "lyric": "Maroon 5"
+        },
+        {
+            "timestamp": 2.61,
+            "lyric": ""
+        },
+        {
+            "timestamp": 4.11,
+            "lyric": ""
+        },
+        {
+            "timestamp": 6.41,
+            "lyric": ""
+        },
+        {
+            "timestamp": 8.97,
+            "lyric": "Say say say, hey hey now baby"
+        },
+        {
+            "timestamp": 11.27,
+            "lyric": ""
+        },
+        {
+            "timestamp": 12.87,
+            "lyric": "Oh my my, don't play now baby"
+        },
+        {
+            "timestamp": 15.77,
+            "lyric": ""
+        },
+        {
+            "timestamp": 17.77,
+            "lyric": "Say say say, hey hey now baby"
+        }
+    ]
+}
